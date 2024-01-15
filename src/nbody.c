@@ -64,13 +64,13 @@ void move_particles(particle_t *p, const f32 dt, u64 n)
 	  //Compute the distance between particle i and j: 6 FLOPs
 	  const f32 d_2 = (dx * dx) + (dy * dy) + (dz * dz) + softening; //9 (mul, add)
 
-	  //2 FLOPs (here, we consider pow to be 1 operation)
-	  const f32 d_3_over_2 = pow(d_2, 3.0 / 2.0); //11 (pow, div)
+	  //3 FLOPs (here, we consider sqrt to be 1 operation)
+	  const f32 d_3_over_2 = 1/(d_2 * sqrt(d_2)); //11 (mul, sqrt)
 	  
 	  //Calculate net force: 6 FLOPs
-	  fx += dx / d_3_over_2; //13 (add, div)
-	  fy += dy / d_3_over_2; //15 (add, div)
-	  fz += dz / d_3_over_2; //17 (add, div)
+	  fx += dx * d_3_over_2; //13 (add, mul)
+	  fy += dy * d_3_over_2; //15 (add, mul)
+	  fz += dz * d_3_over_2; //17 (add, mul)
 	}
 
       //Update particle velocities using the previously computed net force: 6 FLOPs 
