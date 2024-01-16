@@ -12,13 +12,13 @@ typedef unsigned long long u64;
 //
 typedef struct particle_s {
 
-  f32 *x, *y, *z;
-  f32 *vx, *vy, *vz;
+  f32 *restrict x, *restrict y, *restrict z;
+  f32 *restrict vx, *restrict vy, *restrict vz;
   
 } particle_t;
 
 //
-void init(particle_t *p, u64 n)
+void init(particle_t *restrict p, u64 n)
 {
   for (u64 i = 0; i < n; i++)
     {
@@ -40,7 +40,7 @@ void init(particle_t *p, u64 n)
 }
 
 //
-void move_particles(particle_t *p, const f32 dt, u64 n)
+void move_particles(particle_t *restrict p, const f32 dt, u64 n)
 {
   //Used to avoid division by 0 when comparing a particle to itself
   const f32 softening = 1e-20;
@@ -106,16 +106,17 @@ int main(int argc, char **argv)
   //Steps to skip for warm up
   const u64 warmup = 3;
   
+  u64 alignment = 32;
   //
-  particle_t *p = malloc(sizeof(particle_t));
+  particle_t *restrict p = aligned_alloc(alignment,sizeof(particle_t));
   //
-  p->x = malloc(sizeof(f32) * n);
-  p->y = malloc(sizeof(f32) * n);
-  p->z = malloc(sizeof(f32) * n);
-
-  p->vx = malloc(sizeof(f32) * n);
-  p->vy = malloc(sizeof(f32) * n);
-  p->vz = malloc(sizeof(f32) * n);
+  p->x = aligned_alloc(alignment,sizeof(f32) * n);
+  p->y = aligned_alloc(alignment,sizeof(f32) * n);
+  p->z = aligned_alloc(alignment,sizeof(f32) * n);
+  
+  p->vx = aligned_alloc(alignment,sizeof(f32) * n);
+  p->vy = aligned_alloc(alignment,sizeof(f32) * n);
+  p->vz = aligned_alloc(alignment,sizeof(f32) * n);
   //
   init(p, n);
 
