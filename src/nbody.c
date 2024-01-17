@@ -45,6 +45,10 @@ void move_particles(particle_t *restrict p, const f32 dt, u64 n)
   //Used to avoid division by 0 when comparing a particle to itself
   const f32 softening = 1e-20;
   
+  //TFM provided by prof
+  #pragma omp parallel proc_bind(spread)
+  {
+  #pragma omp for nowait 
   //For all particles
   for (u64 i = 0; i < n; i++)
     {
@@ -77,8 +81,8 @@ void move_particles(particle_t *restrict p, const f32 dt, u64 n)
       p->vx[i] += dt * fx; //19 (mul, add)
       p->vy[i] += dt * fy; //21 (mul, add)
       p->vz[i] += dt * fz; //23 (mul, add)
-     }
-
+    }
+  }
   //Update positions: 6 FLOPs
   for (u64 i = 0; i < n; i++)
     {
@@ -91,6 +95,10 @@ void move_particles(particle_t *restrict p, const f32 dt, u64 n)
 //
 int main(int argc, char **argv)
 {
+
+  u64 core = 24;
+
+  printf("core = %d \n", core);
   //Number of particles to simulate
   const u64 n = (argc > 1) ? atoll(argv[1]) : 16384;
 
@@ -130,6 +138,9 @@ int main(int argc, char **argv)
   //
   for (u64 i = 0; i < steps; i++)
     {
+      
+      omp_set_num_threads(core);
+      
       //Measure
       const f64 start = omp_get_wtime();
 
@@ -183,7 +194,6 @@ int main(int argc, char **argv)
   free(p->vy);
   free(p->vz);
   free(p);
-
   //
   return 0;
 }
