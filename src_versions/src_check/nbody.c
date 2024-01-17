@@ -3,6 +3,7 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
+//#include <blis/blis.h>
 
 //
 typedef float              f32;
@@ -27,19 +28,77 @@ void init(particle_t *restrict p, u64 n)
       u64 r2 = (u64)rand();
       f32 sign = (r1 > r2) ? 1 : -1;
       
-      //
+      /*
       p->x[i] = sign * (f32)rand() / (f32)RAND_MAX;
       p->y[i] = (f32)rand() / (f32)RAND_MAX;
       p->z[i] = sign * (f32)rand() / (f32)RAND_MAX;
-
-      //
       p->vx[i] = (f32)rand() / (f32)RAND_MAX;
       p->vy[i] = sign * (f32)rand() / (f32)RAND_MAX;
       p->vz[i] = (f32)rand() / (f32)RAND_MAX;
+      */
+      
+      //
+      p->x[i] = -1.0;
+      p->y[i] = 2.0;
+      p->z[i] = -3.0;
+
+      //
+      p->vx[i] = 2.0;
+      p->vy[i] = -5.0;
+      p->vz[i] = 4.0;
     }
 }
 
-//
+//sequetial
+void move_particles_init(particle_t *restrict p, const f32 dt, u64 n)
+{
+  //Used to avoid division by 0 when comparing a particle to itself
+  const f32 softening = 1e-20;
+
+  //For all particles
+  for (u64 i = 0; i < n; i++)
+    {
+      //
+      f32 fx = 0.0;
+      f32 fy = 0.0;
+      f32 fz = 0.0;
+
+      //Newton's law: 17 FLOPs (Floating-Point Operations) per iteration
+      for (u64 j = 0; j < n; j++)
+	{
+	  //3 FLOPs (Floating-Point Operations)
+          const f32 dx = p->x[j] - p->x[i]; //1 (sub)
+	  const f32 dy = p->y[j] - p->y[i]; //2 (sub)
+	  const f32 dz = p->z[j] - p->z[i]; //3 (sub)
+
+	  //Compute the distance between particle i and j: 6 FLOPs
+	  const f32 d_2 = (dx * dx) + (dy * dy) + (dz * dz) + softening; //9 (mul, add)
+
+	  //3 FLOPs (here, we consider sqrt to be 1 operation)
+	  const f32 d_3_over_2 = 1/(d_2 * sqrt(d_2)); //11 (mul, sqrt)
+
+	  //Calculate net force: 6 FLOPs
+	  fx += dx * d_3_over_2; //13 (add, mul)
+	  fy += dy * d_3_over_2; //15 (add, mul)
+	  fz += dz * d_3_over_2; //17 (add, mul)
+	}
+
+      //Update particle velocities using the previously computed net force: 6 FLOPs
+      p->vx[i] += dt * fx; //19 (mul, add)
+      p->vy[i] += dt * fy; //21 (mul, add)
+      p->vz[i] += dt * fz; //23 (mul, add)
+     }
+
+  //Update positions: 6 FLOPs
+  for (u64 i = 0; i < n; i++)
+    {
+      p->x[i] += dt * p->vx[i];
+      p->y[i] += dt * p->vy[i];
+      p->z[i] += dt * p->vz[i];
+    }
+}
+
+//parrallel
 void move_particles(particle_t *restrict p, const f32 dt, u64 n)
 {
   //Used to avoid division by 0 when comparing a particle to itself
@@ -69,7 +128,7 @@ void move_particles(particle_t *restrict p, const f32 dt, u64 n)
 	  const f32 d_2 = (dx * dx) + (dy * dy) + (dz * dz) + softening; //9 (mul, add)
 
 	  //3 FLOPs (here, we consider sqrt to be 1 operation)
-	  const f32 d_3_over_2 = 1/(d_2 * sqrtf(d_2)); //11 (mul, sqrt)
+	  const f32 d_3_over_2 = 1/(d_2 * sqrtf(d_2)); //11 (mul, sqrtf)
 	  
 	  //Calculate net force: 6 FLOPs
 	  fx += dx * d_3_over_2; //13 (add, mul)
@@ -90,15 +149,19 @@ void move_particles(particle_t *restrict p, const f32 dt, u64 n)
       p->y[i] += dt * p->vy[i];
       p->z[i] += dt * p->vz[i];
     }
+
 }
 
 //
 int main(int argc, char **argv)
 {
 
-  u64 core = 24;
+  const u64 tn = 24;
 
-  printf("core = %d \n", core);
+  printf("Threads = %d \n", tn);
+
+  for(u64 mode = 0; mode<2;mode++){
+  
   //Number of particles to simulate
   const u64 n = (argc > 1) ? atoll(argv[1]) : 16384;
 
@@ -128,6 +191,19 @@ int main(int argc, char **argv)
   //
   init(p, n);
 
+  if(mode == 0){
+      move_particles_init(p,dt,n);
+      printf("CHECK values: \n");
+      printf("x=%f, y=%f, z=%f\n",p->x[n-2],p->y[n-2],p->z[n-2]);    
+  free(p->x);
+  free(p->y);
+  free(p->z);
+  free(p->vx);
+  free(p->vy);
+  free(p->vz);
+  free(p);
+      continue;
+  }
   const u64 s = sizeof(particle_t) * n;
   
   printf("\n\033[1mTotal memory size:\033[0m %llu B, %llu KiB, %llu MiB\n\n", s, s >> 10, s >> 20);
@@ -137,9 +213,8 @@ int main(int argc, char **argv)
   
   //
   for (u64 i = 0; i < steps; i++)
-    {
-      
-      omp_set_num_threads(core);
+    { 
+      omp_set_num_threads(tn);
       
       //Measure
       const f64 start = omp_get_wtime();
@@ -148,6 +223,8 @@ int main(int argc, char **argv)
 
       const f64 end = omp_get_wtime();
 
+      printf("CHECK values: \n");
+      printf("x=%f, y=%f, z=%f\n",p->x[n-2],p->y[n-2],p->z[n-2]);    
       //Number of interactions/iteration
       const f32 h1 = (f32)(n) * (f32)(n);
 
@@ -194,6 +271,8 @@ int main(int argc, char **argv)
   free(p->vy);
   free(p->vz);
   free(p);
+  
+  }//end mode
   //
   return 0;
 }
