@@ -57,10 +57,11 @@ void move_particles(particle_t *restrict p, const f32 dt, u64 n)
             f32 fy = 0.0;
             f32 fz = 0.0;
             
-            for (u64 j = 0; j < n; j+=4)
+            for (u64 j = 0; j < n; j+=5)
             {
-                const f32 d1 = 1/(( (p->x[j] - p->x[i])* (p->x[j] - p->x[i])) + ((p->y[j] - p->y[i]) * (p->y[j] - p->y[i])) + (( p->z[j] - p->z[i]) * ( p->z[j] - p->z[i])) + softening * sqrtf(( (p->x[j] - p->x[i])* (p->x[j] - p->x[i])) + ((p->y[j] - p->y[i]) * (p->y[j] - p->y[i])) + (( p->z[j] - p->z[i]) * ( p->z[j] - p->z[i])) + softening)); //12
+	     const f32 d1 = 1/(( (p->x[j] - p->x[i])* (p->x[j] - p->x[i])) + ((p->y[j] - p->y[i]) * (p->y[j] - p->y[i])) + (( p->z[j] - p->z[i]) * ( p->z[j] - p->z[i])) + softening * sqrtf(( (p->x[j] - p->x[i])* (p->x[j] - p->x[i])) + ((p->y[j] - p->y[i]) * (p->y[j] - p->y[i])) + (( p->z[j] - p->z[i]) * ( p->z[j] - p->z[i])) + softening)); //12
                 
+                //Calculate net force: 6 FLOPs
                 fx += (p->x[j] - p->x[i]) * d1; //14 (add, mul)
                 fy += (p->y[j] - p->y[i]) * d1; //16 (add, mul)
                 fz += (p->z[j] - p->z[i]) * d1; //18 (add, mul)
@@ -82,7 +83,14 @@ void move_particles(particle_t *restrict p, const f32 dt, u64 n)
                 fx += (p->x[j+3] - p->x[i]) * d4; //14 (add, mul)
                 fy += (p->y[j+3] - p->y[i]) * d4; //16 (add, mul)
                 fz += (p->z[j+3] - p->z[i]) * d4; //18 (add, mul)
-            }
+                
+                
+                const f32 d5 = 1/(( (p->x[j+4] - p->x[i])* (p->x[j+4] - p->x[i])) + ((p->y[j+4] - p->y[i]) * (p->y[j+4] - p->y[i])) + (( p->z[j+4] - p->z[i]) * ( p->z[j+4] - p->z[i])) + softening * sqrtf(( (p->x[j+4] - p->x[i])* (p->x[j+4] - p->x[i])) + ((p->y[j+4] - p->y[i]) * (p->y[j+4] - p->y[i])) + (( p->z[j+4] - p->z[i]) * ( p->z[j+4] - p->z[i])) + softening)); //12
+
+                fx += (p->x[j+4] - p->x[i]) * d5; //14 (add, mul)
+                fy += (p->y[j+4] - p->y[i]) * d5; //16 (add, mul)
+                fz += (p->z[j+4] - p->z[i]) * d5; //18 (add, mul)
+	    }
             
             //Newton's law: 36 FLOPs (Floating-Point Operations) per iteration
             //Update particle velocities using the previously computed net force: 6 FLOPs
