@@ -294,14 +294,14 @@ nbody.c:205:5: missed: statement clobbers memory: free (p_60);
 nbody.c:167:50: note: ***** Analysis succeeded with vector mode V4DI
 nbody.c:167:50: note: SLPing BB part
 nbody.c:167:50: note: Costing subgraph: 
-nbody.c:167:50: note: node 0x2c6f7e8 (max_nunits=2, refcnt=1) vector(2) double
+nbody.c:167:50: note: node 0x465e7e8 (max_nunits=2, refcnt=1) vector(2) double
 nbody.c:167:50: note: op template: _16 = _15 * 1.8e+1;
 nbody.c:167:50: note: 	stmt 0 _16 = _15 * 1.8e+1;
 nbody.c:167:50: note: 	stmt 1 _114 = _18 * 2.0e+0;
-nbody.c:167:50: note: 	children 0x2c6f8e8 0x2c6f968
-nbody.c:167:50: note: node (external) 0x2c6f8e8 (max_nunits=1, refcnt=1) vector(2) double
+nbody.c:167:50: note: 	children 0x465e8e8 0x465e968
+nbody.c:167:50: note: node (external) 0x465e8e8 (max_nunits=1, refcnt=1) vector(2) double
 nbody.c:167:50: note: 	{ _15, _18 }
-nbody.c:167:50: note: node (constant) 0x2c6f968 (max_nunits=1, refcnt=1) vector(2) double
+nbody.c:167:50: note: node (constant) 0x465e968 (max_nunits=1, refcnt=1) vector(2) double
 nbody.c:167:50: note: 	{ 1.8e+1, 2.0e+0 }
 nbody.c:167:50: note: Cost model analysis: 
 nbody.c:167:50: note: Cost model analysis for part in loop 0:
@@ -313,14 +313,14 @@ nbody.c:167:50: note: ***** Re-trying analysis with vector mode V16QI
 nbody.c:167:50: note: ***** Analysis succeeded with vector mode V16QI
 nbody.c:167:50: note: SLPing BB part
 nbody.c:167:50: note: Costing subgraph: 
-nbody.c:167:50: note: node 0x2c6f7e8 (max_nunits=2, refcnt=1) vector(2) double
+nbody.c:167:50: note: node 0x465e7e8 (max_nunits=2, refcnt=1) vector(2) double
 nbody.c:167:50: note: op template: _16 = _15 * 1.8e+1;
 nbody.c:167:50: note: 	stmt 0 _16 = _15 * 1.8e+1;
 nbody.c:167:50: note: 	stmt 1 _114 = _18 * 2.0e+0;
-nbody.c:167:50: note: 	children 0x2c6f8e8 0x2c6fa68
-nbody.c:167:50: note: node (external) 0x2c6f8e8 (max_nunits=1, refcnt=1) vector(2) double
+nbody.c:167:50: note: 	children 0x465e8e8 0x465ea68
+nbody.c:167:50: note: node (external) 0x465e8e8 (max_nunits=1, refcnt=1) vector(2) double
 nbody.c:167:50: note: 	{ _15, _18 }
-nbody.c:167:50: note: node (constant) 0x2c6fa68 (max_nunits=1, refcnt=1) vector(2) double
+nbody.c:167:50: note: node (constant) 0x465ea68 (max_nunits=1, refcnt=1) vector(2) double
 nbody.c:167:50: note: 	{ 1.8e+1, 2.0e+0 }
 nbody.c:167:50: note: Cost model analysis: 
 nbody.c:167:50: note: Cost model analysis for part in loop 0:
