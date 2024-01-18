@@ -3,7 +3,6 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <mkl.h>
 
 //
 typedef float              f32;
@@ -45,7 +44,7 @@ void move_particles(particle_t *restrict p, const f32 dt, u64 n)
 {
   //Used to avoid division by 0 when comparing a particle to itself
   const f32 softening = 1e-20;
-  
+  const u64 T = 64;
   //For all particles
   for (u64 i = 0; i < n; i++)
     {
@@ -53,11 +52,11 @@ void move_particles(particle_t *restrict p, const f32 dt, u64 n)
       f32 fx = 0.0;
       f32 fy = 0.0;
       f32 fz = 0.0;
-
+      
       //Newton's law: 17 FLOPs (Floating-Point Operations) per iteration
       for (u64 j = 0; j < n; j+=T)
     {
-        for (u64 jj = j; j < min(j+T,n); jj++){
+        for (u64 jj = j; jj < fmin(j+T,n); jj++){
             //3 FLOPs (Floating-Point Operations)
             const f32 dx = p->x[jj] - p->x[i]; //1 (sub)
             const f32 dy = p->y[jj] - p->y[i]; //2 (sub)
@@ -83,11 +82,45 @@ void move_particles(particle_t *restrict p, const f32 dt, u64 n)
      }
 
     //Update positions: 6 FLOPs
-    u32 inc = 1;
+    /*u32 inc = 1;
     SAXPY(&n, &dt, p->vx, &inc, p->x, &inc);
     SAXPY(&n, &dt, p->vy, &inc, p->y, &inc);
     SAXPY(&n, &dt, p->vz, &inc, p->z, &inc);
-  
+  */
+    for (u64 i = 0; i < n; i+=8)
+    {
+        p->x[i] += dt * p->vx[i];
+        p->y[i] += dt * p->vy[i];
+        p->z[i] += dt * p->vz[i];
+        
+        p->x[i+1] += dt * p->vx[i+1];
+        p->y[i+1] += dt * p->vy[i+1];
+        p->z[i+1] += dt * p->vz[i+1];
+        
+        p->x[i+2] += dt * p->vx[i+2];
+        p->y[i+2] += dt * p->vy[i+2];
+        p->z[i+2] += dt * p->vz[i+2];
+        
+        p->x[i+3] += dt * p->vx[i+3];
+        p->y[i+3] += dt * p->vy[i+3];
+        p->z[i+3] += dt * p->vz[i+3];
+    
+        p->x[i+4] += dt * p->vx[i+4];
+        p->y[i+4] += dt * p->vy[i+4];
+        p->z[i+4] += dt * p->vz[i+4];
+        
+        p->x[i+5] += dt * p->vx[i+5];
+        p->y[i+5] += dt * p->vy[i+5];
+        p->z[i+5] += dt * p->vz[i+5];
+        
+        p->x[i+6] += dt * p->vx[i+6];
+        p->y[i+6] += dt * p->vy[i+6];
+        p->z[i+6] += dt * p->vz[i+6];
+       
+        p->x[i+7] += dt * p->vx[i+7];
+        p->y[i+7] += dt * p->vy[i+7];
+        p->z[i+7] += dt * p->vz[i+7];
+    }
 }
 
 //

@@ -3,7 +3,6 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <mkl.h>
 
 //
 typedef float              f32;
@@ -81,7 +80,7 @@ void move_particles(particle_t *restrict p, const f32 dt, u64 n)
      }
 
     //Update positions: 6 FLOPs
-    for (u64 i = 0; i < n; i+=4)
+    for (u64 i = 0; i < n; i+=8)
     {
         p->x[i] += dt * p->vx[i];
         p->y[i] += dt * p->vy[i];
@@ -98,8 +97,23 @@ void move_particles(particle_t *restrict p, const f32 dt, u64 n)
         p->x[i+3] += dt * p->vx[i+3];
         p->y[i+3] += dt * p->vy[i+3];
         p->z[i+3] += dt * p->vz[i+3];
+    
+        p->x[i+4] += dt * p->vx[i+4];
+        p->y[i+4] += dt * p->vy[i+4];
+        p->z[i+4] += dt * p->vz[i+4];
+        
+        p->x[i+5] += dt * p->vx[i+5];
+        p->y[i+5] += dt * p->vy[i+5];
+        p->z[i+5] += dt * p->vz[i+5];
+        
+        p->x[i+6] += dt * p->vx[i+6];
+        p->y[i+6] += dt * p->vy[i+6];
+        p->z[i+6] += dt * p->vz[i+6];
+       
+        p->x[i+7] += dt * p->vx[i+7];
+        p->y[i+7] += dt * p->vy[i+7];
+        p->z[i+7] += dt * p->vz[i+7];
     }
-  
 }
 
 //
