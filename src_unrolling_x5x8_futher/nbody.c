@@ -76,11 +76,11 @@ void move_particles(particle_t *restrict p, const f32 dt, u64 n)
                 fz += (p->z[j] - p->z[i]) * d1 + (p->z[j+1] - p->z[i]) * d2 + (p->z[j+2] - p->z[i]) * d3 + (p->z[j+3] - p->z[i]) * d4 + (p->z[j+4] - p->z[i]) * d5; 
             }
 
-            //Newton's law: 17 FLOPs (Floating-Point Operations) per iteration
+            //Newton's law: 36 FLOPs (Floating-Point Operations) per iteration
             //Update particle velocities using the previously computed net force: 6 FLOPs
-            p->vx[i] += dt * fx; //20 (mul, add)
-            p->vy[i] += dt * fy; //22 (mul, add)
-            p->vz[i] += dt * fz; //24 (mul, add)
+            p->vx[i] += dt * fx; // (mul, add)
+            p->vy[i] += dt * fy; // (mul, add)
+            p->vz[i] += dt * fz; // (mul, add)
         }
     }
     //Update positions: 6 FLOPs
@@ -183,7 +183,7 @@ int main(int argc, char **argv)
         //Innermost loop (Newton's law)   : 18 FLOPs x n (innermost trip count) x n (outermost trip count)
         //Velocity update (outermost body):  6 FLOPs x n (outermost trip count)
         //Positions update                :  6 FLOPs x n
-        const f32 h2 = (18.0 * h1 + 6.0 * (f32)n + 6.0 * (f32)n) * 1e-9;
+        const f32 h2 = (36.0 * h1 + 6.0 * (f32)n + 6.0 * (f32)n) * 1e-9;
         
         //Do not take warm up runs into account
         if (i >= warmup)
