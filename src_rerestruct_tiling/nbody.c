@@ -14,6 +14,7 @@ typedef struct particle_s {
     
     f32 *restrict x, *restrict y, *restrict z;
     f32 *restrict vx, *restrict vy, *restrict vz;
+    f32 *restrict fx, *restrict fy, *restrict fz;
     
 } particle_t;
 
@@ -36,6 +37,10 @@ void init(particle_t *restrict p, u64 n)
         p->vx[i] = (f32)rand() / (f32)RAND_MAX;
         p->vy[i] = sign * (f32)rand() / (f32)RAND_MAX;
         p->vz[i] = (f32)rand() / (f32)RAND_MAX;
+        
+        p->fx[i] = 0;
+        p->fy[i] = 0;
+        p->fz[i] = 0;
     }
 }
 
@@ -44,7 +49,7 @@ void move_particles(particle_t *restrict p, const f32 dt, u64 n)
 {
     //Used to avoid division by 0 when comparing a particle to itself
     const f32 softening = 1e-20;
-    const f32 T = 64;
+    const u64 T = 64;
     
     //TFM provided by prof
 #pragma omp parallel proc_bind(spread)
@@ -55,12 +60,7 @@ void move_particles(particle_t *restrict p, const f32 dt, u64 n)
         {
             for (u64 j = 0; j < n; j+=T)
             {
-                if(j==0){//
-                    f32 fx = 0.0;
-                    f32 fy = 0.0;
-                    f32 fz = 0.0;}
-                
-                for (u64 jj = j; j < min(j+T,n); jj++){
+                for (u64 jj = j; j < fmin(j+T,n); jj++){
                     //3 FLOPs (Floating-Point Operations)
                     const f32 dx = p->x[jj] - p->x[i]; //1 (sub)
                     const f32 dy = p->y[jj] - p->y[i]; //2 (sub)
@@ -73,15 +73,9 @@ void move_particles(particle_t *restrict p, const f32 dt, u64 n)
                     const f32 d_3_over_2 = 1/(d_2 * sqrt(d_2)); //12 (mul, sqrt)
                     
                     //Calculate net force: 6 FLOPs
-                    fx += dx * d_3_over_2; //14 (add, mul)
-                    fy += dy * d_3_over_2; //16 (add, mul)
-                    fz += dz * d_3_over_2; //18 (add, mul)
-                }
-                
-                if(j+T >= n){
-                    p->vx[i] += dt * fx; //20 (mul, add)
-                    p->vy[i] += dt * fy; //22 (mul, add)
-                    p->vz[i] += dt * fz; //24 (mul, add)
+                    p->fx[i] += dx * d_3_over_2; //14 (add, mul)
+                    p->fy[i] += dy * d_3_over_2; //16 (add, mul)
+                    p->fz[i] += dz * d_3_over_2; //18 (add, mul)
                 }
             }
             
@@ -89,39 +83,15 @@ void move_particles(particle_t *restrict p, const f32 dt, u64 n)
     }
     
     //Update positions: 6 FLOPs
-    for (u64 i = 0; i < n; i+=8)
+    for (u64 i = 0; i < n; i++)
     {
+        p->vx[i] += dt * p->fx[i]; //20 (mul, add)
+        p->vy[i] += dt * p->fy[i]; //22 (mul, add)
+        p->vz[i] += dt * p->fz[i]; //24 (mul, add)
+        
         p->x[i] += dt * p->vx[i];
         p->y[i] += dt * p->vy[i];
         p->z[i] += dt * p->vz[i];
-        
-        p->x[i+1] += dt * p->vx[i+1];
-        p->y[i+1] += dt * p->vy[i+1];
-        p->z[i+1] += dt * p->vz[i+1];
-        
-        p->x[i+2] += dt * p->vx[i+2];
-        p->y[i+2] += dt * p->vy[i+2];
-        p->z[i+2] += dt * p->vz[i+2];
-        
-        p->x[i+3] += dt * p->vx[i+3];
-        p->y[i+3] += dt * p->vy[i+3];
-        p->z[i+3] += dt * p->vz[i+3];
-        
-        p->x[i+4] += dt * p->vx[i+4];
-        p->y[i+4] += dt * p->vy[i+4];
-        p->z[i+4] += dt * p->vz[i+4];
-        
-        p->x[i+5] += dt * p->vx[i+5];
-        p->y[i+5] += dt * p->vy[i+5];
-        p->z[i+5] += dt * p->vz[i+5];
-        
-        p->x[i+6] += dt * p->vx[i+6];
-        p->y[i+6] += dt * p->vy[i+6];
-        p->z[i+6] += dt * p->vz[i+6];
-        
-        p->x[i+7] += dt * p->vx[i+7];
-        p->y[i+7] += dt * p->vy[i+7];
-        p->z[i+7] += dt * p->vz[i+7];
     }
 }
 
@@ -158,6 +128,11 @@ int main(int argc, char **argv)
     p->vx = aligned_alloc(alignment,sizeof(f32) * n);
     p->vy = aligned_alloc(alignment,sizeof(f32) * n);
     p->vz = aligned_alloc(alignment,sizeof(f32) * n);
+    
+    p->fx = aligned_alloc(alignment,sizeof(f32) * n);
+    p->fy = aligned_alloc(alignment,sizeof(f32) * n);
+    p->fz = aligned_alloc(alignment,sizeof(f32) * n);
+    
     //
     init(p, n);
     
@@ -226,6 +201,9 @@ int main(int argc, char **argv)
     free(p->vx);
     free(p->vy);
     free(p->vz);
+    free(p->fx);
+    free(p->fy);
+    free(p->fz);
     free(p);
     //
     return 0;
