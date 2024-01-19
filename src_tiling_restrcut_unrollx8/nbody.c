@@ -51,9 +51,9 @@ void move_particles(particle_t *restrict p, const f32 dt, u64 n)
     {
 #pragma omp for nowait
         //For all particles
-        for (u64 j = 0; j < n; j+=T)
+        for (u64 i = 0; i < n; i++)
         {
-            for (u64 i = 0; i < n; i++)
+            for (u64 j = 0; j < n; j+=T)
             {
                 if(j==0){//
                     f32 fx = 0.0;

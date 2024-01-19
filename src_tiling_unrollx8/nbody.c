@@ -51,40 +51,39 @@ void move_particles(particle_t *restrict p, const f32 dt, u64 n)
     {
 #pragma omp for nowait
         //For all particles
-        for (u64 j = 0; j < n; j+=T)
+        for (u64 i = 0; i < n; i++)
         {
-            for (u64 i = 0; i < n; i++)
-            {
-                if(j==0){//
-                    f32 fx = 0.0;
-                    f32 fy = 0.0;
-                    f32 fz = 0.0;}
-                
-                for (u64 jj = j; j < min(j+T,n); jj++){
-                    //3 FLOPs (Floating-Point Operations)
-                    const f32 dx = p->x[jj] - p->x[i]; //1 (sub)
-                    const f32 dy = p->y[jj] - p->y[i]; //2 (sub)
-                    const f32 dz = p->z[jj] - p->z[i]; //3 (sub)
-                    
-                    //Compute the distance between particle i and j: 6 FLOPs
-                    const f32 d_2 = (dx * dx) + (dy * dy) + (dz * dz) + softening; //9 (mul, add)
-                    
-                    //3 FLOPs (here, we consider sqrt to be 1 operation)
-                    const f32 d_3_over_2 = 1/(d_2 * sqrt(d_2)); //12 (mul, sqrt)
-                    
-                    //Calculate net force: 6 FLOPs
-                    fx += dx * d_3_over_2; //14 (add, mul)
-                    fy += dy * d_3_over_2; //16 (add, mul)
-                    fz += dz * d_3_over_2; //18 (add, mul)
-                }
-                
-                if(j+T >= n){
-                    p->vx[i] += dt * fx; //20 (mul, add)
-                    p->vy[i] += dt * fy; //22 (mul, add)
-                    p->vz[i] += dt * fz; //24 (mul, add)
-                }
-            }
+            //
+            f32 fx = 0.0;
+            f32 fy = 0.0;
+            f32 fz = 0.0;
             
+            for (u64 j = 0; j < n; j+=T)
+                {
+                    for (u64 jj = j; j < min(j+T,n); jj++){
+                        //3 FLOPs (Floating-Point Operations)
+                        const f32 dx = p->x[jj] - p->x[i]; //1 (sub)
+                        const f32 dy = p->y[jj] - p->y[i]; //2 (sub)
+                        const f32 dz = p->z[jj] - p->z[i]; //3 (sub)
+                        
+                        //Compute the distance between particle i and j: 6 FLOPs
+                        const f32 d_2 = (dx * dx) + (dy * dy) + (dz * dz) + softening; //9 (mul, add)
+                        
+                        //3 FLOPs (here, we consider sqrt to be 1 operation)
+                        const f32 d_3_over_2 = 1/(d_2 * sqrt(d_2)); //12 (mul, sqrt)
+                        
+                        //Calculate net force: 6 FLOPs
+                        fx += dx * d_3_over_2; //14 (add, mul)
+                        fy += dy * d_3_over_2; //16 (add, mul)
+                        fz += dz * d_3_over_2; //18 (add, mul)
+                    }
+                }
+            
+            //Newton's law: 36 FLOPs (Floating-Point Operations) per iteration
+            //Update particle velocities using the previously computed net force: 6 FLOPs
+            p->vx[i] += dt * fx; //20 (mul, add)
+            p->vy[i] += dt * fy; //22 (mul, add)
+            p->vz[i] += dt * fz; //24 (mul, add)
         }
     }
     
@@ -106,7 +105,7 @@ void move_particles(particle_t *restrict p, const f32 dt, u64 n)
         p->x[i+3] += dt * p->vx[i+3];
         p->y[i+3] += dt * p->vy[i+3];
         p->z[i+3] += dt * p->vz[i+3];
-        
+    
         p->x[i+4] += dt * p->vx[i+4];
         p->y[i+4] += dt * p->vy[i+4];
         p->z[i+4] += dt * p->vz[i+4];
@@ -118,7 +117,7 @@ void move_particles(particle_t *restrict p, const f32 dt, u64 n)
         p->x[i+6] += dt * p->vx[i+6];
         p->y[i+6] += dt * p->vy[i+6];
         p->z[i+6] += dt * p->vz[i+6];
-        
+       
         p->x[i+7] += dt * p->vx[i+7];
         p->y[i+7] += dt * p->vy[i+7];
         p->z[i+7] += dt * p->vz[i+7];
