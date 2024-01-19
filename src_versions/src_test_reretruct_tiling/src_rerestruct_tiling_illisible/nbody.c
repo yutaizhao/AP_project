@@ -61,13 +61,12 @@ void move_particles(particle_t *restrict p, const f32 dt, u64 n)
             for (u64 j = 0; j < n; j+=T)
             {
                 for (u64 jj = j; jj < fmin(j+T,n); jj++){
-                    
-                    const f32 d = 1/(( (p->x[j] - p->x[i])* (p->x[j] - p->x[i])) + ((p->y[j] - p->y[i]) * (p->y[j] - p->y[i])) + (( p->z[j] - p->z[i]) * ( p->z[j] - p->z[i])) + softening * sqrtf(( (p->x[j] - p->x[i])* (p->x[j] - p->x[i])) + ((p->y[j] - p->y[i]) * (p->y[j] - p->y[i])) + (( p->z[j] - p->z[i]) * ( p->z[j] - p->z[i])) + softening)); //12
-                    
+                    const f32 d = 1/(( (p->x[jj] - p->x[i])* (p->x[jj] - p->x[i])) + ((p->y[jj] - p->y[i]) * (p->y[jj] - p->y[i])) + (( p->z[jj] - p->z[i]) * ( p->z[jj] - p->z[i])) + softening * sqrtf(( (p->x[jj] - p->x[i])* (p->x[jj] - p->x[i])) + ((p->y[jj] - p->y[i]) * (p->y[jj] - p->y[i])) + (( p->z[jj] - p->z[i]) * ( p->z[jj] - p->z[i])) + softening)); //12
+
                     //Calculate net force: 6 FLOPs
-                    p->fx[i] += (p->x[j] - p->x[i]) * d; //14 (add, mul)
-                    p->fy[i] += (p->y[j] - p->y[i]) * d; //16 (add, mul)
-                    p->fz[i] += (p->z[j] - p->z[i]) * d; //18 (add, mul)
+                    p->fx[i] += (p->x[jj] - p->x[i]) * d; //14 (add, mul)
+                    p->fy[i] += (p->y[jj] - p->y[i]) * d; //16 (add, mul)
+                    p->fz[i] += (p->z[jj] - p->z[i]) * d; //18 (add, mul)
                 }
             }
             

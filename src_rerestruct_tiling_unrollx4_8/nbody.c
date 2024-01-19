@@ -49,7 +49,7 @@ void move_particles(particle_t *restrict p, const f32 dt, u64 n)
 {
     //Used to avoid division by 0 when comparing a particle to itself
     const f32 softening = 1e-20;
-    const u64 T = 64;
+    const u64 T = 8;
     
     //TFM provided by prof
 #pragma omp parallel proc_bind(spread)
