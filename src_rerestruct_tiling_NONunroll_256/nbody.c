@@ -75,7 +75,7 @@ void move_particles(particle_t *restrict p, const f32 dt, u64 n)
     }
     
     //Update positions: 6 FLOPs
-    for (u64 i = 0; i < n; i+=4)
+    for (u64 i = 0; i < n; i++)
     {
         p->vx[i] += dt * p->fx[i]; //20 (mul, add)
         p->vy[i] += dt * p->fy[i]; //22 (mul, add)
@@ -83,41 +83,9 @@ void move_particles(particle_t *restrict p, const f32 dt, u64 n)
         
         p->x[i] += dt * p->vx[i];
         p->y[i] += dt * p->vy[i];
-        p->z[i] += dt * p->vz[i];
-        
-        p->vx[i+1] += dt * p->fx[i+1]; //20 (mul, add)
-        p->vy[i+1] += dt * p->fy[i+1]; //22 (mul, add)
-        p->vz[i+1] += dt * p->fz[i+1]; //24 (mul, add)
+        p->z[i] += dt * p->vz[i];	    
+    } 
 
-        p->x[i+1] += dt * p->vx[i+1];
-        p->y[i+1] += dt * p->vy[i+1];
-        p->z[i+1] += dt * p->vz[i+1];
-        
-        p->vx[i+2] += dt * p->fx[i+2]; //20 (mul, add)
-        p->vy[i+2] += dt * p->fy[i+2]; //22 (mul, add)
-        p->vz[i+2] += dt * p->fz[i+2]; //24 (mul, add)
-
-        p->x[i+2] += dt * p->vx[i+2];
-        p->y[i+2] += dt * p->vy[i+2];
-        p->z[i+2] += dt * p->vz[i+2];
-        
-        p->vx[i+3] += dt * p->fx[i+3]; //20 (mul, add)
-        p->vy[i+3] += dt * p->fy[i+3]; //22 (mul, add)
-        p->vz[i+3] += dt * p->fz[i+3]; //24 (mul, add)
-
-        p->x[i+3] += dt * p->vx[i+3];
-        p->y[i+3] += dt * p->vy[i+3];
-        p->z[i+3] += dt * p->vz[i+3];
-        
-        p->vx[i+4] += dt * p->fx[i+4]; //20 (mul, add)
-        p->vy[i+4] += dt * p->fy[i+4]; //22 (mul, add)
-        p->vz[i+4] += dt * p->fz[i+4]; //24 (mul, add)
-
-        p->x[i+4] += dt * p->vx[i+4];
-        p->y[i+4] += dt * p->vy[i+4];
-        p->z[i+4] += dt * p->vz[i+4];
-        
-    }
 }
 
 //

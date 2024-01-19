@@ -1,0 +1,450 @@
+nbody.c:169:32: optimized:   Inlining atoll/13 into main/24 (always_inline).
+nbody.c:213:9: note: Considering inline candidate move_particles/23.
+nbody.c:213:9: missed:   will not early inline: main/24->move_particles/23, growth 12 exceeds --param early-inlining-insns divided by number of calls
+nbody.c:195:5: note: Considering inline candidate init/22.
+nbody.c:195:5: missed:   will not early inline: main/24->init/22, call is cold and code would grow at least by 49
+missed:   not inlinable: move_particles.constprop/42 -> __builtin_GOMP_parallel/31, function body not available
+missed:   not inlinable: move_particles.constprop/42 -> __builtin_GOMP_parallel/31, function body not available
+missed:   not inlinable: move_particles._omp_fn.1/27 -> __builtin_omp_get_thread_num/29, function body not available
+missed:   not inlinable: move_particles._omp_fn.1/27 -> __builtin_omp_get_num_threads/28, function body not available
+nbody.c:102:199: missed:   not inlinable: move_particles._omp_fn.0/26 -> sqrtf/30, function body not available
+nbody.c:95:199: missed:   not inlinable: move_particles._omp_fn.0/26 -> sqrtf/30, function body not available
+nbody.c:88:199: missed:   not inlinable: move_particles._omp_fn.0/26 -> sqrtf/30, function body not available
+nbody.c:81:199: missed:   not inlinable: move_particles._omp_fn.0/26 -> sqrtf/30, function body not available
+nbody.c:75:199: missed:   not inlinable: move_particles._omp_fn.0/26 -> sqrtf/30, function body not available
+nbody.c:69:199: missed:   not inlinable: move_particles._omp_fn.0/26 -> sqrtf/30, function body not available
+nbody.c:62:187: missed:   not inlinable: move_particles._omp_fn.0/26 -> sqrtf/30, function body not available
+missed:   not inlinable: move_particles._omp_fn.0/26 -> __builtin_omp_get_thread_num/29, function body not available
+missed:   not inlinable: move_particles._omp_fn.0/26 -> __builtin_omp_get_num_threads/28, function body not available
+nbody.c:262:5: missed:   not inlinable: main/24 -> free/40, function body not available
+nbody.c:261:5: missed:   not inlinable: main/24 -> free/40, function body not available
+nbody.c:260:5: missed:   not inlinable: main/24 -> free/40, function body not available
+nbody.c:259:5: missed:   not inlinable: main/24 -> free/40, function body not available
+nbody.c:258:5: missed:   not inlinable: main/24 -> free/40, function body not available
+nbody.c:257:5: missed:   not inlinable: main/24 -> free/40, function body not available
+nbody.c:256:5: missed:   not inlinable: main/24 -> free/40, function body not available
+nbody.c:253:5: missed:   not inlinable: main/24 -> __builtin_puts/39, function body not available
+nbody.c:251:5: missed:   not inlinable: main/24 -> printf/32, function body not available
+nbody.c:250:5: missed:   not inlinable: main/24 -> __builtin_puts/39, function body not available
+nbody.c:248:13: missed:   not inlinable: main/24 -> sqrt/38, function body not available
+nbody.c:241:9: missed:   not inlinable: main/24 -> fflush/35, function body not available
+nbody.c:234:9: missed:   not inlinable: main/24 -> printf/32, function body not available
+nbody.c:215:25: missed:   not inlinable: main/24 -> omp_get_wtime/37, function body not available
+nbody.c:211:27: missed:   not inlinable: main/24 -> omp_get_wtime/37, function body not available
+nbody.c:208:9: missed:   not inlinable: main/24 -> omp_set_num_threads/36, function body not available
+nbody.c:202:94: missed:   not inlinable: main/24 -> fflush/35, function body not available
+nbody.c:202:5: missed:   not inlinable: main/24 -> printf/32, function body not available
+nbody.c:199:5: missed:   not inlinable: main/24 -> printf/32, function body not available
+nbody.c:195:5: missed:   not inlinable: main/24 -> init/22, --param max-inline-insns-auto limit reached
+nbody.c:193:13: missed:   not inlinable: main/24 -> aligned_alloc/33, function body not available
+nbody.c:192:13: missed:   not inlinable: main/24 -> aligned_alloc/33, function body not available
+nbody.c:191:13: missed:   not inlinable: main/24 -> aligned_alloc/33, function body not available
+nbody.c:189:12: missed:   not inlinable: main/24 -> aligned_alloc/33, function body not available
+nbody.c:188:12: missed:   not inlinable: main/24 -> aligned_alloc/33, function body not available
+nbody.c:187:12: missed:   not inlinable: main/24 -> aligned_alloc/33, function body not available
+nbody.c:185:30: missed:   not inlinable: main/24 -> aligned_alloc/33, function body not available
+/usr/include/stdlib.h:495:10: missed:   not inlinable: main/24 -> strtoll/41, function body not available
+nbody.c:167:5: missed:   not inlinable: main/24 -> printf/32, function body not available
+missed:   not inlinable: move_particles/23 -> __builtin_GOMP_parallel/31, function body not available
+missed:   not inlinable: move_particles/23 -> __builtin_GOMP_parallel/31, function body not available
+nbody.c:38:25: missed:   not inlinable: init/22 -> rand/25, function body not available
+nbody.c:37:32: missed:   not inlinable: init/22 -> rand/25, function body not available
+nbody.c:36:25: missed:   not inlinable: init/22 -> rand/25, function body not available
+nbody.c:33:31: missed:   not inlinable: init/22 -> rand/25, function body not available
+nbody.c:32:24: missed:   not inlinable: init/22 -> rand/25, function body not available
+nbody.c:31:31: missed:   not inlinable: init/22 -> rand/25, function body not available
+nbody.c:27:23: missed:   not inlinable: init/22 -> rand/25, function body not available
+nbody.c:26:23: missed:   not inlinable: init/22 -> rand/25, function body not available
+nbody.c:213:9: optimized:  Inlined move_particles.constprop/42 into main/24 which now has time 2293.056854 and size 163, net change of -7.
+Unit growth for small function inlining: 724->717 (-1%)
+
+Inlined 2 calls, eliminated 1 functions
+
+BB 7 is always executed in loop 1
+loop 1's coldest_outermost_loop is 1, hotter_than_inner_loop is NULL
+consider run-time aliasing test between *_30 and *_27
+consider run-time aliasing test between *_39 and *_36
+consider run-time aliasing test between *_48 and *_45
+consider run-time aliasing test between *_57 and *_55
+consider run-time aliasing test between *_64 and *_62
+consider run-time aliasing test between *_71 and *_69
+consider run-time aliasing test between *_80 and *_78
+consider run-time aliasing test between *_87 and *_85
+consider run-time aliasing test between *_94 and *_92
+consider run-time aliasing test between *_103 and *_101
+consider run-time aliasing test between *_110 and *_108
+consider run-time aliasing test between *_117 and *_115
+consider run-time aliasing test between *_126 and *_124
+consider run-time aliasing test between *_133 and *_131
+consider run-time aliasing test between *_140 and *_138
+consider run-time aliasing test between *_149 and *_147
+consider run-time aliasing test between *_156 and *_154
+consider run-time aliasing test between *_163 and *_161
+consider run-time aliasing test between *_172 and *_170
+consider run-time aliasing test between *_179 and *_177
+consider run-time aliasing test between *_186 and *_184
+consider run-time aliasing test between *_195 and *_193
+consider run-time aliasing test between *_202 and *_200
+consider run-time aliasing test between *_209 and *_207
+nbody.c:126:9: missed: couldn't vectorize loop
+nbody.c:126:13: missed: not vectorized: no vectype for stmt: _28 = *_27;
+ scalar_type: f32
+nbody.c:121:9: note: vectorized 0 loops in function.
+nbody.c:128:17: note: ***** Analysis failed with vector mode V4DI
+nbody.c:128:17: note: ***** The result for vector mode V32QI would be the same
+nbody.c:128:17: note: ***** Re-trying analysis with vector mode V16QI
+nbody.c:128:17: note: ***** Analysis failed with vector mode V16QI
+nbody.c:128:17: note: ***** Re-trying analysis with vector mode V8QI
+nbody.c:128:17: note: ***** Analysis failed with vector mode V8QI
+nbody.c:128:17: note: ***** Re-trying analysis with vector mode V4QI
+nbody.c:156:19: note: ***** Analysis failed with vector mode V4QI
+BB 7 is always executed in loop 1
+loop 1's coldest_outermost_loop is 1, hotter_than_inner_loop is NULL
+nbody.c:156:19: note: considering unrolling loop 1 at BB 6
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+BB 8 is always executed in loop 1
+BB 6 is always executed in loop 1
+loop 1's coldest_outermost_loop is 1, hotter_than_inner_loop is NULL
+loop 2's coldest_outermost_loop is 1, hotter_than_inner_loop is NULL
+nbody.c:56:13: missed: Guard edge 9 --> 8 is not around the loop!
+consider run-time aliasing test between *_53 and *_27
+consider run-time aliasing test between *_60 and *_27
+consider run-time aliasing test between *_68 and *_27
+consider run-time aliasing test between *_50 and *_27
+consider run-time aliasing test between *_58 and *_27
+consider run-time aliasing test between *_66 and *_27
+consider run-time aliasing test between *_86 and *_27
+consider run-time aliasing test between *_90 and *_27
+consider run-time aliasing test between *_95 and *_27
+consider run-time aliasing test between *_113 and *_27
+consider run-time aliasing test between *_117 and *_27
+consider run-time aliasing test between *_122 and *_27
+consider run-time aliasing test between *_140 and *_27
+consider run-time aliasing test between *_144 and *_27
+consider run-time aliasing test between *_149 and *_27
+consider run-time aliasing test between *_167 and *_27
+consider run-time aliasing test between *_171 and *_27
+consider run-time aliasing test between *_176 and *_27
+consider run-time aliasing test between *_194 and *_27
+consider run-time aliasing test between *_198 and *_27
+consider run-time aliasing test between *_203 and *_27
+consider run-time aliasing test between *_221 and *_27
+consider run-time aliasing test between *_225 and *_27
+consider run-time aliasing test between *_230 and *_27
+consider run-time aliasing test between *_53 and *_36
+consider run-time aliasing test between *_60 and *_36
+consider run-time aliasing test between *_68 and *_36
+consider run-time aliasing test between *_50 and *_36
+consider run-time aliasing test between *_58 and *_36
+consider run-time aliasing test between *_66 and *_36
+consider run-time aliasing test between *_86 and *_36
+consider run-time aliasing test between *_90 and *_36
+consider run-time aliasing test between *_95 and *_36
+consider run-time aliasing test between *_113 and *_36
+consider run-time aliasing test between *_117 and *_36
+consider run-time aliasing test between *_122 and *_36
+consider run-time aliasing test between *_140 and *_36
+consider run-time aliasing test between *_144 and *_36
+consider run-time aliasing test between *_149 and *_36
+consider run-time aliasing test between *_167 and *_36
+consider run-time aliasing test between *_171 and *_36
+consider run-time aliasing test between *_176 and *_36
+consider run-time aliasing test between *_194 and *_36
+consider run-time aliasing test between *_198 and *_36
+consider run-time aliasing test between *_203 and *_36
+consider run-time aliasing test between *_221 and *_36
+consider run-time aliasing test between *_225 and *_36
+consider run-time aliasing test between *_230 and *_36
+consider run-time aliasing test between *_53 and *_42
+consider run-time aliasing test between *_60 and *_42
+consider run-time aliasing test between *_68 and *_42
+consider run-time aliasing test between *_50 and *_42
+consider run-time aliasing test between *_58 and *_42
+consider run-time aliasing test between *_66 and *_42
+consider run-time aliasing test between *_86 and *_42
+consider run-time aliasing test between *_90 and *_42
+consider run-time aliasing test between *_95 and *_42
+consider run-time aliasing test between *_113 and *_42
+consider run-time aliasing test between *_117 and *_42
+consider run-time aliasing test between *_122 and *_42
+consider run-time aliasing test between *_140 and *_42
+consider run-time aliasing test between *_144 and *_42
+consider run-time aliasing test between *_149 and *_42
+consider run-time aliasing test between *_167 and *_42
+consider run-time aliasing test between *_171 and *_42
+consider run-time aliasing test between *_176 and *_42
+consider run-time aliasing test between *_194 and *_42
+consider run-time aliasing test between *_198 and *_42
+consider run-time aliasing test between *_203 and *_42
+consider run-time aliasing test between *_221 and *_42
+consider run-time aliasing test between *_225 and *_42
+consider run-time aliasing test between *_230 and *_42
+consider run-time aliasing test between *_53 and *_36
+consider run-time aliasing test between *_60 and *_36
+consider run-time aliasing test between *_68 and *_36
+consider run-time aliasing test between *_50 and *_36
+consider run-time aliasing test between *_58 and *_36
+consider run-time aliasing test between *_66 and *_36
+consider run-time aliasing test between *_86 and *_36
+consider run-time aliasing test between *_90 and *_36
+consider run-time aliasing test between *_95 and *_36
+consider run-time aliasing test between *_113 and *_36
+consider run-time aliasing test between *_117 and *_36
+consider run-time aliasing test between *_122 and *_36
+consider run-time aliasing test between *_140 and *_36
+consider run-time aliasing test between *_144 and *_36
+consider run-time aliasing test between *_149 and *_36
+consider run-time aliasing test between *_167 and *_36
+consider run-time aliasing test between *_171 and *_36
+consider run-time aliasing test between *_176 and *_36
+consider run-time aliasing test between *_194 and *_36
+consider run-time aliasing test between *_198 and *_36
+consider run-time aliasing test between *_203 and *_36
+consider run-time aliasing test between *_221 and *_36
+consider run-time aliasing test between *_225 and *_36
+consider run-time aliasing test between *_230 and *_36
+consider run-time aliasing test between *_27 and *_36
+consider run-time aliasing test between *_53 and *_27
+consider run-time aliasing test between *_60 and *_27
+consider run-time aliasing test between *_68 and *_27
+consider run-time aliasing test between *_50 and *_27
+consider run-time aliasing test between *_58 and *_27
+consider run-time aliasing test between *_66 and *_27
+consider run-time aliasing test between *_86 and *_27
+consider run-time aliasing test between *_90 and *_27
+consider run-time aliasing test between *_95 and *_27
+consider run-time aliasing test between *_113 and *_27
+consider run-time aliasing test between *_117 and *_27
+consider run-time aliasing test between *_122 and *_27
+consider run-time aliasing test between *_140 and *_27
+consider run-time aliasing test between *_144 and *_27
+consider run-time aliasing test between *_149 and *_27
+consider run-time aliasing test between *_167 and *_27
+consider run-time aliasing test between *_171 and *_27
+consider run-time aliasing test between *_176 and *_27
+consider run-time aliasing test between *_194 and *_27
+consider run-time aliasing test between *_198 and *_27
+consider run-time aliasing test between *_203 and *_27
+consider run-time aliasing test between *_221 and *_27
+consider run-time aliasing test between *_225 and *_27
+consider run-time aliasing test between *_230 and *_27
+consider run-time aliasing test between *_27 and *_36
+consider run-time aliasing test between *_27 and *_36
+consider run-time aliasing test between *_53 and *_42
+consider run-time aliasing test between *_60 and *_42
+consider run-time aliasing test between *_68 and *_42
+consider run-time aliasing test between *_50 and *_42
+consider run-time aliasing test between *_58 and *_42
+consider run-time aliasing test between *_66 and *_42
+consider run-time aliasing test between *_86 and *_42
+consider run-time aliasing test between *_90 and *_42
+consider run-time aliasing test between *_95 and *_42
+consider run-time aliasing test between *_113 and *_42
+consider run-time aliasing test between *_117 and *_42
+consider run-time aliasing test between *_122 and *_42
+consider run-time aliasing test between *_140 and *_42
+consider run-time aliasing test between *_144 and *_42
+consider run-time aliasing test between *_149 and *_42
+consider run-time aliasing test between *_167 and *_42
+consider run-time aliasing test between *_171 and *_42
+consider run-time aliasing test between *_176 and *_42
+consider run-time aliasing test between *_194 and *_42
+consider run-time aliasing test between *_198 and *_42
+consider run-time aliasing test between *_203 and *_42
+consider run-time aliasing test between *_221 and *_42
+consider run-time aliasing test between *_225 and *_42
+consider run-time aliasing test between *_230 and *_42
+consider run-time aliasing test between *_27 and *_42
+consider run-time aliasing test between *_53 and *_27
+consider run-time aliasing test between *_60 and *_27
+consider run-time aliasing test between *_68 and *_27
+consider run-time aliasing test between *_50 and *_27
+consider run-time aliasing test between *_58 and *_27
+consider run-time aliasing test between *_66 and *_27
+consider run-time aliasing test between *_86 and *_27
+consider run-time aliasing test between *_90 and *_27
+consider run-time aliasing test between *_95 and *_27
+consider run-time aliasing test between *_113 and *_27
+consider run-time aliasing test between *_117 and *_27
+consider run-time aliasing test between *_122 and *_27
+consider run-time aliasing test between *_140 and *_27
+consider run-time aliasing test between *_144 and *_27
+consider run-time aliasing test between *_149 and *_27
+consider run-time aliasing test between *_167 and *_27
+consider run-time aliasing test between *_171 and *_27
+consider run-time aliasing test between *_176 and *_27
+consider run-time aliasing test between *_194 and *_27
+consider run-time aliasing test between *_198 and *_27
+consider run-time aliasing test between *_203 and *_27
+consider run-time aliasing test between *_221 and *_27
+consider run-time aliasing test between *_225 and *_27
+consider run-time aliasing test between *_230 and *_27
+consider run-time aliasing test between *_27 and *_42
+consider run-time aliasing test between *_27 and *_42
+consider run-time aliasing test between *_36 and *_42
+consider run-time aliasing test between *_53 and *_36
+consider run-time aliasing test between *_60 and *_36
+consider run-time aliasing test between *_68 and *_36
+consider run-time aliasing test between *_50 and *_36
+consider run-time aliasing test between *_58 and *_36
+consider run-time aliasing test between *_66 and *_36
+consider run-time aliasing test between *_86 and *_36
+consider run-time aliasing test between *_90 and *_36
+consider run-time aliasing test between *_95 and *_36
+consider run-time aliasing test between *_113 and *_36
+consider run-time aliasing test between *_117 and *_36
+consider run-time aliasing test between *_122 and *_36
+consider run-time aliasing test between *_140 and *_36
+consider run-time aliasing test between *_144 and *_36
+consider run-time aliasing test between *_149 and *_36
+consider run-time aliasing test between *_167 and *_36
+consider run-time aliasing test between *_171 and *_36
+consider run-time aliasing test between *_176 and *_36
+consider run-time aliasing test between *_194 and *_36
+consider run-time aliasing test between *_198 and *_36
+consider run-time aliasing test between *_203 and *_36
+consider run-time aliasing test between *_221 and *_36
+consider run-time aliasing test between *_225 and *_36
+consider run-time aliasing test between *_230 and *_36
+consider run-time aliasing test between *_36 and *_42
+consider run-time aliasing test between *_36 and *_42
+nbody.c:56:13: missed: couldn't vectorize loop
+nbody.c:62:52: missed: not vectorized: no vectype for stmt: _54 = *_53;
+ scalar_type: f32
+nbody.c:60:31: optimized: loop vectorized using 32 byte vectors
+nbody.c:60:31: optimized: loop vectorized using 16 byte vectors
+nbody.c:49:9: note: vectorized 1 loops in function.
+nbody.c:49:9: optimized: loop turned into non-loop; it never loops
+nbody.c:115:22: note: ***** Analysis failed with vector mode V4DI
+nbody.c:115:22: note: ***** The result for vector mode V32QI would be the same
+nbody.c:115:22: note: ***** Re-trying analysis with vector mode V16QI
+nbody.c:115:22: note: ***** Analysis failed with vector mode V16QI
+nbody.c:115:22: note: ***** Re-trying analysis with vector mode V8QI
+nbody.c:115:22: note: ***** Analysis failed with vector mode V8QI
+nbody.c:115:22: note: ***** Re-trying analysis with vector mode V4QI
+nbody.c:115:22: note: ***** Analysis failed with vector mode V4QI
+nbody.c:60:31: missed: missed loop optimization: niters analysis ends up with assumptions.
+BB 23 is always executed in loop 1
+BB 7 is always executed in loop 1
+BB 29 is always executed in loop 4
+BB 9 is always executed in loop 2
+loop 1's coldest_outermost_loop is 1, hotter_than_inner_loop is NULL
+loop 4's coldest_outermost_loop is 1, hotter_than_inner_loop is NULL
+loop 2's coldest_outermost_loop is 1, hotter_than_inner_loop is NULL
+nbody.c:60:31: note: considering unrolling loop 4 at BB 15
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+nbody.c:60:31: note: considering unrolling loop 2 at BB 16
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+nbody.c:115:22: note: considering unrolling loop 1 at BB 6
+BB 3 is always executed in loop 1
+loop 1's coldest_outermost_loop is 1, hotter_than_inner_loop is NULL
+nbody.c:26:23: missed: statement clobbers memory: _1 = rand ();
+nbody.c:23:23: missed: couldn't vectorize loop
+nbody.c:23:23: missed: not vectorized: control flow in loop.
+nbody.c:21:6: note: vectorized 0 loops in function.
+nbody.c:26:23: missed: statement clobbers memory: _1 = rand ();
+nbody.c:26:23: missed: statement clobbers memory: _1 = rand ();
+nbody.c:27:23: missed: statement clobbers memory: _2 = rand ();
+nbody.c:31:31: missed: statement clobbers memory: _3 = rand ();
+nbody.c:32:24: missed: statement clobbers memory: _10 = rand ();
+nbody.c:33:31: missed: statement clobbers memory: _15 = rand ();
+nbody.c:36:25: missed: statement clobbers memory: _21 = rand ();
+nbody.c:37:32: missed: statement clobbers memory: _26 = rand ();
+nbody.c:38:25: missed: statement clobbers memory: _32 = rand ();
+nbody.c:40:1: note: ***** Analysis failed with vector mode V4DI
+nbody.c:40:1: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+BB 4 is always executed in loop 1
+loop 1's coldest_outermost_loop is 1, hotter_than_inner_loop is NULL
+nbody.c:23:23: note: considering unrolling loop 1 at BB 3
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+nbody.c:43:6: note: vectorized 0 loops in function.
+nbody.c:43:6: missed: statement clobbers memory: __builtin_GOMP_parallel (move_particles._omp_fn.0, &.omp_data_o.4, 0, 4);
+nbody.c:43:6: missed: statement clobbers memory: __builtin_GOMP_parallel (move_particles._omp_fn.1, &.omp_data_o.6, 0, 4);
+nbody.c:159:1: note: ***** Analysis failed with vector mode V4DI
+nbody.c:159:1: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+BB 5 is always executed in loop 1
+loop 1's coldest_outermost_loop is 1, hotter_than_inner_loop is NULL
+nbody.c:208:9: missed: statement clobbers memory: omp_set_num_threads (24);
+nbody.c:205:23: missed: couldn't vectorize loop
+nbody.c:205:23: missed: not vectorized: control flow in loop.
+nbody.c:162:5: note: vectorized 0 loops in function.
+nbody.c:208:9: missed: statement clobbers memory: omp_set_num_threads (24);
+nbody.c:167:5: missed: statement clobbers memory: printf ("threads = %d \n", 24);
+/usr/include/stdlib.h:495:10: missed: statement clobbers memory: _103 = strtoll (_1, 0B, 10);
+nbody.c:185:30: missed: statement clobbers memory: p_60 = aligned_alloc (32, 48);
+nbody.c:187:12: missed: statement clobbers memory: _3 = aligned_alloc (32, _2);
+nbody.c:188:12: missed: statement clobbers memory: _5 = aligned_alloc (32, _2);
+nbody.c:189:12: missed: statement clobbers memory: _7 = aligned_alloc (32, _2);
+nbody.c:191:13: missed: statement clobbers memory: _8 = aligned_alloc (32, _2);
+nbody.c:192:13: missed: statement clobbers memory: _9 = aligned_alloc (32, _2);
+nbody.c:193:13: missed: statement clobbers memory: _10 = aligned_alloc (32, _2);
+nbody.c:195:5: missed: statement clobbers memory: init (p_60, iftmp.11_51);
+nbody.c:199:5: missed: statement clobbers memory: printf ("\n\x1b[1mTotal memory size:\x1b[0m %llu B, %llu KiB, %llu MiB\n\n", s_74, _12, _11);
+nbody.c:202:5: missed: statement clobbers memory: printf ("\x1b[1m%5s %10s %10s %8s\x1b[0m\n", "Step", "Time, s", "Interact/s", "GFLOP/s");
+nbody.c:202:94: missed: statement clobbers memory: fflush (stdout.12_13);
+nbody.c:208:9: missed: statement clobbers memory: omp_set_num_threads (24);
+nbody.c:211:27: missed: statement clobbers memory: start_92 = omp_get_wtime ();
+nbody.c:162:5: missed: statement clobbers memory: __builtin_GOMP_parallel (move_particles._omp_fn.0, &.omp_data_o.4, 0, 4);
+nbody.c:162:5: missed: statement clobbers memory: __builtin_GOMP_parallel (move_particles._omp_fn.1, &.omp_data_o.6, 0, 4);
+nbody.c:215:25: missed: statement clobbers memory: end_95 = omp_get_wtime ();
+nbody.c:234:9: missed: statement clobbers memory: printf ("%5llu %10.3e %10.3e %8.1f %s\n", i_121, _32, _35, _33, iftmp.13_52);
+nbody.c:241:9: missed: statement clobbers memory: fflush (stdout.14_36);
+nbody.c:250:5: missed: statement clobbers memory: __builtin_puts (&"-----------------------------------------------------"[0]);
+nbody.c:251:5: missed: statement clobbers memory: printf ("\x1b[1m%s %4s \x1b[42m%10.1lf +- %.1lf GFLOP/s\x1b[0m\n", "Average performance:", "", rate_78, drate_79);
+nbody.c:253:5: missed: statement clobbers memory: __builtin_puts (&"-----------------------------------------------------"[0]);
+nbody.c:256:5: missed: statement clobbers memory: free (_40);
+nbody.c:257:5: missed: statement clobbers memory: free (_41);
+nbody.c:258:5: missed: statement clobbers memory: free (_42);
+nbody.c:259:5: missed: statement clobbers memory: free (_43);
+nbody.c:260:5: missed: statement clobbers memory: free (_44);
+nbody.c:261:5: missed: statement clobbers memory: free (_45);
+nbody.c:262:5: missed: statement clobbers memory: free (p_60);
+nbody.c:224:50: note: ***** Analysis succeeded with vector mode V4DI
+nbody.c:224:50: note: SLPing BB part
+nbody.c:224:50: note: Costing subgraph: 
+nbody.c:224:50: note: node 0x4728738 (max_nunits=2, refcnt=1) vector(2) double
+nbody.c:224:50: note: op template: _16 = _15 * 3.6e+1;
+nbody.c:224:50: note: 	stmt 0 _16 = _15 * 3.6e+1;
+nbody.c:224:50: note: 	stmt 1 _123 = _18 * 2.0e+0;
+nbody.c:224:50: note: 	children 0x4728838 0x47288b8
+nbody.c:224:50: note: node (external) 0x4728838 (max_nunits=1, refcnt=1) vector(2) double
+nbody.c:224:50: note: 	{ _15, _18 }
+nbody.c:224:50: note: node (constant) 0x47288b8 (max_nunits=1, refcnt=1) vector(2) double
+nbody.c:224:50: note: 	{ 3.6e+1, 2.0e+0 }
+nbody.c:224:50: note: Cost model analysis: 
+nbody.c:224:50: note: Cost model analysis for part in loop 0:
+  Vector cost: 56
+  Scalar cost: 44
+nbody.c:224:50: missed: not vectorized: vectorization is not profitable.
+nbody.c:224:50: note: ***** The result for vector mode V32QI would be the same
+nbody.c:224:50: note: ***** Re-trying analysis with vector mode V16QI
+nbody.c:224:50: note: ***** Analysis succeeded with vector mode V16QI
+nbody.c:224:50: note: SLPing BB part
+nbody.c:224:50: note: Costing subgraph: 
+nbody.c:224:50: note: node 0x4728738 (max_nunits=2, refcnt=1) vector(2) double
+nbody.c:224:50: note: op template: _16 = _15 * 3.6e+1;
+nbody.c:224:50: note: 	stmt 0 _16 = _15 * 3.6e+1;
+nbody.c:224:50: note: 	stmt 1 _123 = _18 * 2.0e+0;
+nbody.c:224:50: note: 	children 0x4728838 0x47289b8
+nbody.c:224:50: note: node (external) 0x4728838 (max_nunits=1, refcnt=1) vector(2) double
+nbody.c:224:50: note: 	{ _15, _18 }
+nbody.c:224:50: note: node (constant) 0x47289b8 (max_nunits=1, refcnt=1) vector(2) double
+nbody.c:224:50: note: 	{ 3.6e+1, 2.0e+0 }
+nbody.c:224:50: note: Cost model analysis: 
+nbody.c:224:50: note: Cost model analysis for part in loop 0:
+  Vector cost: 56
+  Scalar cost: 44
+nbody.c:224:50: missed: not vectorized: vectorization is not profitable.
+nbody.c:224:50: note: ***** Re-trying analysis with vector mode V8QI
+nbody.c:230:19: note: ***** Analysis failed with vector mode V8QI
+nbody.c:230:19: note: ***** Re-trying analysis with vector mode V4QI
+nbody.c:230:19: note: ***** Analysis failed with vector mode V4QI
+BB 5 is always executed in loop 1
+loop 1's coldest_outermost_loop is 1, hotter_than_inner_loop is NULL
+nbody.c:205:23: note: considering unrolling loop 1 at BB 8
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
