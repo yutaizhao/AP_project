@@ -186,6 +186,11 @@ int main(int argc, char **argv)
     p->vx = aligned_alloc(alignment,sizeof(f32) * n);
     p->vy = aligned_alloc(alignment,sizeof(f32) * n);
     p->vz = aligned_alloc(alignment,sizeof(f32) * n);
+    
+    p->fx = aligned_alloc(alignment,sizeof(f32) * n);
+    p->fy = aligned_alloc(alignment,sizeof(f32) * n);
+    p->fz = aligned_alloc(alignment,sizeof(f32) * n);
+    
     //
     init(p, n);
     

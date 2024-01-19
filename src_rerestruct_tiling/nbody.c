@@ -50,7 +50,6 @@ void move_particles(particle_t *restrict p, const f32 dt, u64 n)
     //Used to avoid division by 0 when comparing a particle to itself
     const f32 softening = 1e-20;
     const u64 T = 64;
-    
     //TFM provided by prof
 #pragma omp parallel proc_bind(spread)
     {
@@ -60,7 +59,7 @@ void move_particles(particle_t *restrict p, const f32 dt, u64 n)
         {
             for (u64 j = 0; j < n; j+=T)
             {
-                for (u64 jj = j; j < fmin(j+T,n); jj++){
+                for (u64 jj = j; jj < fmin(j+T,n); jj++){
                     //3 FLOPs (Floating-Point Operations)
                     const f32 dx = p->x[jj] - p->x[i]; //1 (sub)
                     const f32 dy = p->y[jj] - p->y[i]; //2 (sub)
@@ -71,11 +70,11 @@ void move_particles(particle_t *restrict p, const f32 dt, u64 n)
                     
                     //3 FLOPs (here, we consider sqrt to be 1 operation)
                     const f32 d_3_over_2 = 1/(d_2 * sqrt(d_2)); //12 (mul, sqrt)
-                    
                     //Calculate net force: 6 FLOPs
                     p->fx[i] += dx * d_3_over_2; //14 (add, mul)
                     p->fy[i] += dy * d_3_over_2; //16 (add, mul)
                     p->fz[i] += dz * d_3_over_2; //18 (add, mul)
+		
                 }
             }
             
