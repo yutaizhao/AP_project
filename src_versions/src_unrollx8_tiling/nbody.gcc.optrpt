@@ -3,14 +3,14 @@ nbody.c:189:9: note: Considering inline candidate move_particles/23.
 nbody.c:189:9: missed:   will not early inline: main/24->move_particles/23, call is cold and code would grow at least by 38
 nbody.c:171:5: note: Considering inline candidate init/22.
 nbody.c:171:5: missed:   will not early inline: main/24->init/22, call is cold and code would grow at least by 49
-nbody.c:109:185: missed:   not inlinable: move_particles._omp_fn.0/26 -> sqrtf/29, function body not available
-nbody.c:102:185: missed:   not inlinable: move_particles._omp_fn.0/26 -> sqrtf/29, function body not available
-nbody.c:95:185: missed:   not inlinable: move_particles._omp_fn.0/26 -> sqrtf/29, function body not available
+nbody.c:109:199: missed:   not inlinable: move_particles._omp_fn.0/26 -> sqrtf/29, function body not available
+nbody.c:102:199: missed:   not inlinable: move_particles._omp_fn.0/26 -> sqrtf/29, function body not available
+nbody.c:95:199: missed:   not inlinable: move_particles._omp_fn.0/26 -> sqrtf/29, function body not available
 nbody.c:88:199: missed:   not inlinable: move_particles._omp_fn.0/26 -> sqrtf/29, function body not available
 nbody.c:81:199: missed:   not inlinable: move_particles._omp_fn.0/26 -> sqrtf/29, function body not available
 nbody.c:75:199: missed:   not inlinable: move_particles._omp_fn.0/26 -> sqrtf/29, function body not available
 nbody.c:69:199: missed:   not inlinable: move_particles._omp_fn.0/26 -> sqrtf/29, function body not available
-nbody.c:62:177: missed:   not inlinable: move_particles._omp_fn.0/26 -> sqrtf/29, function body not available
+nbody.c:62:187: missed:   not inlinable: move_particles._omp_fn.0/26 -> sqrtf/29, function body not available
 missed:   not inlinable: move_particles._omp_fn.0/26 -> __builtin_omp_get_thread_num/28, function body not available
 missed:   not inlinable: move_particles._omp_fn.0/26 -> __builtin_omp_get_num_threads/27, function body not available
 nbody.c:238:5: missed:   not inlinable: main/24 -> free/39, function body not available
@@ -287,7 +287,7 @@ consider run-time aliasing test between *_257 and *_36
 consider run-time aliasing test between *_36 and *_42
 consider run-time aliasing test between *_36 and *_42
 nbody.c:56:13: missed: couldn't vectorize loop
-nbody.c:62:42: missed: not vectorized: no vectype for stmt: _54 = *_53;
+nbody.c:62:52: missed: not vectorized: no vectype for stmt: _54 = *_53;
  scalar_type: f32
 nbody.c:60:31: optimized: loop vectorized using 32 byte vectors
 nbody.c:49:9: note: vectorized 1 loops in function.
@@ -399,14 +399,14 @@ nbody.c:238:5: missed: statement clobbers memory: free (p_60);
 nbody.c:200:50: note: ***** Analysis succeeded with vector mode V4DI
 nbody.c:200:50: note: SLPing BB part
 nbody.c:200:50: note: Costing subgraph: 
-nbody.c:200:50: note: node 0x2cf5128 (max_nunits=2, refcnt=1) vector(2) double
+nbody.c:200:50: note: node 0x391e3d8 (max_nunits=2, refcnt=1) vector(2) double
 nbody.c:200:50: note: op template: _16 = _15 * 3.6e+1;
 nbody.c:200:50: note: 	stmt 0 _16 = _15 * 3.6e+1;
 nbody.c:200:50: note: 	stmt 1 _114 = _18 * 2.0e+0;
-nbody.c:200:50: note: 	children 0x2cf5228 0x2cf52a8
-nbody.c:200:50: note: node (external) 0x2cf5228 (max_nunits=1, refcnt=1) vector(2) double
+nbody.c:200:50: note: 	children 0x391e4d8 0x391e558
+nbody.c:200:50: note: node (external) 0x391e4d8 (max_nunits=1, refcnt=1) vector(2) double
 nbody.c:200:50: note: 	{ _15, _18 }
-nbody.c:200:50: note: node (constant) 0x2cf52a8 (max_nunits=1, refcnt=1) vector(2) double
+nbody.c:200:50: note: node (constant) 0x391e558 (max_nunits=1, refcnt=1) vector(2) double
 nbody.c:200:50: note: 	{ 3.6e+1, 2.0e+0 }
 nbody.c:200:50: note: Cost model analysis: 
 nbody.c:200:50: note: Cost model analysis for part in loop 0:
@@ -418,14 +418,14 @@ nbody.c:200:50: note: ***** Re-trying analysis with vector mode V16QI
 nbody.c:200:50: note: ***** Analysis succeeded with vector mode V16QI
 nbody.c:200:50: note: SLPing BB part
 nbody.c:200:50: note: Costing subgraph: 
-nbody.c:200:50: note: node 0x2cf5128 (max_nunits=2, refcnt=1) vector(2) double
+nbody.c:200:50: note: node 0x391e3d8 (max_nunits=2, refcnt=1) vector(2) double
 nbody.c:200:50: note: op template: _16 = _15 * 3.6e+1;
 nbody.c:200:50: note: 	stmt 0 _16 = _15 * 3.6e+1;
 nbody.c:200:50: note: 	stmt 1 _114 = _18 * 2.0e+0;
-nbody.c:200:50: note: 	children 0x2cf5228 0x2cf53a8
-nbody.c:200:50: note: node (external) 0x2cf5228 (max_nunits=1, refcnt=1) vector(2) double
+nbody.c:200:50: note: 	children 0x391e4d8 0x391e658
+nbody.c:200:50: note: node (external) 0x391e4d8 (max_nunits=1, refcnt=1) vector(2) double
 nbody.c:200:50: note: 	{ _15, _18 }
-nbody.c:200:50: note: node (constant) 0x2cf53a8 (max_nunits=1, refcnt=1) vector(2) double
+nbody.c:200:50: note: node (constant) 0x391e658 (max_nunits=1, refcnt=1) vector(2) double
 nbody.c:200:50: note: 	{ 3.6e+1, 2.0e+0 }
 nbody.c:200:50: note: Cost model analysis: 
 nbody.c:200:50: note: Cost model analysis for part in loop 0:

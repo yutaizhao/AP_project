@@ -57,7 +57,7 @@ void move_particles(particle_t *restrict p, const f32 dt, u64 n)
             f32 fy = 0.0;
             f32 fz = 0.0;
             
-            for (u64 j = 0; j < n; j+=6)
+            for (u64 j = 0; j < n; j+=7)
             {
                 const f32 d1 = 1/(( (p->x[j] - p->x[i])* (p->x[j] - p->x[i])) + ((p->y[j] - p->y[i]) * (p->y[j] - p->y[i])) + (( p->z[j] - p->z[i]) * ( p->z[j] - p->z[i])) + softening * sqrtf(( (p->x[j] - p->x[i])* (p->x[j] - p->x[i])) + ((p->y[j] - p->y[i]) * (p->y[j] - p->y[i])) + (( p->z[j] - p->z[i]) * ( p->z[j] - p->z[i])) + softening)); //12
                 

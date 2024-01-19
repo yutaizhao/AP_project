@@ -1,45 +1,47 @@
-nbody.c:123:32: optimized:   Inlining atoll/13 into main/24 (always_inline).
-nbody.c:167:9: note: Considering inline candidate move_particles/23.
-nbody.c:167:9: missed:   will not early inline: main/24->move_particles/23, call is cold and code would grow at least by 38
-nbody.c:149:5: note: Considering inline candidate init/22.
-nbody.c:149:5: missed:   will not early inline: main/24->init/22, call is cold and code would grow at least by 49
+nbody.c:139:32: optimized:   Inlining atoll/13 into main/24 (always_inline).
+nbody.c:183:9: note: Considering inline candidate move_particles/23.
+nbody.c:183:9: missed:   will not early inline: main/24->move_particles/23, call is cold and code would grow at least by 38
+nbody.c:165:5: note: Considering inline candidate init/22.
+nbody.c:165:5: missed:   will not early inline: main/24->init/22, call is cold and code would grow at least by 49
+nbody.c:102:199: missed:   not inlinable: move_particles._omp_fn.0/26 -> sqrtf/29, function body not available
+nbody.c:95:199: missed:   not inlinable: move_particles._omp_fn.0/26 -> sqrtf/29, function body not available
 nbody.c:88:199: missed:   not inlinable: move_particles._omp_fn.0/26 -> sqrtf/29, function body not available
 nbody.c:81:199: missed:   not inlinable: move_particles._omp_fn.0/26 -> sqrtf/29, function body not available
 nbody.c:75:199: missed:   not inlinable: move_particles._omp_fn.0/26 -> sqrtf/29, function body not available
 nbody.c:69:199: missed:   not inlinable: move_particles._omp_fn.0/26 -> sqrtf/29, function body not available
-nbody.c:62:177: missed:   not inlinable: move_particles._omp_fn.0/26 -> sqrtf/29, function body not available
+nbody.c:62:187: missed:   not inlinable: move_particles._omp_fn.0/26 -> sqrtf/29, function body not available
 missed:   not inlinable: move_particles._omp_fn.0/26 -> __builtin_omp_get_thread_num/28, function body not available
 missed:   not inlinable: move_particles._omp_fn.0/26 -> __builtin_omp_get_num_threads/27, function body not available
-nbody.c:216:5: missed:   not inlinable: main/24 -> free/39, function body not available
-nbody.c:215:5: missed:   not inlinable: main/24 -> free/39, function body not available
-nbody.c:214:5: missed:   not inlinable: main/24 -> free/39, function body not available
-nbody.c:213:5: missed:   not inlinable: main/24 -> free/39, function body not available
-nbody.c:212:5: missed:   not inlinable: main/24 -> free/39, function body not available
-nbody.c:211:5: missed:   not inlinable: main/24 -> free/39, function body not available
-nbody.c:210:5: missed:   not inlinable: main/24 -> free/39, function body not available
-nbody.c:207:5: missed:   not inlinable: main/24 -> __builtin_puts/38, function body not available
-nbody.c:205:5: missed:   not inlinable: main/24 -> printf/31, function body not available
-nbody.c:204:5: missed:   not inlinable: main/24 -> __builtin_puts/38, function body not available
-nbody.c:202:13: missed:   not inlinable: main/24 -> sqrt/37, function body not available
-nbody.c:195:9: missed:   not inlinable: main/24 -> fflush/34, function body not available
-nbody.c:188:9: missed:   not inlinable: main/24 -> printf/31, function body not available
-nbody.c:169:25: missed:   not inlinable: main/24 -> omp_get_wtime/36, function body not available
-nbody.c:167:9: missed:   not inlinable: main/24 -> move_particles/23, --param max-inline-insns-auto limit reached
-nbody.c:165:27: missed:   not inlinable: main/24 -> omp_get_wtime/36, function body not available
-nbody.c:162:9: missed:   not inlinable: main/24 -> omp_set_num_threads/35, function body not available
-nbody.c:156:94: missed:   not inlinable: main/24 -> fflush/34, function body not available
-nbody.c:156:5: missed:   not inlinable: main/24 -> printf/31, function body not available
-nbody.c:153:5: missed:   not inlinable: main/24 -> printf/31, function body not available
-nbody.c:149:5: missed:   not inlinable: main/24 -> init/22, --param max-inline-insns-auto limit reached
-nbody.c:147:13: missed:   not inlinable: main/24 -> aligned_alloc/32, function body not available
-nbody.c:146:13: missed:   not inlinable: main/24 -> aligned_alloc/32, function body not available
-nbody.c:145:13: missed:   not inlinable: main/24 -> aligned_alloc/32, function body not available
-nbody.c:143:12: missed:   not inlinable: main/24 -> aligned_alloc/32, function body not available
-nbody.c:142:12: missed:   not inlinable: main/24 -> aligned_alloc/32, function body not available
-nbody.c:141:12: missed:   not inlinable: main/24 -> aligned_alloc/32, function body not available
-nbody.c:139:30: missed:   not inlinable: main/24 -> aligned_alloc/32, function body not available
+nbody.c:232:5: missed:   not inlinable: main/24 -> free/39, function body not available
+nbody.c:231:5: missed:   not inlinable: main/24 -> free/39, function body not available
+nbody.c:230:5: missed:   not inlinable: main/24 -> free/39, function body not available
+nbody.c:229:5: missed:   not inlinable: main/24 -> free/39, function body not available
+nbody.c:228:5: missed:   not inlinable: main/24 -> free/39, function body not available
+nbody.c:227:5: missed:   not inlinable: main/24 -> free/39, function body not available
+nbody.c:226:5: missed:   not inlinable: main/24 -> free/39, function body not available
+nbody.c:223:5: missed:   not inlinable: main/24 -> __builtin_puts/38, function body not available
+nbody.c:221:5: missed:   not inlinable: main/24 -> printf/31, function body not available
+nbody.c:220:5: missed:   not inlinable: main/24 -> __builtin_puts/38, function body not available
+nbody.c:218:13: missed:   not inlinable: main/24 -> sqrt/37, function body not available
+nbody.c:211:9: missed:   not inlinable: main/24 -> fflush/34, function body not available
+nbody.c:204:9: missed:   not inlinable: main/24 -> printf/31, function body not available
+nbody.c:185:25: missed:   not inlinable: main/24 -> omp_get_wtime/36, function body not available
+nbody.c:183:9: missed:   not inlinable: main/24 -> move_particles/23, --param max-inline-insns-auto limit reached
+nbody.c:181:27: missed:   not inlinable: main/24 -> omp_get_wtime/36, function body not available
+nbody.c:178:9: missed:   not inlinable: main/24 -> omp_set_num_threads/35, function body not available
+nbody.c:172:94: missed:   not inlinable: main/24 -> fflush/34, function body not available
+nbody.c:172:5: missed:   not inlinable: main/24 -> printf/31, function body not available
+nbody.c:169:5: missed:   not inlinable: main/24 -> printf/31, function body not available
+nbody.c:165:5: missed:   not inlinable: main/24 -> init/22, --param max-inline-insns-auto limit reached
+nbody.c:163:13: missed:   not inlinable: main/24 -> aligned_alloc/32, function body not available
+nbody.c:162:13: missed:   not inlinable: main/24 -> aligned_alloc/32, function body not available
+nbody.c:161:13: missed:   not inlinable: main/24 -> aligned_alloc/32, function body not available
+nbody.c:159:12: missed:   not inlinable: main/24 -> aligned_alloc/32, function body not available
+nbody.c:158:12: missed:   not inlinable: main/24 -> aligned_alloc/32, function body not available
+nbody.c:157:12: missed:   not inlinable: main/24 -> aligned_alloc/32, function body not available
+nbody.c:155:30: missed:   not inlinable: main/24 -> aligned_alloc/32, function body not available
 /usr/include/stdlib.h:495:10: missed:   not inlinable: main/24 -> strtoll/40, function body not available
-nbody.c:121:5: missed:   not inlinable: main/24 -> printf/31, function body not available
+nbody.c:137:5: missed:   not inlinable: main/24 -> printf/31, function body not available
 missed:   not inlinable: move_particles/23 -> __builtin_GOMP_parallel/30, function body not available
 nbody.c:38:25: missed:   not inlinable: init/22 -> rand/25, function body not available
 nbody.c:37:32: missed:   not inlinable: init/22 -> rand/25, function body not available
@@ -49,7 +51,7 @@ nbody.c:32:24: missed:   not inlinable: init/22 -> rand/25, function body not av
 nbody.c:31:31: missed:   not inlinable: init/22 -> rand/25, function body not available
 nbody.c:27:23: missed:   not inlinable: init/22 -> rand/25, function body not available
 nbody.c:26:23: missed:   not inlinable: init/22 -> rand/25, function body not available
-Unit growth for small function inlining: 459->459 (0%)
+Unit growth for small function inlining: 517->517 (0%)
 
 Inlined 1 calls, eliminated 0 functions
 
@@ -76,6 +78,12 @@ consider run-time aliasing test between *_149 and *_27
 consider run-time aliasing test between *_167 and *_27
 consider run-time aliasing test between *_171 and *_27
 consider run-time aliasing test between *_176 and *_27
+consider run-time aliasing test between *_194 and *_27
+consider run-time aliasing test between *_198 and *_27
+consider run-time aliasing test between *_203 and *_27
+consider run-time aliasing test between *_221 and *_27
+consider run-time aliasing test between *_225 and *_27
+consider run-time aliasing test between *_230 and *_27
 consider run-time aliasing test between *_53 and *_36
 consider run-time aliasing test between *_60 and *_36
 consider run-time aliasing test between *_68 and *_36
@@ -94,6 +102,12 @@ consider run-time aliasing test between *_149 and *_36
 consider run-time aliasing test between *_167 and *_36
 consider run-time aliasing test between *_171 and *_36
 consider run-time aliasing test between *_176 and *_36
+consider run-time aliasing test between *_194 and *_36
+consider run-time aliasing test between *_198 and *_36
+consider run-time aliasing test between *_203 and *_36
+consider run-time aliasing test between *_221 and *_36
+consider run-time aliasing test between *_225 and *_36
+consider run-time aliasing test between *_230 and *_36
 consider run-time aliasing test between *_53 and *_42
 consider run-time aliasing test between *_60 and *_42
 consider run-time aliasing test between *_68 and *_42
@@ -112,6 +126,12 @@ consider run-time aliasing test between *_149 and *_42
 consider run-time aliasing test between *_167 and *_42
 consider run-time aliasing test between *_171 and *_42
 consider run-time aliasing test between *_176 and *_42
+consider run-time aliasing test between *_194 and *_42
+consider run-time aliasing test between *_198 and *_42
+consider run-time aliasing test between *_203 and *_42
+consider run-time aliasing test between *_221 and *_42
+consider run-time aliasing test between *_225 and *_42
+consider run-time aliasing test between *_230 and *_42
 consider run-time aliasing test between *_53 and *_36
 consider run-time aliasing test between *_60 and *_36
 consider run-time aliasing test between *_68 and *_36
@@ -130,6 +150,12 @@ consider run-time aliasing test between *_149 and *_36
 consider run-time aliasing test between *_167 and *_36
 consider run-time aliasing test between *_171 and *_36
 consider run-time aliasing test between *_176 and *_36
+consider run-time aliasing test between *_194 and *_36
+consider run-time aliasing test between *_198 and *_36
+consider run-time aliasing test between *_203 and *_36
+consider run-time aliasing test between *_221 and *_36
+consider run-time aliasing test between *_225 and *_36
+consider run-time aliasing test between *_230 and *_36
 consider run-time aliasing test between *_27 and *_36
 consider run-time aliasing test between *_53 and *_27
 consider run-time aliasing test between *_60 and *_27
@@ -149,6 +175,12 @@ consider run-time aliasing test between *_149 and *_27
 consider run-time aliasing test between *_167 and *_27
 consider run-time aliasing test between *_171 and *_27
 consider run-time aliasing test between *_176 and *_27
+consider run-time aliasing test between *_194 and *_27
+consider run-time aliasing test between *_198 and *_27
+consider run-time aliasing test between *_203 and *_27
+consider run-time aliasing test between *_221 and *_27
+consider run-time aliasing test between *_225 and *_27
+consider run-time aliasing test between *_230 and *_27
 consider run-time aliasing test between *_27 and *_36
 consider run-time aliasing test between *_27 and *_36
 consider run-time aliasing test between *_53 and *_42
@@ -169,6 +201,12 @@ consider run-time aliasing test between *_149 and *_42
 consider run-time aliasing test between *_167 and *_42
 consider run-time aliasing test between *_171 and *_42
 consider run-time aliasing test between *_176 and *_42
+consider run-time aliasing test between *_194 and *_42
+consider run-time aliasing test between *_198 and *_42
+consider run-time aliasing test between *_203 and *_42
+consider run-time aliasing test between *_221 and *_42
+consider run-time aliasing test between *_225 and *_42
+consider run-time aliasing test between *_230 and *_42
 consider run-time aliasing test between *_27 and *_42
 consider run-time aliasing test between *_53 and *_27
 consider run-time aliasing test between *_60 and *_27
@@ -188,6 +226,12 @@ consider run-time aliasing test between *_149 and *_27
 consider run-time aliasing test between *_167 and *_27
 consider run-time aliasing test between *_171 and *_27
 consider run-time aliasing test between *_176 and *_27
+consider run-time aliasing test between *_194 and *_27
+consider run-time aliasing test between *_198 and *_27
+consider run-time aliasing test between *_203 and *_27
+consider run-time aliasing test between *_221 and *_27
+consider run-time aliasing test between *_225 and *_27
+consider run-time aliasing test between *_230 and *_27
 consider run-time aliasing test between *_27 and *_42
 consider run-time aliasing test between *_27 and *_42
 consider run-time aliasing test between *_36 and *_42
@@ -209,23 +253,29 @@ consider run-time aliasing test between *_149 and *_36
 consider run-time aliasing test between *_167 and *_36
 consider run-time aliasing test between *_171 and *_36
 consider run-time aliasing test between *_176 and *_36
+consider run-time aliasing test between *_194 and *_36
+consider run-time aliasing test between *_198 and *_36
+consider run-time aliasing test between *_203 and *_36
+consider run-time aliasing test between *_221 and *_36
+consider run-time aliasing test between *_225 and *_36
+consider run-time aliasing test between *_230 and *_36
 consider run-time aliasing test between *_36 and *_42
 consider run-time aliasing test between *_36 and *_42
 nbody.c:56:13: missed: couldn't vectorize loop
-nbody.c:62:42: missed: not vectorized: no vectype for stmt: _54 = *_53;
+nbody.c:62:52: missed: not vectorized: no vectype for stmt: _54 = *_53;
  scalar_type: f32
 nbody.c:60:31: optimized: loop vectorized using 32 byte vectors
 nbody.c:60:31: optimized: loop vectorized using 16 byte vectors
 nbody.c:49:9: note: vectorized 1 loops in function.
 nbody.c:49:9: optimized: loop turned into non-loop; it never loops
-nbody.c:99:22: note: ***** Analysis failed with vector mode V4DI
-nbody.c:99:22: note: ***** The result for vector mode V32QI would be the same
-nbody.c:99:22: note: ***** Re-trying analysis with vector mode V16QI
-nbody.c:99:22: note: ***** Analysis failed with vector mode V16QI
-nbody.c:99:22: note: ***** Re-trying analysis with vector mode V8QI
-nbody.c:99:22: note: ***** Analysis failed with vector mode V8QI
-nbody.c:99:22: note: ***** Re-trying analysis with vector mode V4QI
-nbody.c:99:22: note: ***** Analysis failed with vector mode V4QI
+nbody.c:115:22: note: ***** Analysis failed with vector mode V4DI
+nbody.c:115:22: note: ***** The result for vector mode V32QI would be the same
+nbody.c:115:22: note: ***** Re-trying analysis with vector mode V16QI
+nbody.c:115:22: note: ***** Analysis failed with vector mode V16QI
+nbody.c:115:22: note: ***** Re-trying analysis with vector mode V8QI
+nbody.c:115:22: note: ***** Analysis failed with vector mode V8QI
+nbody.c:115:22: note: ***** Re-trying analysis with vector mode V4QI
+nbody.c:115:22: note: ***** Analysis failed with vector mode V4QI
 nbody.c:60:31: missed: missed loop optimization: niters analysis ends up with assumptions.
 BB 23 is always executed in loop 1
 BB 7 is always executed in loop 1
@@ -240,7 +290,7 @@ considering unrolling loop with runtime-computable number of iterations
 nbody.c:60:31: note: considering unrolling loop 2 at BB 16
 considering unrolling loop with constant number of iterations
 considering unrolling loop with runtime-computable number of iterations
-nbody.c:99:22: note: considering unrolling loop 1 at BB 6
+nbody.c:115:22: note: considering unrolling loop 1 at BB 6
 BB 3 is always executed in loop 1
 loop 1's coldest_outermost_loop is 1, hotter_than_inner_loop is NULL
 nbody.c:26:23: missed: statement clobbers memory: _1 = rand ();
@@ -267,110 +317,110 @@ BB 5 is always executed in loop 2
 BB 3 is always executed in loop 3
 loop 2's coldest_outermost_loop is 2, hotter_than_inner_loop is NULL
 loop 3's coldest_outermost_loop is 2, hotter_than_inner_loop is NULL
-nbody.c:104:23: note: Considering guard 7 -> 14 in loop 2
-nbody.c:104:23: note: guard operands have definitions inside loop
-nbody.c:104:23: missed: couldn't vectorize loop
-nbody.c:104:23: missed: not vectorized: control flow in loop.
-nbody.c:106:24: missed: couldn't vectorize loop
-nbody.c:106:24: missed: not vectorized: number of iterations cannot be computed.
+nbody.c:120:23: note: Considering guard 7 -> 14 in loop 2
+nbody.c:120:23: note: guard operands have definitions inside loop
+nbody.c:120:23: missed: couldn't vectorize loop
+nbody.c:120:23: missed: not vectorized: control flow in loop.
+nbody.c:122:24: missed: couldn't vectorize loop
+nbody.c:122:24: missed: not vectorized: number of iterations cannot be computed.
 nbody.c:43:6: note: vectorized 0 loops in function.
 nbody.c:43:6: missed: statement clobbers memory: __builtin_GOMP_parallel (move_particles._omp_fn.0, &.omp_data_o.3, 0, 4);
-nbody.c:106:25: note: ***** Analysis failed with vector mode V4DI
-nbody.c:106:25: note: ***** The result for vector mode V32QI would be the same
-nbody.c:106:25: note: ***** Re-trying analysis with vector mode V16QI
-nbody.c:106:25: note: ***** Analysis failed with vector mode V16QI
-nbody.c:106:25: note: ***** Re-trying analysis with vector mode V8QI
-nbody.c:110:21: note: ***** Analysis failed with vector mode V8QI
-nbody.c:110:21: note: ***** Re-trying analysis with vector mode V4QI
-nbody.c:110:21: note: ***** Analysis failed with vector mode V4QI
-nbody.c:104:23: missed: missed loop optimization: niters analysis ends up with assumptions.
+nbody.c:122:25: note: ***** Analysis failed with vector mode V4DI
+nbody.c:122:25: note: ***** The result for vector mode V32QI would be the same
+nbody.c:122:25: note: ***** Re-trying analysis with vector mode V16QI
+nbody.c:122:25: note: ***** Analysis failed with vector mode V16QI
+nbody.c:122:25: note: ***** Re-trying analysis with vector mode V8QI
+nbody.c:126:21: note: ***** Analysis failed with vector mode V8QI
+nbody.c:126:21: note: ***** Re-trying analysis with vector mode V4QI
+nbody.c:126:21: note: ***** Analysis failed with vector mode V4QI
+nbody.c:120:23: missed: missed loop optimization: niters analysis ends up with assumptions.
 BB 6 is always executed in loop 2
 BB 7 is always executed in loop 2
 BB 5 is always executed in loop 3
 loop 2's coldest_outermost_loop is 2, hotter_than_inner_loop is NULL
 loop 3's coldest_outermost_loop is 2, hotter_than_inner_loop is NULL
-nbody.c:106:24: note: considering unrolling loop 3 at BB 8
+nbody.c:122:24: note: considering unrolling loop 3 at BB 8
 considering unrolling loop with constant number of iterations
 considering unrolling loop with runtime-computable number of iterations
-nbody.c:104:23: note: considering unrolling loop 2 at BB 13
+nbody.c:120:23: note: considering unrolling loop 2 at BB 13
 BB 5 is always executed in loop 1
 loop 1's coldest_outermost_loop is 1, hotter_than_inner_loop is NULL
-nbody.c:162:9: missed: statement clobbers memory: omp_set_num_threads (24);
-nbody.c:159:23: missed: couldn't vectorize loop
-nbody.c:159:23: missed: not vectorized: control flow in loop.
-nbody.c:116:5: note: vectorized 0 loops in function.
-nbody.c:162:9: missed: statement clobbers memory: omp_set_num_threads (24);
-nbody.c:121:5: missed: statement clobbers memory: printf ("threads = %d \n", 24);
+nbody.c:178:9: missed: statement clobbers memory: omp_set_num_threads (24);
+nbody.c:175:23: missed: couldn't vectorize loop
+nbody.c:175:23: missed: not vectorized: control flow in loop.
+nbody.c:132:5: note: vectorized 0 loops in function.
+nbody.c:178:9: missed: statement clobbers memory: omp_set_num_threads (24);
+nbody.c:137:5: missed: statement clobbers memory: printf ("threads = %d \n", 24);
 /usr/include/stdlib.h:495:10: missed: statement clobbers memory: _103 = strtoll (_1, 0B, 10);
-nbody.c:139:30: missed: statement clobbers memory: p_60 = aligned_alloc (32, 48);
-nbody.c:141:12: missed: statement clobbers memory: _3 = aligned_alloc (32, _2);
-nbody.c:142:12: missed: statement clobbers memory: _5 = aligned_alloc (32, _2);
-nbody.c:143:12: missed: statement clobbers memory: _7 = aligned_alloc (32, _2);
-nbody.c:145:13: missed: statement clobbers memory: _8 = aligned_alloc (32, _2);
-nbody.c:146:13: missed: statement clobbers memory: _9 = aligned_alloc (32, _2);
-nbody.c:147:13: missed: statement clobbers memory: _10 = aligned_alloc (32, _2);
-nbody.c:149:5: missed: statement clobbers memory: init (p_60, iftmp.6_51);
-nbody.c:153:5: missed: statement clobbers memory: printf ("\n\x1b[1mTotal memory size:\x1b[0m %llu B, %llu KiB, %llu MiB\n\n", s_74, _12, _11);
-nbody.c:156:5: missed: statement clobbers memory: printf ("\x1b[1m%5s %10s %10s %8s\x1b[0m\n", "Step", "Time, s", "Interact/s", "GFLOP/s");
-nbody.c:156:94: missed: statement clobbers memory: fflush (stdout.7_13);
-nbody.c:162:9: missed: statement clobbers memory: omp_set_num_threads (24);
-nbody.c:165:27: missed: statement clobbers memory: start_92 = omp_get_wtime ();
-nbody.c:167:9: missed: statement clobbers memory: move_particles (p_60, 9.99999977648258209228515625e-3, iftmp.6_51);
-nbody.c:169:25: missed: statement clobbers memory: end_95 = omp_get_wtime ();
-nbody.c:188:9: missed: statement clobbers memory: printf ("%5llu %10.3e %10.3e %8.1f %s\n", i_112, _32, _35, _33, iftmp.8_52);
-nbody.c:195:9: missed: statement clobbers memory: fflush (stdout.9_36);
-nbody.c:204:5: missed: statement clobbers memory: __builtin_puts (&"-----------------------------------------------------"[0]);
-nbody.c:205:5: missed: statement clobbers memory: printf ("\x1b[1m%s %4s \x1b[42m%10.1lf +- %.1lf GFLOP/s\x1b[0m\n", "Average performance:", "", rate_78, drate_79);
-nbody.c:207:5: missed: statement clobbers memory: __builtin_puts (&"-----------------------------------------------------"[0]);
-nbody.c:210:5: missed: statement clobbers memory: free (_40);
-nbody.c:211:5: missed: statement clobbers memory: free (_41);
-nbody.c:212:5: missed: statement clobbers memory: free (_42);
-nbody.c:213:5: missed: statement clobbers memory: free (_43);
-nbody.c:214:5: missed: statement clobbers memory: free (_44);
-nbody.c:215:5: missed: statement clobbers memory: free (_45);
-nbody.c:216:5: missed: statement clobbers memory: free (p_60);
-nbody.c:178:50: note: ***** Analysis succeeded with vector mode V4DI
-nbody.c:178:50: note: SLPing BB part
-nbody.c:178:50: note: Costing subgraph: 
-nbody.c:178:50: note: node 0x3b20c08 (max_nunits=2, refcnt=1) vector(2) double
-nbody.c:178:50: note: op template: _16 = _15 * 3.6e+1;
-nbody.c:178:50: note: 	stmt 0 _16 = _15 * 3.6e+1;
-nbody.c:178:50: note: 	stmt 1 _114 = _18 * 2.0e+0;
-nbody.c:178:50: note: 	children 0x3b20d08 0x3b20d88
-nbody.c:178:50: note: node (external) 0x3b20d08 (max_nunits=1, refcnt=1) vector(2) double
-nbody.c:178:50: note: 	{ _15, _18 }
-nbody.c:178:50: note: node (constant) 0x3b20d88 (max_nunits=1, refcnt=1) vector(2) double
-nbody.c:178:50: note: 	{ 3.6e+1, 2.0e+0 }
-nbody.c:178:50: note: Cost model analysis: 
-nbody.c:178:50: note: Cost model analysis for part in loop 0:
+nbody.c:155:30: missed: statement clobbers memory: p_60 = aligned_alloc (32, 48);
+nbody.c:157:12: missed: statement clobbers memory: _3 = aligned_alloc (32, _2);
+nbody.c:158:12: missed: statement clobbers memory: _5 = aligned_alloc (32, _2);
+nbody.c:159:12: missed: statement clobbers memory: _7 = aligned_alloc (32, _2);
+nbody.c:161:13: missed: statement clobbers memory: _8 = aligned_alloc (32, _2);
+nbody.c:162:13: missed: statement clobbers memory: _9 = aligned_alloc (32, _2);
+nbody.c:163:13: missed: statement clobbers memory: _10 = aligned_alloc (32, _2);
+nbody.c:165:5: missed: statement clobbers memory: init (p_60, iftmp.6_51);
+nbody.c:169:5: missed: statement clobbers memory: printf ("\n\x1b[1mTotal memory size:\x1b[0m %llu B, %llu KiB, %llu MiB\n\n", s_74, _12, _11);
+nbody.c:172:5: missed: statement clobbers memory: printf ("\x1b[1m%5s %10s %10s %8s\x1b[0m\n", "Step", "Time, s", "Interact/s", "GFLOP/s");
+nbody.c:172:94: missed: statement clobbers memory: fflush (stdout.7_13);
+nbody.c:178:9: missed: statement clobbers memory: omp_set_num_threads (24);
+nbody.c:181:27: missed: statement clobbers memory: start_92 = omp_get_wtime ();
+nbody.c:183:9: missed: statement clobbers memory: move_particles (p_60, 9.99999977648258209228515625e-3, iftmp.6_51);
+nbody.c:185:25: missed: statement clobbers memory: end_95 = omp_get_wtime ();
+nbody.c:204:9: missed: statement clobbers memory: printf ("%5llu %10.3e %10.3e %8.1f %s\n", i_112, _32, _35, _33, iftmp.8_52);
+nbody.c:211:9: missed: statement clobbers memory: fflush (stdout.9_36);
+nbody.c:220:5: missed: statement clobbers memory: __builtin_puts (&"-----------------------------------------------------"[0]);
+nbody.c:221:5: missed: statement clobbers memory: printf ("\x1b[1m%s %4s \x1b[42m%10.1lf +- %.1lf GFLOP/s\x1b[0m\n", "Average performance:", "", rate_78, drate_79);
+nbody.c:223:5: missed: statement clobbers memory: __builtin_puts (&"-----------------------------------------------------"[0]);
+nbody.c:226:5: missed: statement clobbers memory: free (_40);
+nbody.c:227:5: missed: statement clobbers memory: free (_41);
+nbody.c:228:5: missed: statement clobbers memory: free (_42);
+nbody.c:229:5: missed: statement clobbers memory: free (_43);
+nbody.c:230:5: missed: statement clobbers memory: free (_44);
+nbody.c:231:5: missed: statement clobbers memory: free (_45);
+nbody.c:232:5: missed: statement clobbers memory: free (p_60);
+nbody.c:194:50: note: ***** Analysis succeeded with vector mode V4DI
+nbody.c:194:50: note: SLPing BB part
+nbody.c:194:50: note: Costing subgraph: 
+nbody.c:194:50: note: node 0x4190ca8 (max_nunits=2, refcnt=1) vector(2) double
+nbody.c:194:50: note: op template: _16 = _15 * 3.6e+1;
+nbody.c:194:50: note: 	stmt 0 _16 = _15 * 3.6e+1;
+nbody.c:194:50: note: 	stmt 1 _114 = _18 * 2.0e+0;
+nbody.c:194:50: note: 	children 0x4190da8 0x4190e28
+nbody.c:194:50: note: node (external) 0x4190da8 (max_nunits=1, refcnt=1) vector(2) double
+nbody.c:194:50: note: 	{ _15, _18 }
+nbody.c:194:50: note: node (constant) 0x4190e28 (max_nunits=1, refcnt=1) vector(2) double
+nbody.c:194:50: note: 	{ 3.6e+1, 2.0e+0 }
+nbody.c:194:50: note: Cost model analysis: 
+nbody.c:194:50: note: Cost model analysis for part in loop 0:
   Vector cost: 56
   Scalar cost: 44
-nbody.c:178:50: missed: not vectorized: vectorization is not profitable.
-nbody.c:178:50: note: ***** The result for vector mode V32QI would be the same
-nbody.c:178:50: note: ***** Re-trying analysis with vector mode V16QI
-nbody.c:178:50: note: ***** Analysis succeeded with vector mode V16QI
-nbody.c:178:50: note: SLPing BB part
-nbody.c:178:50: note: Costing subgraph: 
-nbody.c:178:50: note: node 0x3b20c08 (max_nunits=2, refcnt=1) vector(2) double
-nbody.c:178:50: note: op template: _16 = _15 * 3.6e+1;
-nbody.c:178:50: note: 	stmt 0 _16 = _15 * 3.6e+1;
-nbody.c:178:50: note: 	stmt 1 _114 = _18 * 2.0e+0;
-nbody.c:178:50: note: 	children 0x3b20d08 0x3b20e88
-nbody.c:178:50: note: node (external) 0x3b20d08 (max_nunits=1, refcnt=1) vector(2) double
-nbody.c:178:50: note: 	{ _15, _18 }
-nbody.c:178:50: note: node (constant) 0x3b20e88 (max_nunits=1, refcnt=1) vector(2) double
-nbody.c:178:50: note: 	{ 3.6e+1, 2.0e+0 }
-nbody.c:178:50: note: Cost model analysis: 
-nbody.c:178:50: note: Cost model analysis for part in loop 0:
+nbody.c:194:50: missed: not vectorized: vectorization is not profitable.
+nbody.c:194:50: note: ***** The result for vector mode V32QI would be the same
+nbody.c:194:50: note: ***** Re-trying analysis with vector mode V16QI
+nbody.c:194:50: note: ***** Analysis succeeded with vector mode V16QI
+nbody.c:194:50: note: SLPing BB part
+nbody.c:194:50: note: Costing subgraph: 
+nbody.c:194:50: note: node 0x4190ca8 (max_nunits=2, refcnt=1) vector(2) double
+nbody.c:194:50: note: op template: _16 = _15 * 3.6e+1;
+nbody.c:194:50: note: 	stmt 0 _16 = _15 * 3.6e+1;
+nbody.c:194:50: note: 	stmt 1 _114 = _18 * 2.0e+0;
+nbody.c:194:50: note: 	children 0x4190da8 0x4190f28
+nbody.c:194:50: note: node (external) 0x4190da8 (max_nunits=1, refcnt=1) vector(2) double
+nbody.c:194:50: note: 	{ _15, _18 }
+nbody.c:194:50: note: node (constant) 0x4190f28 (max_nunits=1, refcnt=1) vector(2) double
+nbody.c:194:50: note: 	{ 3.6e+1, 2.0e+0 }
+nbody.c:194:50: note: Cost model analysis: 
+nbody.c:194:50: note: Cost model analysis for part in loop 0:
   Vector cost: 56
   Scalar cost: 44
-nbody.c:178:50: missed: not vectorized: vectorization is not profitable.
-nbody.c:178:50: note: ***** Re-trying analysis with vector mode V8QI
-nbody.c:184:19: note: ***** Analysis failed with vector mode V8QI
-nbody.c:184:19: note: ***** Re-trying analysis with vector mode V4QI
-nbody.c:184:19: note: ***** Analysis failed with vector mode V4QI
+nbody.c:194:50: missed: not vectorized: vectorization is not profitable.
+nbody.c:194:50: note: ***** Re-trying analysis with vector mode V8QI
+nbody.c:200:19: note: ***** Analysis failed with vector mode V8QI
+nbody.c:200:19: note: ***** Re-trying analysis with vector mode V4QI
+nbody.c:200:19: note: ***** Analysis failed with vector mode V4QI
 BB 5 is always executed in loop 1
 loop 1's coldest_outermost_loop is 1, hotter_than_inner_loop is NULL
-nbody.c:159:23: note: considering unrolling loop 1 at BB 8
+nbody.c:175:23: note: considering unrolling loop 1 at BB 8
 considering unrolling loop with constant number of iterations
 considering unrolling loop with runtime-computable number of iterations
