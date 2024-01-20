@@ -2,7 +2,7 @@ CC=gcc
 
 CFLAGS=-march=native -g3
 
-OFLAGS=-Ofast -fopenmp -fopt-info-all=nbody.gcc.optrpt
+OFLAGS=-O2 -fopenmp -fopt-info-all=nbody.gcc.optrpt
 
 all: nbody3D
 
