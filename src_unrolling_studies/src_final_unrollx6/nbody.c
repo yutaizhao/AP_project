@@ -112,9 +112,9 @@ void move_particles(particle_t *restrict p, const f32 dt, u64 n)
     //Update positions: 6 FLOPs
     for (u64 i = 0; i < n; i++)
       {
-        p[i].x += dt * p[i].vx;
-        p[i].y += dt * p[i].vy;
-        p[i].z += dt * p[i].vz;
+          p->x[i] += dt * p->vx[i];
+          p->y[i] += dt * p->vy[i];
+          p->z[i] += dt * p->vz[i];
       }
 }
 
