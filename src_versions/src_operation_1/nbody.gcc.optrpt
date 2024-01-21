@@ -1,0 +1,499 @@
+nbody.c:95:30: optimized:   Inlining atoll/13 into main/24 (always_inline).
+nbody.c:128:7: note: Considering inline candidate move_particles/23.
+nbody.c:128:7: missed:   will not early inline: main/24->move_particles/23, call is cold and code would grow at least by 66
+nbody.c:113:3: note: Considering inline candidate init/22.
+nbody.c:113:3: missed:   will not early inline: main/24->init/22, call is cold and code would grow at least by 41
+nbody.c:171:3: missed:   not inlinable: main/24 -> free/33, function body not available
+nbody.c:168:3: missed:   not inlinable: main/24 -> __builtin_puts/32, function body not available
+nbody.c:166:3: missed:   not inlinable: main/24 -> printf/28, function body not available
+nbody.c:165:3: missed:   not inlinable: main/24 -> __builtin_puts/32, function body not available
+nbody.c:163:11: missed:   not inlinable: main/24 -> sqrt/26, function body not available
+nbody.c:156:7: missed:   not inlinable: main/24 -> fflush/30, function body not available
+nbody.c:149:7: missed:   not inlinable: main/24 -> printf/28, function body not available
+nbody.c:130:23: missed:   not inlinable: main/24 -> omp_get_wtime/31, function body not available
+nbody.c:128:7: missed:   not inlinable: main/24 -> move_particles/23, --param max-inline-insns-auto limit reached
+nbody.c:126:25: missed:   not inlinable: main/24 -> omp_get_wtime/31, function body not available
+nbody.c:120:92: missed:   not inlinable: main/24 -> fflush/30, function body not available
+nbody.c:120:3: missed:   not inlinable: main/24 -> printf/28, function body not available
+nbody.c:117:3: missed:   not inlinable: main/24 -> printf/28, function body not available
+nbody.c:113:3: missed:   not inlinable: main/24 -> init/22, --param max-inline-insns-auto limit reached
+nbody.c:110:19: missed:   not inlinable: main/24 -> malloc/27, function body not available
+/usr/include/stdlib.h:495:10: missed:   not inlinable: main/24 -> strtoll/34, function body not available
+nbody.c:68:36: missed:   not inlinable: move_particles/23 -> sqrt/26, function body not available
+nbody.c:38:22: missed:   not inlinable: init/22 -> rand/25, function body not available
+nbody.c:37:29: missed:   not inlinable: init/22 -> rand/25, function body not available
+nbody.c:36:22: missed:   not inlinable: init/22 -> rand/25, function body not available
+nbody.c:33:28: missed:   not inlinable: init/22 -> rand/25, function body not available
+nbody.c:32:21: missed:   not inlinable: init/22 -> rand/25, function body not available
+nbody.c:31:28: missed:   not inlinable: init/22 -> rand/25, function body not available
+nbody.c:27:21: missed:   not inlinable: init/22 -> rand/25, function body not available
+nbody.c:26:21: missed:   not inlinable: init/22 -> rand/25, function body not available
+Unit growth for small function inlining: 216->216 (0%)
+
+Inlined 1 calls, eliminated 0 functions
+
+BB 3 is always executed in loop 1
+loop 1's coldest_outermost_loop is 1, hotter_than_inner_loop is NULL
+nbody.c:26:21: missed: statement clobbers memory: _1 = rand ();
+nbody.c:23:21: missed: couldn't vectorize loop
+nbody.c:23:21: missed: not vectorized: control flow in loop.
+nbody.c:21:6: note: vectorized 0 loops in function.
+nbody.c:26:21: missed: statement clobbers memory: _1 = rand ();
+nbody.c:26:21: missed: statement clobbers memory: _1 = rand ();
+nbody.c:27:21: missed: statement clobbers memory: _2 = rand ();
+nbody.c:31:28: missed: statement clobbers memory: _3 = rand ();
+nbody.c:32:21: missed: statement clobbers memory: _9 = rand ();
+nbody.c:33:28: missed: statement clobbers memory: _12 = rand ();
+nbody.c:36:22: missed: statement clobbers memory: _16 = rand ();
+nbody.c:37:29: missed: statement clobbers memory: _19 = rand ();
+nbody.c:38:22: missed: statement clobbers memory: _23 = rand ();
+nbody.c:40:1: note: ***** Analysis failed with vector mode V8SF
+nbody.c:40:1: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V8SF
+BB 4 is always executed in loop 1
+loop 1's coldest_outermost_loop is 1, hotter_than_inner_loop is NULL
+nbody.c:23:21: note: considering unrolling loop 1 at BB 4
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+BB 6 is always executed in loop 2
+BB 4 is always executed in loop 1
+BB 3 is always executed in loop 1
+BB 5 is always executed in loop 1
+loop 2's coldest_outermost_loop is 2, hotter_than_inner_loop is NULL
+loop 1's coldest_outermost_loop is 1, hotter_than_inner_loop is NULL
+loop 3's coldest_outermost_loop is 1, hotter_than_inner_loop is NULL
+nbody.c:49:21: missed: Guard edge 4 --> 5 is not around the loop!
+nbody.c:83:21: optimized: loop vectorized using 8 byte vectors
+nbody.c:49:21: missed: couldn't vectorize loop
+nbody.c:60:32: missed: not vectorized: no vectype for stmt: _6 = _5->x;
+ scalar_type: f32
+nbody.c:57:25: missed: couldn't vectorize loop
+nbody.c:60:23: missed: not vectorized: no vectype for stmt: _3 = _2->x;
+ scalar_type: f32
+nbody.c:43:6: note: vectorized 1 loops in function.
+nbody.c:83:21: optimized: loop turned into non-loop; it never loops
+nbody.c:85:14: note: ***** Analysis succeeded with vector mode V8SF
+nbody.c:85:14: note: SLPing BB part
+nbody.c:77:15: note: Costing subgraph: 
+nbody.c:77:15: note: node 0x4284e28 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:77:15: note: op template: _5->vx = _27;
+nbody.c:77:15: note: 	stmt 0 _5->vx = _27;
+nbody.c:77:15: note: 	stmt 1 _5->vy = _30;
+nbody.c:77:15: note: 	children 0x4284ea8
+nbody.c:77:15: note: node 0x4284ea8 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:77:15: note: op template: _27 = _25 + _26;
+nbody.c:77:15: note: 	stmt 0 _27 = _25 + _26;
+nbody.c:77:15: note: 	stmt 1 _30 = _28 + _29;
+nbody.c:77:15: note: 	children 0x4284f28 0x4284fa8
+nbody.c:77:15: note: node 0x4284f28 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:77:15: note: op template: _25 = _5->vx;
+nbody.c:77:15: note: 	stmt 0 _25 = _5->vx;
+nbody.c:77:15: note: 	stmt 1 _28 = _5->vy;
+nbody.c:77:15: note: node 0x4284fa8 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:77:15: note: op template: _26 = dt_62(D) * fx_229;
+nbody.c:77:15: note: 	stmt 0 _26 = dt_62(D) * fx_229;
+nbody.c:77:15: note: 	stmt 1 _29 = dt_62(D) * fy_228;
+nbody.c:77:15: note: 	children 0x4285028 0x42850a8
+nbody.c:77:15: note: node (external) 0x4285028 (max_nunits=1, refcnt=1) const vector(2) float
+nbody.c:77:15: note: 	{ dt_62(D), dt_62(D) }
+nbody.c:77:15: note: node 0x42850a8 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:77:15: note: op template: fx_229 = PHI <fx_76(4)>
+nbody.c:77:15: note: 	stmt 0 fx_229 = PHI <fx_76(4)>
+nbody.c:77:15: note: 	stmt 1 fy_228 = PHI <fy_77(4)>
+nbody.c:77:15: note: 	children 0x4285128
+nbody.c:77:15: note: node 0x4285128 (max_nunits=2, refcnt=2) vector(2) float
+nbody.c:77:15: note: op template: fx_76 = _20 + fx_86;
+nbody.c:77:15: note: 	stmt 0 fx_76 = _20 + fx_86;
+nbody.c:77:15: note: 	stmt 1 fy_77 = _21 + fy_88;
+nbody.c:77:15: note: 	children 0x42851a8 0x4285428
+nbody.c:77:15: note: node 0x42851a8 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:77:15: note: op template: _20 = dx_71 * d_3_over_2_75;
+nbody.c:77:15: note: 	stmt 0 _20 = dx_71 * d_3_over_2_75;
+nbody.c:77:15: note: 	stmt 1 _21 = dy_72 * d_3_over_2_75;
+nbody.c:77:15: note: 	children 0x4285228 0x42853a8
+nbody.c:77:15: note: node 0x4285228 (max_nunits=2, refcnt=1) const vector(2) float
+nbody.c:77:15: note: op template: dx_71 = _3 - _6;
+nbody.c:77:15: note: 	stmt 0 dx_71 = _3 - _6;
+nbody.c:77:15: note: 	stmt 1 dy_72 = _7 - _8;
+nbody.c:77:15: note: 	children 0x42852a8 0x4285328
+nbody.c:77:15: note: node 0x42852a8 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:77:15: note: op template: _3 = _2->x;
+nbody.c:77:15: note: 	stmt 0 _3 = _2->x;
+nbody.c:77:15: note: 	stmt 1 _7 = _2->y;
+nbody.c:77:15: note: node 0x4285328 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:77:15: note: op template: _6 = _5->x;
+nbody.c:77:15: note: 	stmt 0 _6 = _5->x;
+nbody.c:77:15: note: 	stmt 1 _8 = _5->y;
+nbody.c:77:15: note: node (external) 0x42853a8 (max_nunits=1, refcnt=1) const vector(2) float
+nbody.c:77:15: note: 	{ d_3_over_2_75, d_3_over_2_75 }
+nbody.c:77:15: note: node 0x4285428 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:77:15: note: op template: fx_86 = PHI <fx_76(12), 0.0(6)>
+nbody.c:77:15: note: 	stmt 0 fx_86 = PHI <fx_76(12), 0.0(6)>
+nbody.c:77:15: note: 	stmt 1 fy_88 = PHI <fy_77(12), 0.0(6)>
+nbody.c:77:15: note: 	children 0x4285128 0x42854a8
+nbody.c:77:15: note: node (constant) 0x42854a8 (max_nunits=1, refcnt=1) vector(2) float
+nbody.c:77:15: note: 	{ 0.0, 0.0 }
+nbody.c:77:15: note: Cost model analysis: 
+nbody.c:77:15: note: Cost model analysis for part in loop 1:
+  Vector cost: 68
+  Scalar cost: 128
+nbody.c:77:15: note: Cost model analysis for part in loop 3:
+  Vector cost: 88
+  Scalar cost: 128
+nbody.c:85:14: note: Costing subgraph: 
+nbody.c:85:14: note: node 0x42855a8 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:85:14: note: op template: MEM[(float *)ivtmp_161] = _159;
+nbody.c:85:14: note: 	stmt 0 MEM[(float *)ivtmp_161] = _159;
+nbody.c:85:14: note: 	stmt 1 MEM[(float *)ivtmp_161 + 4B] = _157;
+nbody.c:85:14: note: 	children 0x4285628
+nbody.c:85:14: note: node 0x4285628 (max_nunits=1, refcnt=1) vector(2) float
+nbody.c:85:14: note: op: VEC_PERM_EXPR
+nbody.c:85:14: note: 	stmt 0 _159 = BIT_FIELD_REF <vect__41.48_164, 32, 0>;
+nbody.c:85:14: note: 	stmt 1 _157 = BIT_FIELD_REF <vect__41.48_164, 32, 32>;
+nbody.c:85:14: note: 	lane permutation { 0[0] 0[1] }
+nbody.c:85:14: note: 	children 0x42856a8
+nbody.c:85:14: note: node (external) 0x42856a8 (max_nunits=1, refcnt=1) vector(2) float
+nbody.c:85:14: note: 	{ }
+nbody.c:85:14: note: Cost model analysis: 
+nbody.c:85:14: note: Cost model analysis for part in loop 2:
+  Vector cost: 12
+  Scalar cost: 48
+nbody.c:85:14: note: Costing subgraph: 
+nbody.c:85:14: note: node 0x42857a8 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:85:14: note: op template: MEM[(float *)ivtmp_153] = _152;
+nbody.c:85:14: note: 	stmt 0 MEM[(float *)ivtmp_153] = _152;
+nbody.c:85:14: note: 	stmt 1 MEM[(float *)ivtmp_153 + 4B] = _150;
+nbody.c:85:14: note: 	children 0x42858a8
+nbody.c:85:14: note: node (external) 0x42858a8 (max_nunits=1, refcnt=1) vector(2) float
+nbody.c:85:14: note: 	{ _152, _150 }
+nbody.c:85:14: note: Cost model analysis: 
+nbody.c:85:14: note: Cost model analysis for part in loop 2:
+  Vector cost: 16
+  Scalar cost: 24
+nbody.c:85:14: note: Costing subgraph: 
+nbody.c:85:14: note: node 0x42859a8 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:85:14: note: op template: _223->x = _219;
+nbody.c:85:14: note: 	stmt 0 _223->x = _219;
+nbody.c:85:14: note: 	stmt 1 _223->y = _214;
+nbody.c:85:14: note: 	children 0x4285a28
+nbody.c:85:14: note: node 0x4285a28 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:85:14: note: op template: _219 = _222 + _220;
+nbody.c:85:14: note: 	stmt 0 _219 = _222 + _220;
+nbody.c:85:14: note: 	stmt 1 _214 = _217 + _215;
+nbody.c:85:14: note: 	children 0x4285aa8 0x4285b28
+nbody.c:85:14: note: node 0x4285aa8 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:85:14: note: op template: _222 = _223->x;
+nbody.c:85:14: note: 	stmt 0 _222 = _223->x;
+nbody.c:85:14: note: 	stmt 1 _217 = _223->y;
+nbody.c:85:14: note: node 0x4285b28 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:85:14: note: op template: _220 = _221 * dt_62(D);
+nbody.c:85:14: note: 	stmt 0 _220 = _221 * dt_62(D);
+nbody.c:85:14: note: 	stmt 1 _215 = _216 * dt_62(D);
+nbody.c:85:14: note: 	children 0x4285ba8 0x4285c28
+nbody.c:85:14: note: node 0x4285ba8 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:85:14: note: op template: _221 = _223->vx;
+nbody.c:85:14: note: 	stmt 0 _221 = _223->vx;
+nbody.c:85:14: note: 	stmt 1 _216 = _223->vy;
+nbody.c:85:14: note: node (external) 0x4285c28 (max_nunits=1, refcnt=1) vector(2) float
+nbody.c:85:14: note: 	{ dt_62(D), dt_62(D) }
+nbody.c:85:14: note: Cost model analysis: 
+nbody.c:85:14: note: Cost model analysis for part in loop 0:
+  Vector cost: 68
+  Scalar cost: 128
+nbody.c:85:14: note: Basic block will be vectorized using SLP
+nbody.c:85:14: note: Vectorizing SLP tree:
+nbody.c:85:14: note: node 0x4284e28 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:85:14: note: op template: _5->vx = _27;
+nbody.c:85:14: note: 	stmt 0 _5->vx = _27;
+nbody.c:85:14: note: 	stmt 1 _5->vy = _30;
+nbody.c:85:14: note: 	children 0x4284ea8
+nbody.c:85:14: note: node 0x4284ea8 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:85:14: note: op template: _27 = _25 + _26;
+nbody.c:85:14: note: 	stmt 0 _27 = _25 + _26;
+nbody.c:85:14: note: 	stmt 1 _30 = _28 + _29;
+nbody.c:85:14: note: 	children 0x4284f28 0x4284fa8
+nbody.c:85:14: note: node 0x4284f28 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:85:14: note: op template: _25 = _5->vx;
+nbody.c:85:14: note: 	stmt 0 _25 = _5->vx;
+nbody.c:85:14: note: 	stmt 1 _28 = _5->vy;
+nbody.c:85:14: note: node 0x4284fa8 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:85:14: note: op template: _26 = dt_62(D) * fx_229;
+nbody.c:85:14: note: 	stmt 0 _26 = dt_62(D) * fx_229;
+nbody.c:85:14: note: 	stmt 1 _29 = dt_62(D) * fy_228;
+nbody.c:85:14: note: 	children 0x4285028 0x42850a8
+nbody.c:85:14: note: node (external) 0x4285028 (max_nunits=1, refcnt=1) const vector(2) float
+nbody.c:85:14: note: 	{ dt_62(D), dt_62(D) }
+nbody.c:85:14: note: node 0x42850a8 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:85:14: note: op template: fx_229 = PHI <fx_76(4)>
+nbody.c:85:14: note: 	stmt 0 fx_229 = PHI <fx_76(4)>
+nbody.c:85:14: note: 	stmt 1 fy_228 = PHI <fy_77(4)>
+nbody.c:85:14: note: 	children 0x4285128
+nbody.c:85:14: note: node 0x4285128 (max_nunits=2, refcnt=2) vector(2) float
+nbody.c:85:14: note: op template: fx_76 = _20 + fx_86;
+nbody.c:85:14: note: 	stmt 0 fx_76 = _20 + fx_86;
+nbody.c:85:14: note: 	stmt 1 fy_77 = _21 + fy_88;
+nbody.c:85:14: note: 	children 0x42851a8 0x4285428
+nbody.c:85:14: note: node 0x42851a8 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:85:14: note: op template: _20 = dx_71 * d_3_over_2_75;
+nbody.c:85:14: note: 	stmt 0 _20 = dx_71 * d_3_over_2_75;
+nbody.c:85:14: note: 	stmt 1 _21 = dy_72 * d_3_over_2_75;
+nbody.c:85:14: note: 	children 0x4285228 0x42853a8
+nbody.c:85:14: note: node 0x4285228 (max_nunits=2, refcnt=1) const vector(2) float
+nbody.c:85:14: note: op template: dx_71 = _3 - _6;
+nbody.c:85:14: note: 	stmt 0 dx_71 = _3 - _6;
+nbody.c:85:14: note: 	stmt 1 dy_72 = _7 - _8;
+nbody.c:85:14: note: 	children 0x42852a8 0x4285328
+nbody.c:85:14: note: node 0x42852a8 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:85:14: note: op template: _3 = _2->x;
+nbody.c:85:14: note: 	stmt 0 _3 = _2->x;
+nbody.c:85:14: note: 	stmt 1 _7 = _2->y;
+nbody.c:85:14: note: node 0x4285328 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:85:14: note: op template: _6 = _5->x;
+nbody.c:85:14: note: 	stmt 0 _6 = _5->x;
+nbody.c:85:14: note: 	stmt 1 _8 = _5->y;
+nbody.c:85:14: note: node (external) 0x42853a8 (max_nunits=1, refcnt=1) const vector(2) float
+nbody.c:85:14: note: 	{ d_3_over_2_75, d_3_over_2_75 }
+nbody.c:85:14: note: node 0x4285428 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:85:14: note: op template: fx_86 = PHI <fx_76(12), 0.0(6)>
+nbody.c:85:14: note: 	stmt 0 fx_86 = PHI <fx_76(12), 0.0(6)>
+nbody.c:85:14: note: 	stmt 1 fy_88 = PHI <fy_77(12), 0.0(6)>
+nbody.c:85:14: note: 	children 0x4285128 0x42854a8
+nbody.c:85:14: note: node (constant) 0x42854a8 (max_nunits=1, refcnt=1) vector(2) float
+nbody.c:85:14: note: 	{ 0.0, 0.0 }
+nbody.c:85:14: note: ------>vectorizing SLP node starting from: _25 = _5->vx;
+nbody.c:85:14: note: transform load. ncopies = 1
+nbody.c:85:14: note: create vector_type-pointer variable to type: vector(2) float  vectorizing a pointer ref: _5->vx
+nbody.c:85:14: note: created vectp.52_207
+nbody.c:85:14: note: add new stmt: vect__25.53_225 = MEM <vector(2) float> [(float *)vectp.52_207];
+nbody.c:85:14: note: add new stmt: vectp.52_226 = vectp.52_207 + 4;
+nbody.c:85:14: note: ------>vectorizing SLP node starting from: _3 = _2->x;
+nbody.c:85:14: note: transform load. ncopies = 1
+nbody.c:85:14: note: create vector_type-pointer variable to type: vector(2) float  vectorizing a pointer ref: _2->x
+nbody.c:85:14: note: created vectp.55_34
+nbody.c:85:14: note: add new stmt: vect__3.56_35 = MEM <vector(2) float> [(float *)vectp.55_34];
+nbody.c:85:14: note: add new stmt: vectp.55_195 = vectp.55_34 + 4;
+nbody.c:85:14: note: ------>vectorizing SLP node starting from: _6 = _5->x;
+nbody.c:85:14: note: transform load. ncopies = 1
+nbody.c:85:14: note: create vector_type-pointer variable to type: vector(2) float  vectorizing a pointer ref: _5->x
+nbody.c:85:14: note: created vectp.58_36
+nbody.c:85:14: note: add new stmt: vect__6.59_178 = MEM <vector(2) float> [(float *)vectp.58_36];
+nbody.c:85:14: note: add new stmt: vectp.58_37 = vectp.58_36 + 4;
+nbody.c:85:14: note: ------>vectorizing SLP node starting from: dx_71 = _3 - _6;
+nbody.c:85:14: note: vect_is_simple_use: operand _2->x, type of def: internal
+nbody.c:85:14: note: vect_is_simple_use: operand _5->x, type of def: internal
+nbody.c:85:14: note: transform binary/unary operation.
+nbody.c:85:14: note: add new stmt: vect_dx_71.60_38 = vect__3.56_35 - vect__6.59_178;
+nbody.c:85:14: note: extracting lane for live stmt dx_71 = _3 - _6;
+nbody.c:85:14: note: extracting lane for live stmt dy_72 = _7 - _8;
+nbody.c:85:14: note: ------>vectorizing SLP node starting from: _20 = dx_71 * d_3_over_2_75;
+nbody.c:85:14: note: vect_is_simple_use: operand _3 - _6, type of def: internal
+nbody.c:85:14: note: transform binary/unary operation.
+nbody.c:85:14: note: add new stmt: vect__20.61_45 = vect_dx_71.60_38 * _44;
+nbody.c:85:14: note: ------>vectorizing SLP node starting from: fx_86 = PHI <fx_76(12), 0.0(6)>
+nbody.c:85:14: note: ------>vectorizing SLP node starting from: fx_76 = _20 + fx_86;
+nbody.c:85:14: note: vect_is_simple_use: operand dx_71 * d_3_over_2_75, type of def: internal
+nbody.c:85:14: note: vect_is_simple_use: operand fx_86 = PHI <fx_76(12), 0.0(6)>, type of def: internal
+nbody.c:85:14: note: transform binary/unary operation.
+nbody.c:85:14: note: add new stmt: vect_fx_76.63_47 = vect__20.61_45 + vect_fx_86.62_46;
+nbody.c:85:14: note: ------>vectorizing SLP node starting from: fx_229 = PHI <fx_76(4)>
+nbody.c:85:14: note: ------>vectorizing SLP node starting from: _26 = dt_62(D) * fx_229;
+nbody.c:85:14: note: vect_is_simple_use: operand fx_229 = PHI <fx_76(4)>, type of def: internal
+nbody.c:85:14: note: transform binary/unary operation.
+nbody.c:85:14: note: add new stmt: vect__26.65_49 = _93 * vect_fx_229.64_48;
+nbody.c:85:14: note: ------>vectorizing SLP node starting from: _27 = _25 + _26;
+nbody.c:85:14: note: vect_is_simple_use: operand _5->vx, type of def: internal
+nbody.c:85:14: note: vect_is_simple_use: operand dt_62(D) * fx_229, type of def: internal
+nbody.c:85:14: note: transform binary/unary operation.
+nbody.c:85:14: note: add new stmt: vect__27.66_50 = vect__25.53_225 + vect__26.65_49;
+nbody.c:85:14: note: ------>vectorizing SLP node starting from: _5->vx = _27;
+nbody.c:85:14: note: vect_is_simple_use: operand _25 + _26, type of def: internal
+nbody.c:85:14: note: vect_is_simple_use: operand _28 + _29, type of def: internal
+nbody.c:85:14: note: transform store. ncopies = 1
+nbody.c:85:14: note: create vector_type-pointer variable to type: vector(2) float  vectorizing a pointer ref: _5->vx
+nbody.c:85:14: note: created vectp.68_146
+nbody.c:85:14: note: add new stmt: MEM <vector(2) float> [(float *)vectp.68_146] = vect__27.66_50;
+nbody.c:85:14: note: vectorizing stmts using SLP.
+nbody.c:85:14: optimized: basic block part vectorized using 32 byte vectors
+nbody.c:85:14: note: Vectorizing SLP tree:
+nbody.c:85:14: note: node 0x42855a8 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:85:14: note: op template: MEM[(float *)ivtmp_161] = _159;
+nbody.c:85:14: note: 	stmt 0 MEM[(float *)ivtmp_161] = _159;
+nbody.c:85:14: note: 	stmt 1 MEM[(float *)ivtmp_161 + 4B] = _157;
+nbody.c:85:14: note: 	children 0x4285628
+nbody.c:85:14: note: node 0x4285628 (max_nunits=1, refcnt=1) vector(2) float
+nbody.c:85:14: note: op: VEC_PERM_EXPR
+nbody.c:85:14: note: 	stmt 0 _159 = BIT_FIELD_REF <vect__41.48_164, 32, 0>;
+nbody.c:85:14: note: 	stmt 1 _157 = BIT_FIELD_REF <vect__41.48_164, 32, 32>;
+nbody.c:85:14: note: 	lane permutation { 0[0] 0[1] }
+nbody.c:85:14: note: 	children 0x42856a8
+nbody.c:85:14: note: node (external) 0x42856a8 (max_nunits=1, refcnt=1) vector(2) float
+nbody.c:85:14: note: 	{ }
+nbody.c:85:14: note: ------>vectorizing SLP node starting from: _159 = BIT_FIELD_REF <vect__41.48_164, 32, 0>;
+nbody.c:85:14: note: vectorizing permutation op0[0] op0[1] (repeat 2)
+
+nbody.c:85:14: note: vectorizing permutation op0[0] op0[1] (repeat 2)
+
+nbody.c:85:14: note: as vops0[0][0] vops0[0][1], vops0[0][2] vops0[0][3], vops0[0][4] vops0[0][5]
+nbody.c:85:14: note: add new stmt: _230 = vect__41.48_164;
+nbody.c:85:14: note: ------>vectorizing SLP node starting from: MEM[(float *)ivtmp_161] = _159;
+nbody.c:85:14: note: vect_is_simple_use: operand BIT_FIELD_REF <vect__41.48_164, 32, 0>, type of def: internal
+nbody.c:85:14: note: vect_is_simple_use: operand BIT_FIELD_REF <vect__41.48_164, 32, 32>, type of def: internal
+nbody.c:85:14: note: transform store. ncopies = 1
+nbody.c:85:14: note: create vector_type-pointer variable to type: vector(2) float  vectorizing a pointer ref: MEM[(float *)ivtmp_161]
+nbody.c:85:14: note: created vectp.70_169
+nbody.c:85:14: note: add new stmt: MEM <vector(2) float> [(float *)vectp.70_169] = _230;
+nbody.c:85:14: note: vectorizing stmts using SLP.
+nbody.c:85:14: optimized: basic block part vectorized using 32 byte vectors
+nbody.c:85:14: note: Vectorizing SLP tree:
+nbody.c:85:14: note: node 0x42857a8 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:85:14: note: op template: MEM[(float *)ivtmp_153] = _152;
+nbody.c:85:14: note: 	stmt 0 MEM[(float *)ivtmp_153] = _152;
+nbody.c:85:14: note: 	stmt 1 MEM[(float *)ivtmp_153 + 4B] = _150;
+nbody.c:85:14: note: 	children 0x42858a8
+nbody.c:85:14: note: node (external) 0x42858a8 (max_nunits=1, refcnt=1) vector(2) float
+nbody.c:85:14: note: 	{ _152, _150 }
+nbody.c:85:14: note: ------>vectorizing SLP node starting from: MEM[(float *)ivtmp_153] = _152;
+nbody.c:85:14: note: vect_is_simple_use: operand BIT_FIELD_REF <vect__41.48_162, 32, 0>, type of def: internal
+nbody.c:85:14: note: transform store. ncopies = 1
+nbody.c:85:14: note: create vector_type-pointer variable to type: vector(2) float  vectorizing a pointer ref: MEM[(float *)ivtmp_153]
+nbody.c:85:14: note: created vectp.72_64
+nbody.c:85:14: note: add new stmt: MEM <vector(2) float> [(float *)vectp.72_64] = _65;
+nbody.c:85:14: note: vectorizing stmts using SLP.
+nbody.c:85:14: optimized: basic block part vectorized using 32 byte vectors
+nbody.c:85:14: note: Vectorizing SLP tree:
+nbody.c:85:14: note: node 0x42859a8 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:85:14: note: op template: _223->x = _219;
+nbody.c:85:14: note: 	stmt 0 _223->x = _219;
+nbody.c:85:14: note: 	stmt 1 _223->y = _214;
+nbody.c:85:14: note: 	children 0x4285a28
+nbody.c:85:14: note: node 0x4285a28 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:85:14: note: op template: _219 = _222 + _220;
+nbody.c:85:14: note: 	stmt 0 _219 = _222 + _220;
+nbody.c:85:14: note: 	stmt 1 _214 = _217 + _215;
+nbody.c:85:14: note: 	children 0x4285aa8 0x4285b28
+nbody.c:85:14: note: node 0x4285aa8 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:85:14: note: op template: _222 = _223->x;
+nbody.c:85:14: note: 	stmt 0 _222 = _223->x;
+nbody.c:85:14: note: 	stmt 1 _217 = _223->y;
+nbody.c:85:14: note: node 0x4285b28 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:85:14: note: op template: _220 = _221 * dt_62(D);
+nbody.c:85:14: note: 	stmt 0 _220 = _221 * dt_62(D);
+nbody.c:85:14: note: 	stmt 1 _215 = _216 * dt_62(D);
+nbody.c:85:14: note: 	children 0x4285ba8 0x4285c28
+nbody.c:85:14: note: node 0x4285ba8 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:85:14: note: op template: _221 = _223->vx;
+nbody.c:85:14: note: 	stmt 0 _221 = _223->vx;
+nbody.c:85:14: note: 	stmt 1 _216 = _223->vy;
+nbody.c:85:14: note: node (external) 0x4285c28 (max_nunits=1, refcnt=1) vector(2) float
+nbody.c:85:14: note: 	{ dt_62(D), dt_62(D) }
+nbody.c:85:14: note: ------>vectorizing SLP node starting from: _222 = _223->x;
+nbody.c:85:14: note: transform load. ncopies = 1
+nbody.c:85:14: note: create vector_type-pointer variable to type: vector(2) float  vectorizing a pointer ref: _223->x
+nbody.c:85:14: note: created vectp.74_177
+nbody.c:85:14: note: add new stmt: vect__222.75_183 = MEM <vector(2) float> [(float *)vectp.74_177];
+nbody.c:85:14: note: add new stmt: vectp.74_188 = vectp.74_177 + 16;
+nbody.c:85:14: note: ------>vectorizing SLP node starting from: _221 = _223->vx;
+nbody.c:85:14: note: transform load. ncopies = 1
+nbody.c:85:14: note: create vector_type-pointer variable to type: vector(2) float  vectorizing a pointer ref: _223->vx
+nbody.c:85:14: note: created vectp.77_194
+nbody.c:85:14: note: add new stmt: vect__221.78_143 = MEM <vector(2) float> [(float *)vectp.77_194];
+nbody.c:85:14: note: add new stmt: vectp.77_142 = vectp.77_194 + 16;
+nbody.c:85:14: note: ------>vectorizing SLP node starting from: _220 = _221 * dt_62(D);
+nbody.c:85:14: note: vect_is_simple_use: operand _223->vx, type of def: internal
+nbody.c:85:14: note: transform binary/unary operation.
+nbody.c:85:14: note: add new stmt: vect__220.79_140 = vect__221.78_143 * _141;
+nbody.c:85:14: note: ------>vectorizing SLP node starting from: _219 = _222 + _220;
+nbody.c:85:14: note: vect_is_simple_use: operand _223->x, type of def: internal
+nbody.c:85:14: note: vect_is_simple_use: operand _221 * dt_62(D), type of def: internal
+nbody.c:85:14: note: transform binary/unary operation.
+nbody.c:85:14: note: add new stmt: vect__219.80_139 = vect__222.75_183 + vect__220.79_140;
+nbody.c:85:14: note: ------>vectorizing SLP node starting from: _223->x = _219;
+nbody.c:85:14: note: vect_is_simple_use: operand _222 + _220, type of def: internal
+nbody.c:85:14: note: vect_is_simple_use: operand _217 + _215, type of def: internal
+nbody.c:85:14: note: transform store. ncopies = 1
+nbody.c:85:14: note: create vector_type-pointer variable to type: vector(2) float  vectorizing a pointer ref: _223->x
+nbody.c:85:14: note: created vectp.82_138
+nbody.c:85:14: note: add new stmt: MEM <vector(2) float> [(float *)vectp.82_138] = vect__219.80_139;
+nbody.c:85:14: note: vectorizing stmts using SLP.
+nbody.c:85:14: optimized: basic block part vectorized using 32 byte vectors
+nbody.c:85:14: note: ***** The result for vector mode V32QI would be the same
+BB 7 is always executed in loop 2
+BB 5 is always executed in loop 1
+BB 4 is always executed in loop 1
+BB 6 is always executed in loop 1
+loop 2's coldest_outermost_loop is 2, hotter_than_inner_loop is NULL
+loop 1's coldest_outermost_loop is 1, hotter_than_inner_loop is NULL
+loop 3's coldest_outermost_loop is 1, hotter_than_inner_loop is NULL
+nbody.c:83:21: note: considering unrolling loop 2 at BB 9
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+nbody.c:57:25: note: considering unrolling loop 3 at BB 4
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+nbody.c:49:21: note: considering unrolling loop 1 at BB 6
+BB 5 is always executed in loop 1
+loop 1's coldest_outermost_loop is 1, hotter_than_inner_loop is NULL
+nbody.c:126:25: missed: statement clobbers memory: start_59 = omp_get_wtime ();
+nbody.c:123:21: missed: couldn't vectorize loop
+nbody.c:123:21: missed: not vectorized: control flow in loop.
+nbody.c:92:5: note: vectorized 0 loops in function.
+nbody.c:126:25: missed: statement clobbers memory: start_59 = omp_get_wtime ();
+/usr/include/stdlib.h:495:10: missed: statement clobbers memory: _70 = strtoll (_1, 0B, 10);
+nbody.c:110:19: missed: statement clobbers memory: p_46 = malloc (_2);
+nbody.c:113:3: missed: statement clobbers memory: init (p_46, iftmp.1_38);
+nbody.c:117:3: missed: statement clobbers memory: printf ("\n\x1b[1mTotal memory size:\x1b[0m %llu B, %llu KiB, %llu MiB\n\n", _2, _4, _3);
+nbody.c:120:3: missed: statement clobbers memory: printf ("\x1b[1m%5s %10s %10s %8s\x1b[0m\n", "Step", "Time, s", "Interact/s", "GFLOP/s");
+nbody.c:120:92: missed: statement clobbers memory: fflush (stdout.2_5);
+nbody.c:126:25: missed: statement clobbers memory: start_59 = omp_get_wtime ();
+nbody.c:128:7: missed: statement clobbers memory: move_particles (p_46, 9.99999977648258209228515625e-3, iftmp.1_38);
+nbody.c:130:23: missed: statement clobbers memory: end_62 = omp_get_wtime ();
+nbody.c:149:7: missed: statement clobbers memory: printf ("%5llu %10.3e %10.3e %8.1f %s\n", i_79, _25, _28, _26, iftmp.3_39);
+nbody.c:156:7: missed: statement clobbers memory: fflush (stdout.4_29);
+nbody.c:165:3: missed: statement clobbers memory: __builtin_puts (&"-----------------------------------------------------"[0]);
+nbody.c:166:3: missed: statement clobbers memory: printf ("\x1b[1m%s %4s \x1b[42m%10.1lf +- %.1lf GFLOP/s\x1b[0m\n", "Average performance:", "", rate_52, drate_53);
+nbody.c:168:3: missed: statement clobbers memory: __builtin_puts (&"-----------------------------------------------------"[0]);
+nbody.c:171:3: missed: statement clobbers memory: free (p_46);
+nbody.c:139:48: note: ***** Analysis succeeded with vector mode V4DI
+nbody.c:139:48: note: SLPing BB part
+nbody.c:139:48: note: Costing subgraph: 
+nbody.c:139:48: note: node 0x42c73b8 (max_nunits=2, refcnt=1) vector(2) double
+nbody.c:139:48: note: op template: _9 = _8 * 1.8e+1;
+nbody.c:139:48: note: 	stmt 0 _9 = _8 * 1.8e+1;
+nbody.c:139:48: note: 	stmt 1 _81 = _11 * 2.0e+0;
+nbody.c:139:48: note: 	children 0x42c74b8 0x42c7538
+nbody.c:139:48: note: node (external) 0x42c74b8 (max_nunits=1, refcnt=1) vector(2) double
+nbody.c:139:48: note: 	{ _8, _11 }
+nbody.c:139:48: note: node (constant) 0x42c7538 (max_nunits=1, refcnt=1) vector(2) double
+nbody.c:139:48: note: 	{ 1.8e+1, 2.0e+0 }
+nbody.c:139:48: note: Cost model analysis: 
+nbody.c:139:48: note: Cost model analysis for part in loop 0:
+  Vector cost: 56
+  Scalar cost: 44
+nbody.c:139:48: missed: not vectorized: vectorization is not profitable.
+nbody.c:139:48: note: ***** The result for vector mode V32QI would be the same
+nbody.c:139:48: note: ***** Re-trying analysis with vector mode V16QI
+nbody.c:139:48: note: ***** Analysis succeeded with vector mode V16QI
+nbody.c:139:48: note: SLPing BB part
+nbody.c:139:48: note: Costing subgraph: 
+nbody.c:139:48: note: node 0x42c73b8 (max_nunits=2, refcnt=1) vector(2) double
+nbody.c:139:48: note: op template: _9 = _8 * 1.8e+1;
+nbody.c:139:48: note: 	stmt 0 _9 = _8 * 1.8e+1;
+nbody.c:139:48: note: 	stmt 1 _81 = _11 * 2.0e+0;
+nbody.c:139:48: note: 	children 0x42c74b8 0x42c75b8
+nbody.c:139:48: note: node (external) 0x42c74b8 (max_nunits=1, refcnt=1) vector(2) double
+nbody.c:139:48: note: 	{ _8, _11 }
+nbody.c:139:48: note: node (constant) 0x42c75b8 (max_nunits=1, refcnt=1) vector(2) double
+nbody.c:139:48: note: 	{ 1.8e+1, 2.0e+0 }
+nbody.c:139:48: note: Cost model analysis: 
+nbody.c:139:48: note: Cost model analysis for part in loop 0:
+  Vector cost: 56
+  Scalar cost: 44
+nbody.c:139:48: missed: not vectorized: vectorization is not profitable.
+nbody.c:139:48: note: ***** Re-trying analysis with vector mode V8QI
+nbody.c:145:10: note: ***** Analysis failed with vector mode V8QI
+nbody.c:145:10: note: ***** Re-trying analysis with vector mode V4QI
+nbody.c:145:10: note: ***** Analysis failed with vector mode V4QI
+BB 5 is always executed in loop 1
+loop 1's coldest_outermost_loop is 1, hotter_than_inner_loop is NULL
+nbody.c:123:21: note: considering unrolling loop 1 at BB 8
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations

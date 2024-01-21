@@ -1,0 +1,869 @@
+nbody.c:125:32: optimized:   Inlining atoll/13 into main/24 (always_inline).
+nbody.c:148:9: note: Considering inline candidate move_particles_optimized/23.
+nbody.c:148:9: missed:   will not early inline: main/24->move_particles_optimized/23, call is cold and code would grow at least by 60
+nbody.c:139:5: note: Considering inline candidate init/22.
+nbody.c:139:5: missed:   will not early inline: main/24->init/22, call is cold and code would grow at least by 49
+nbody.c:97:42: missed:   not inlinable: move_particles_optimized._omp_fn.0/26 -> sqrtf/30, function body not available
+nbody.c:88:42: missed:   not inlinable: move_particles_optimized._omp_fn.0/26 -> sqrtf/30, function body not available
+nbody.c:79:42: missed:   not inlinable: move_particles_optimized._omp_fn.0/26 -> sqrtf/30, function body not available
+nbody.c:70:42: missed:   not inlinable: move_particles_optimized._omp_fn.0/26 -> sqrtf/30, function body not available
+nbody.c:61:42: missed:   not inlinable: move_particles_optimized._omp_fn.0/26 -> sqrtf/30, function body not available
+nbody.c:52:42: missed:   not inlinable: move_particles_optimized._omp_fn.0/26 -> sqrtf/30, function body not available
+missed:   not inlinable: move_particles_optimized._omp_fn.0/26 -> __builtin_omp_get_thread_num/29, function body not available
+missed:   not inlinable: move_particles_optimized._omp_fn.0/26 -> __builtin_omp_get_num_threads/28, function body not available
+missed:   not inlinable: move_particles_optimized._omp_fn.0/26 -> __atomic_load_4/27, function body not available
+nbody.c:177:5: missed:   not inlinable: main/24 -> free/39, function body not available
+nbody.c:176:5: missed:   not inlinable: main/24 -> free/39, function body not available
+nbody.c:175:5: missed:   not inlinable: main/24 -> free/39, function body not available
+nbody.c:174:5: missed:   not inlinable: main/24 -> free/39, function body not available
+nbody.c:173:5: missed:   not inlinable: main/24 -> free/39, function body not available
+nbody.c:172:5: missed:   not inlinable: main/24 -> free/39, function body not available
+nbody.c:171:5: missed:   not inlinable: main/24 -> free/39, function body not available
+nbody.c:169:5: missed:   not inlinable: main/24 -> __builtin_puts/38, function body not available
+nbody.c:168:5: missed:   not inlinable: main/24 -> printf/33, function body not available
+nbody.c:167:5: missed:   not inlinable: main/24 -> __builtin_puts/38, function body not available
+nbody.c:165:13: missed:   not inlinable: main/24 -> sqrt/37, function body not available
+nbody.c:161:9: missed:   not inlinable: main/24 -> fflush/35, function body not available
+nbody.c:159:9: missed:   not inlinable: main/24 -> printf/33, function body not available
+nbody.c:149:25: missed:   not inlinable: main/24 -> omp_get_wtime/36, function body not available
+nbody.c:148:9: missed:   not inlinable: main/24 -> move_particles_optimized/23, --param max-inline-insns-auto limit reached
+nbody.c:147:27: missed:   not inlinable: main/24 -> omp_get_wtime/36, function body not available
+nbody.c:144:5: missed:   not inlinable: main/24 -> fflush/35, function body not available
+nbody.c:143:5: missed:   not inlinable: main/24 -> printf/33, function body not available
+nbody.c:142:5: missed:   not inlinable: main/24 -> printf/33, function body not available
+nbody.c:139:5: missed:   not inlinable: main/24 -> init/22, --param max-inline-insns-auto limit reached
+nbody.c:137:15: missed:   not inlinable: main/24 -> aligned_alloc/32, function body not available
+nbody.c:136:15: missed:   not inlinable: main/24 -> aligned_alloc/32, function body not available
+nbody.c:135:15: missed:   not inlinable: main/24 -> aligned_alloc/32, function body not available
+nbody.c:134:14: missed:   not inlinable: main/24 -> aligned_alloc/32, function body not available
+nbody.c:133:14: missed:   not inlinable: main/24 -> aligned_alloc/32, function body not available
+nbody.c:132:14: missed:   not inlinable: main/24 -> aligned_alloc/32, function body not available
+nbody.c:131:30: missed:   not inlinable: main/24 -> aligned_alloc/32, function body not available
+/usr/include/stdlib.h:495:10: missed:   not inlinable: main/24 -> strtoll/40, function body not available
+missed:   not inlinable: move_particles_optimized/23 -> __builtin_GOMP_parallel/31, function body not available
+nbody.c:27:27: missed:   not inlinable: init/22 -> rand/25, function body not available
+nbody.c:26:34: missed:   not inlinable: init/22 -> rand/25, function body not available
+nbody.c:25:27: missed:   not inlinable: init/22 -> rand/25, function body not available
+nbody.c:23:33: missed:   not inlinable: init/22 -> rand/25, function body not available
+nbody.c:22:26: missed:   not inlinable: init/22 -> rand/25, function body not available
+nbody.c:21:33: missed:   not inlinable: init/22 -> rand/25, function body not available
+nbody.c:18:23: missed:   not inlinable: init/22 -> rand/25, function body not available
+nbody.c:17:23: missed:   not inlinable: init/22 -> rand/25, function body not available
+Unit growth for small function inlining: 516->516 (0%)
+
+Inlined 1 calls, eliminated 0 functions
+
+BB 4 is always executed in loop 1
+BB 9 is always executed in loop 2
+loop 1's coldest_outermost_loop is 1, hotter_than_inner_loop is NULL
+loop 2's coldest_outermost_loop is 2, hotter_than_inner_loop is NULL
+nbody.c:106:16: missed: statement clobbers memory: _245 = .ATOMIC_COMPARE_EXCHANGE (_238, _37, _243, 4, 0, 0);
+nbody.c:106:16: missed: couldn't vectorize loop
+nbody.c:37:9: missed: not vectorized: number of iterations cannot be computed.
+nbody.c:48:13: missed: couldn't vectorize loop
+nbody.c:48:35: missed: not vectorized: no vectype for stmt: _64 = *_63;
+ scalar_type: f32
+nbody.c:37:9: note: vectorized 0 loops in function.
+nbody.c:106:16: missed: statement clobbers memory: _245 = .ATOMIC_COMPARE_EXCHANGE (_238, _37, _243, 4, 0, 0);
+nbody.c:37:9: missed: statement clobbers memory: _240 = __atomic_load_4 (_238, 0);
+nbody.c:106:16: missed: statement clobbers memory: _245 = .ATOMIC_COMPARE_EXCHANGE (_238, _37, _243, 4, 0, 0);
+nbody.c:37:9: note: ***** Analysis succeeded with vector mode V4DI
+nbody.c:37:9: note: SLPing BB part
+nbody.c:37:9: note: Costing subgraph: 
+nbody.c:37:9: note: node 0x3cea688 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: *.omp_data_i_43(D).fy = _253;
+nbody.c:37:9: note: 	stmt 0 *.omp_data_i_43(D).fy = _253;
+nbody.c:37:9: note: 	stmt 1 *.omp_data_i_43(D).fz = _261;
+nbody.c:37:9: note: 	children 0x3cea708
+nbody.c:37:9: note: node 0x3cea708 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: _253 = fy5_private_34 + _270;
+nbody.c:37:9: note: 	stmt 0 _253 = fy5_private_34 + _270;
+nbody.c:37:9: note: 	stmt 1 _261 = fz5_private_36 + _266;
+nbody.c:37:9: note: 	children 0x3cea788 0x3ceae08
+nbody.c:37:9: note: node 0x3cea788 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: fy5_private_34 = PHI <0.0(2), fy5_private_865(10), 0.0(7)>
+nbody.c:37:9: note: 	stmt 0 fy5_private_34 = PHI <0.0(2), fy5_private_865(10), 0.0(7)>
+nbody.c:37:9: note: 	stmt 1 fz5_private_36 = PHI <0.0(2), fz5_private_864(10), 0.0(7)>
+nbody.c:37:9: note: 	children 0x3cea808 0x3cea888 0x3cead88
+nbody.c:37:9: note: node (constant) 0x3cea808 (max_nunits=1, refcnt=1) vector(2) float
+nbody.c:37:9: note: 	{ 0.0, 0.0 }
+nbody.c:37:9: note: node 0x3cea888 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: fy5_private_865 = PHI <fy5_private_229(9)>
+nbody.c:37:9: note: 	stmt 0 fy5_private_865 = PHI <fy5_private_229(9)>
+nbody.c:37:9: note: 	stmt 1 fz5_private_864 = PHI <fz5_private_231(9)>
+nbody.c:37:9: note: 	children 0x3cea908
+nbody.c:37:9: note: node 0x3cea908 (max_nunits=2, refcnt=2) vector(2) float
+nbody.c:37:9: note: op template: fy5_private_229 = fy5_private_33 + _228;
+nbody.c:37:9: note: 	stmt 0 fy5_private_229 = fy5_private_33 + _228;
+nbody.c:37:9: note: 	stmt 1 fz5_private_231 = fz5_private_35 + _230;
+nbody.c:37:9: note: 	children 0x3cea988 0x3ceaa88
+nbody.c:37:9: note: node 0x3cea988 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: fy5_private_33 = PHI <0.0(8), fy5_private_229(13)>
+nbody.c:37:9: note: 	stmt 0 fy5_private_33 = PHI <0.0(8), fy5_private_229(13)>
+nbody.c:37:9: note: 	stmt 1 fz5_private_35 = PHI <0.0(8), fz5_private_231(13)>
+nbody.c:37:9: note: 	children 0x3ceaa08 0x3cea908
+nbody.c:37:9: note: node (constant) 0x3ceaa08 (max_nunits=1, refcnt=1) vector(2) float
+nbody.c:37:9: note: 	{ 0.0, 0.0 }
+nbody.c:37:9: note: node 0x3ceaa88 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: _228 = dy5_212 * d_3_over_2_5_225;
+nbody.c:37:9: note: 	stmt 0 _228 = dy5_212 * d_3_over_2_5_225;
+nbody.c:37:9: note: 	stmt 1 _230 = dz5_215 * d_3_over_2_5_225;
+nbody.c:37:9: note: 	children 0x3cead08 0x3ceac08
+nbody.c:37:9: note: node (external) 0x3cead08 (max_nunits=1, refcnt=1) const vector(2) float
+nbody.c:37:9: note: 	{ dy5_212, dz5_215 }
+nbody.c:37:9: note: node (external) 0x3ceac08 (max_nunits=1, refcnt=1) const vector(2) float
+nbody.c:37:9: note: 	{ d_3_over_2_5_225, d_3_over_2_5_225 }
+nbody.c:37:9: note: node (constant) 0x3cead88 (max_nunits=1, refcnt=1) vector(2) float
+nbody.c:37:9: note: 	{ 0.0, 0.0 }
+nbody.c:37:9: note: node 0x3ceae08 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: _270 = fy4_private_28 + _269;
+nbody.c:37:9: note: 	stmt 0 _270 = fy4_private_28 + _269;
+nbody.c:37:9: note: 	stmt 1 _266 = fz4_private_30 + _265;
+nbody.c:37:9: note: 	children 0x3ceae88 0x3ceb488
+nbody.c:37:9: note: node 0x3ceae88 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: fy4_private_28 = PHI <0.0(2), fy4_private_868(10), 0.0(7)>
+nbody.c:37:9: note: 	stmt 0 fy4_private_28 = PHI <0.0(2), fy4_private_868(10), 0.0(7)>
+nbody.c:37:9: note: 	stmt 1 fz4_private_30 = PHI <0.0(2), fz4_private_866(10), 0.0(7)>
+nbody.c:37:9: note: 	children 0x3ceaf08 0x3ceaf88 0x3ceb408
+nbody.c:37:9: note: node (constant) 0x3ceaf08 (max_nunits=1, refcnt=1) vector(2) float
+nbody.c:37:9: note: 	{ 0.0, 0.0 }
+nbody.c:37:9: note: node 0x3ceaf88 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: fy4_private_868 = PHI <fy4_private_202(9)>
+nbody.c:37:9: note: 	stmt 0 fy4_private_868 = PHI <fy4_private_202(9)>
+nbody.c:37:9: note: 	stmt 1 fz4_private_866 = PHI <fz4_private_204(9)>
+nbody.c:37:9: note: 	children 0x3ceb008
+nbody.c:37:9: note: node 0x3ceb008 (max_nunits=2, refcnt=2) vector(2) float
+nbody.c:37:9: note: op template: fy4_private_202 = fy4_private_27 + _201;
+nbody.c:37:9: note: 	stmt 0 fy4_private_202 = fy4_private_27 + _201;
+nbody.c:37:9: note: 	stmt 1 fz4_private_204 = fz4_private_29 + _203;
+nbody.c:37:9: note: 	children 0x3ceb088 0x3ceb188
+nbody.c:37:9: note: node 0x3ceb088 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: fy4_private_27 = PHI <0.0(8), fy4_private_202(13)>
+nbody.c:37:9: note: 	stmt 0 fy4_private_27 = PHI <0.0(8), fy4_private_202(13)>
+nbody.c:37:9: note: 	stmt 1 fz4_private_29 = PHI <0.0(8), fz4_private_204(13)>
+nbody.c:37:9: note: 	children 0x3ceb108 0x3ceb008
+nbody.c:37:9: note: node (constant) 0x3ceb108 (max_nunits=1, refcnt=1) vector(2) float
+nbody.c:37:9: note: 	{ 0.0, 0.0 }
+nbody.c:37:9: note: node 0x3ceb188 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: _201 = dy4_185 * d_3_over_2_4_198;
+nbody.c:37:9: note: 	stmt 0 _201 = dy4_185 * d_3_over_2_4_198;
+nbody.c:37:9: note: 	stmt 1 _203 = dz4_188 * d_3_over_2_4_198;
+nbody.c:37:9: note: 	children 0x3ceb388 0x3ceb308
+nbody.c:37:9: note: node (external) 0x3ceb388 (max_nunits=1, refcnt=1) const vector(2) float
+nbody.c:37:9: note: 	{ dy4_185, dz4_188 }
+nbody.c:37:9: note: node (external) 0x3ceb308 (max_nunits=1, refcnt=1) const vector(2) float
+nbody.c:37:9: note: 	{ d_3_over_2_4_198, d_3_over_2_4_198 }
+nbody.c:37:9: note: node (constant) 0x3ceb408 (max_nunits=1, refcnt=1) vector(2) float
+nbody.c:37:9: note: 	{ 0.0, 0.0 }
+nbody.c:37:9: note: node 0x3ceb488 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: _269 = fy3_private_22 + _268;
+nbody.c:37:9: note: 	stmt 0 _269 = fy3_private_22 + _268;
+nbody.c:37:9: note: 	stmt 1 _265 = fz3_private_24 + _264;
+nbody.c:37:9: note: 	children 0x3ceb508 0x3cebb08
+nbody.c:37:9: note: node 0x3ceb508 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: fy3_private_22 = PHI <0.0(2), fy3_private_871(10), 0.0(7)>
+nbody.c:37:9: note: 	stmt 0 fy3_private_22 = PHI <0.0(2), fy3_private_871(10), 0.0(7)>
+nbody.c:37:9: note: 	stmt 1 fz3_private_24 = PHI <0.0(2), fz3_private_870(10), 0.0(7)>
+nbody.c:37:9: note: 	children 0x3ceb588 0x3ceb608 0x3ceba88
+nbody.c:37:9: note: node (constant) 0x3ceb588 (max_nunits=1, refcnt=1) vector(2) float
+nbody.c:37:9: note: 	{ 0.0, 0.0 }
+nbody.c:37:9: note: node 0x3ceb608 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: fy3_private_871 = PHI <fy3_private_175(9)>
+nbody.c:37:9: note: 	stmt 0 fy3_private_871 = PHI <fy3_private_175(9)>
+nbody.c:37:9: note: 	stmt 1 fz3_private_870 = PHI <fz3_private_177(9)>
+nbody.c:37:9: note: 	children 0x3ceb688
+nbody.c:37:9: note: node 0x3ceb688 (max_nunits=2, refcnt=2) vector(2) float
+nbody.c:37:9: note: op template: fy3_private_175 = fy3_private_21 + _174;
+nbody.c:37:9: note: 	stmt 0 fy3_private_175 = fy3_private_21 + _174;
+nbody.c:37:9: note: 	stmt 1 fz3_private_177 = fz3_private_23 + _176;
+nbody.c:37:9: note: 	children 0x3ceb708 0x3ceb808
+nbody.c:37:9: note: node 0x3ceb708 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: fy3_private_21 = PHI <0.0(8), fy3_private_175(13)>
+nbody.c:37:9: note: 	stmt 0 fy3_private_21 = PHI <0.0(8), fy3_private_175(13)>
+nbody.c:37:9: note: 	stmt 1 fz3_private_23 = PHI <0.0(8), fz3_private_177(13)>
+nbody.c:37:9: note: 	children 0x3ceb788 0x3ceb688
+nbody.c:37:9: note: node (constant) 0x3ceb788 (max_nunits=1, refcnt=1) vector(2) float
+nbody.c:37:9: note: 	{ 0.0, 0.0 }
+nbody.c:37:9: note: node 0x3ceb808 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: _174 = dy3_158 * d_3_over_2_3_171;
+nbody.c:37:9: note: 	stmt 0 _174 = dy3_158 * d_3_over_2_3_171;
+nbody.c:37:9: note: 	stmt 1 _176 = dz3_161 * d_3_over_2_3_171;
+nbody.c:37:9: note: 	children 0x3ceba08 0x3ceb988
+nbody.c:37:9: note: node (external) 0x3ceba08 (max_nunits=1, refcnt=1) const vector(2) float
+nbody.c:37:9: note: 	{ dy3_158, dz3_161 }
+nbody.c:37:9: note: node (external) 0x3ceb988 (max_nunits=1, refcnt=1) const vector(2) float
+nbody.c:37:9: note: 	{ d_3_over_2_3_171, d_3_over_2_3_171 }
+nbody.c:37:9: note: node (constant) 0x3ceba88 (max_nunits=1, refcnt=1) vector(2) float
+nbody.c:37:9: note: 	{ 0.0, 0.0 }
+nbody.c:37:9: note: node 0x3cebb08 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: _268 = fy2_private_16 + _267;
+nbody.c:37:9: note: 	stmt 0 _268 = fy2_private_16 + _267;
+nbody.c:37:9: note: 	stmt 1 _264 = fz2_private_18 + _263;
+nbody.c:37:9: note: 	children 0x3cebb88 0x3cec188
+nbody.c:37:9: note: node 0x3cebb88 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: fy2_private_16 = PHI <0.0(2), fy2_private_4(10), 0.0(7)>
+nbody.c:37:9: note: 	stmt 0 fy2_private_16 = PHI <0.0(2), fy2_private_4(10), 0.0(7)>
+nbody.c:37:9: note: 	stmt 1 fz2_private_18 = PHI <0.0(2), fz2_private_2(10), 0.0(7)>
+nbody.c:37:9: note: 	children 0x3cebc08 0x3cebc88 0x3cec108
+nbody.c:37:9: note: node (constant) 0x3cebc08 (max_nunits=1, refcnt=1) vector(2) float
+nbody.c:37:9: note: 	{ 0.0, 0.0 }
+nbody.c:37:9: note: node 0x3cebc88 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: fy2_private_4 = PHI <fy2_private_148(9)>
+nbody.c:37:9: note: 	stmt 0 fy2_private_4 = PHI <fy2_private_148(9)>
+nbody.c:37:9: note: 	stmt 1 fz2_private_2 = PHI <fz2_private_150(9)>
+nbody.c:37:9: note: 	children 0x3cebd08
+nbody.c:37:9: note: node 0x3cebd08 (max_nunits=2, refcnt=2) vector(2) float
+nbody.c:37:9: note: op template: fy2_private_148 = fy2_private_15 + _147;
+nbody.c:37:9: note: 	stmt 0 fy2_private_148 = fy2_private_15 + _147;
+nbody.c:37:9: note: 	stmt 1 fz2_private_150 = fz2_private_17 + _149;
+nbody.c:37:9: note: 	children 0x3cebd88 0x3cebe88
+nbody.c:37:9: note: node 0x3cebd88 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: fy2_private_15 = PHI <0.0(8), fy2_private_148(13)>
+nbody.c:37:9: note: 	stmt 0 fy2_private_15 = PHI <0.0(8), fy2_private_148(13)>
+nbody.c:37:9: note: 	stmt 1 fz2_private_17 = PHI <0.0(8), fz2_private_150(13)>
+nbody.c:37:9: note: 	children 0x3cebe08 0x3cebd08
+nbody.c:37:9: note: node (constant) 0x3cebe08 (max_nunits=1, refcnt=1) vector(2) float
+nbody.c:37:9: note: 	{ 0.0, 0.0 }
+nbody.c:37:9: note: node 0x3cebe88 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: _147 = dy2_131 * d_3_over_2_2_144;
+nbody.c:37:9: note: 	stmt 0 _147 = dy2_131 * d_3_over_2_2_144;
+nbody.c:37:9: note: 	stmt 1 _149 = dz2_134 * d_3_over_2_2_144;
+nbody.c:37:9: note: 	children 0x3cec088 0x3cec008
+nbody.c:37:9: note: node (external) 0x3cec088 (max_nunits=1, refcnt=1) const vector(2) float
+nbody.c:37:9: note: 	{ dy2_131, dz2_134 }
+nbody.c:37:9: note: node (external) 0x3cec008 (max_nunits=1, refcnt=1) const vector(2) float
+nbody.c:37:9: note: 	{ d_3_over_2_2_144, d_3_over_2_2_144 }
+nbody.c:37:9: note: node (constant) 0x3cec108 (max_nunits=1, refcnt=1) vector(2) float
+nbody.c:37:9: note: 	{ 0.0, 0.0 }
+nbody.c:37:9: note: node 0x3cec188 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: _267 = _252 + prephitmp_884;
+nbody.c:37:9: note: 	stmt 0 _267 = _252 + prephitmp_884;
+nbody.c:37:9: note: 	stmt 1 _263 = _260 + prephitmp_886;
+nbody.c:37:9: note: 	children 0x3cec208 0x3cec288
+nbody.c:37:9: note: node 0x3cec208 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: _252 = *.omp_data_i_43(D).fy;
+nbody.c:37:9: note: 	stmt 0 _252 = *.omp_data_i_43(D).fy;
+nbody.c:37:9: note: 	stmt 1 _260 = *.omp_data_i_43(D).fz;
+nbody.c:37:9: note: node 0x3cec288 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: prephitmp_884 = PHI <0.0(2), _883(10), 0.0(7)>
+nbody.c:37:9: note: 	stmt 0 prephitmp_884 = PHI <0.0(2), _883(10), 0.0(7)>
+nbody.c:37:9: note: 	stmt 1 prephitmp_886 = PHI <0.0(2), _885(10), 0.0(7)>
+nbody.c:37:9: note: 	children 0x3cec308 0x3cec388 0x3cecd08
+nbody.c:37:9: note: node (constant) 0x3cec308 (max_nunits=1, refcnt=1) vector(2) float
+nbody.c:37:9: note: 	{ 0.0, 0.0 }
+nbody.c:37:9: note: node 0x3cec388 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: _883 = fy0_private_20 + fy1_private_10;
+nbody.c:37:9: note: 	stmt 0 _883 = fy0_private_20 + fy1_private_10;
+nbody.c:37:9: note: 	stmt 1 _885 = fz0_private_14 + fz1_private_8;
+nbody.c:37:9: note: 	children 0x3cec408 0x3cec888
+nbody.c:37:9: note: node 0x3cec408 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: fy0_private_20 = PHI <fy0_private_94(9)>
+nbody.c:37:9: note: 	stmt 0 fy0_private_20 = PHI <fy0_private_94(9)>
+nbody.c:37:9: note: 	stmt 1 fz0_private_14 = PHI <fz0_private_96(9)>
+nbody.c:37:9: note: 	children 0x3cec488
+nbody.c:37:9: note: node 0x3cec488 (max_nunits=2, refcnt=2) vector(2) float
+nbody.c:37:9: note: op template: fy0_private_94 = fy0_private_3 + _93;
+nbody.c:37:9: note: 	stmt 0 fy0_private_94 = fy0_private_3 + _93;
+nbody.c:37:9: note: 	stmt 1 fz0_private_96 = fz0_private_5 + _95;
+nbody.c:37:9: note: 	children 0x3cec508 0x3cec608
+nbody.c:37:9: note: node 0x3cec508 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: fy0_private_3 = PHI <0.0(8), fy0_private_94(13)>
+nbody.c:37:9: note: 	stmt 0 fy0_private_3 = PHI <0.0(8), fy0_private_94(13)>
+nbody.c:37:9: note: 	stmt 1 fz0_private_5 = PHI <0.0(8), fz0_private_96(13)>
+nbody.c:37:9: note: 	children 0x3cec588 0x3cec488
+nbody.c:37:9: note: node (constant) 0x3cec588 (max_nunits=1, refcnt=1) vector(2) float
+nbody.c:37:9: note: 	{ 0.0, 0.0 }
+nbody.c:37:9: note: node 0x3cec608 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: _93 = dy0_74 * d_3_over_2_0_90;
+nbody.c:37:9: note: 	stmt 0 _93 = dy0_74 * d_3_over_2_0_90;
+nbody.c:37:9: note: 	stmt 1 _95 = dz0_80 * d_3_over_2_0_90;
+nbody.c:37:9: note: 	children 0x3cec808 0x3cec788
+nbody.c:37:9: note: node (external) 0x3cec808 (max_nunits=1, refcnt=1) const vector(2) float
+nbody.c:37:9: note: 	{ dy0_74, dz0_80 }
+nbody.c:37:9: note: node (external) 0x3cec788 (max_nunits=1, refcnt=1) const vector(2) float
+nbody.c:37:9: note: 	{ d_3_over_2_0_90, d_3_over_2_0_90 }
+nbody.c:37:9: note: node 0x3cec888 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: fy1_private_10 = PHI <fy1_private_121(9)>
+nbody.c:37:9: note: 	stmt 0 fy1_private_10 = PHI <fy1_private_121(9)>
+nbody.c:37:9: note: 	stmt 1 fz1_private_8 = PHI <fz1_private_123(9)>
+nbody.c:37:9: note: 	children 0x3cec908
+nbody.c:37:9: note: node 0x3cec908 (max_nunits=2, refcnt=2) vector(2) float
+nbody.c:37:9: note: op template: fy1_private_121 = fy1_private_9 + _120;
+nbody.c:37:9: note: 	stmt 0 fy1_private_121 = fy1_private_9 + _120;
+nbody.c:37:9: note: 	stmt 1 fz1_private_123 = fz1_private_11 + _122;
+nbody.c:37:9: note: 	children 0x3cec988 0x3ceca88
+nbody.c:37:9: note: node 0x3cec988 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: fy1_private_9 = PHI <0.0(8), fy1_private_121(13)>
+nbody.c:37:9: note: 	stmt 0 fy1_private_9 = PHI <0.0(8), fy1_private_121(13)>
+nbody.c:37:9: note: 	stmt 1 fz1_private_11 = PHI <0.0(8), fz1_private_123(13)>
+nbody.c:37:9: note: 	children 0x3ceca08 0x3cec908
+nbody.c:37:9: note: node (constant) 0x3ceca08 (max_nunits=1, refcnt=1) vector(2) float
+nbody.c:37:9: note: 	{ 0.0, 0.0 }
+nbody.c:37:9: note: node 0x3ceca88 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: _120 = dy1_104 * d_3_over_2_1_117;
+nbody.c:37:9: note: 	stmt 0 _120 = dy1_104 * d_3_over_2_1_117;
+nbody.c:37:9: note: 	stmt 1 _122 = dz1_107 * d_3_over_2_1_117;
+nbody.c:37:9: note: 	children 0x3cecc88 0x3cecc08
+nbody.c:37:9: note: node (external) 0x3cecc88 (max_nunits=1, refcnt=1) const vector(2) float
+nbody.c:37:9: note: 	{ dy1_104, dz1_107 }
+nbody.c:37:9: note: node (external) 0x3cecc08 (max_nunits=1, refcnt=1) const vector(2) float
+nbody.c:37:9: note: 	{ d_3_over_2_1_117, d_3_over_2_1_117 }
+nbody.c:37:9: note: node (constant) 0x3cecd08 (max_nunits=1, refcnt=1) vector(2) float
+nbody.c:37:9: note: 	{ 0.0, 0.0 }
+nbody.c:37:9: note: Cost model analysis: 
+nbody.c:37:9: note: Cost model analysis for part in loop 0:
+  Vector cost: 276
+  Scalar cost: 312
+nbody.c:37:9: note: Cost model analysis for part in loop 2:
+  Vector cost: 360
+  Scalar cost: 480
+nbody.c:37:9: note: Basic block will be vectorized using SLP
+nbody.c:37:9: note: Vectorizing SLP tree:
+nbody.c:37:9: note: node 0x3cea688 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: *.omp_data_i_43(D).fy = _253;
+nbody.c:37:9: note: 	stmt 0 *.omp_data_i_43(D).fy = _253;
+nbody.c:37:9: note: 	stmt 1 *.omp_data_i_43(D).fz = _261;
+nbody.c:37:9: note: 	children 0x3cea708
+nbody.c:37:9: note: node 0x3cea708 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: _253 = fy5_private_34 + _270;
+nbody.c:37:9: note: 	stmt 0 _253 = fy5_private_34 + _270;
+nbody.c:37:9: note: 	stmt 1 _261 = fz5_private_36 + _266;
+nbody.c:37:9: note: 	children 0x3cea788 0x3ceae08
+nbody.c:37:9: note: node 0x3cea788 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: fy5_private_34 = PHI <0.0(2), fy5_private_865(10), 0.0(7)>
+nbody.c:37:9: note: 	stmt 0 fy5_private_34 = PHI <0.0(2), fy5_private_865(10), 0.0(7)>
+nbody.c:37:9: note: 	stmt 1 fz5_private_36 = PHI <0.0(2), fz5_private_864(10), 0.0(7)>
+nbody.c:37:9: note: 	children 0x3cea808 0x3cea888 0x3cead88
+nbody.c:37:9: note: node (constant) 0x3cea808 (max_nunits=1, refcnt=1) vector(2) float
+nbody.c:37:9: note: 	{ 0.0, 0.0 }
+nbody.c:37:9: note: node 0x3cea888 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: fy5_private_865 = PHI <fy5_private_229(9)>
+nbody.c:37:9: note: 	stmt 0 fy5_private_865 = PHI <fy5_private_229(9)>
+nbody.c:37:9: note: 	stmt 1 fz5_private_864 = PHI <fz5_private_231(9)>
+nbody.c:37:9: note: 	children 0x3cea908
+nbody.c:37:9: note: node 0x3cea908 (max_nunits=2, refcnt=2) vector(2) float
+nbody.c:37:9: note: op template: fy5_private_229 = fy5_private_33 + _228;
+nbody.c:37:9: note: 	stmt 0 fy5_private_229 = fy5_private_33 + _228;
+nbody.c:37:9: note: 	stmt 1 fz5_private_231 = fz5_private_35 + _230;
+nbody.c:37:9: note: 	children 0x3cea988 0x3ceaa88
+nbody.c:37:9: note: node 0x3cea988 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: fy5_private_33 = PHI <0.0(8), fy5_private_229(13)>
+nbody.c:37:9: note: 	stmt 0 fy5_private_33 = PHI <0.0(8), fy5_private_229(13)>
+nbody.c:37:9: note: 	stmt 1 fz5_private_35 = PHI <0.0(8), fz5_private_231(13)>
+nbody.c:37:9: note: 	children 0x3ceaa08 0x3cea908
+nbody.c:37:9: note: node (constant) 0x3ceaa08 (max_nunits=1, refcnt=1) vector(2) float
+nbody.c:37:9: note: 	{ 0.0, 0.0 }
+nbody.c:37:9: note: node 0x3ceaa88 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: _228 = dy5_212 * d_3_over_2_5_225;
+nbody.c:37:9: note: 	stmt 0 _228 = dy5_212 * d_3_over_2_5_225;
+nbody.c:37:9: note: 	stmt 1 _230 = dz5_215 * d_3_over_2_5_225;
+nbody.c:37:9: note: 	children 0x3cead08 0x3ceac08
+nbody.c:37:9: note: node (external) 0x3cead08 (max_nunits=1, refcnt=1) const vector(2) float
+nbody.c:37:9: note: 	{ dy5_212, dz5_215 }
+nbody.c:37:9: note: node (external) 0x3ceac08 (max_nunits=1, refcnt=1) const vector(2) float
+nbody.c:37:9: note: 	{ d_3_over_2_5_225, d_3_over_2_5_225 }
+nbody.c:37:9: note: node (constant) 0x3cead88 (max_nunits=1, refcnt=1) vector(2) float
+nbody.c:37:9: note: 	{ 0.0, 0.0 }
+nbody.c:37:9: note: node 0x3ceae08 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: _270 = fy4_private_28 + _269;
+nbody.c:37:9: note: 	stmt 0 _270 = fy4_private_28 + _269;
+nbody.c:37:9: note: 	stmt 1 _266 = fz4_private_30 + _265;
+nbody.c:37:9: note: 	children 0x3ceae88 0x3ceb488
+nbody.c:37:9: note: node 0x3ceae88 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: fy4_private_28 = PHI <0.0(2), fy4_private_868(10), 0.0(7)>
+nbody.c:37:9: note: 	stmt 0 fy4_private_28 = PHI <0.0(2), fy4_private_868(10), 0.0(7)>
+nbody.c:37:9: note: 	stmt 1 fz4_private_30 = PHI <0.0(2), fz4_private_866(10), 0.0(7)>
+nbody.c:37:9: note: 	children 0x3ceaf08 0x3ceaf88 0x3ceb408
+nbody.c:37:9: note: node (constant) 0x3ceaf08 (max_nunits=1, refcnt=1) vector(2) float
+nbody.c:37:9: note: 	{ 0.0, 0.0 }
+nbody.c:37:9: note: node 0x3ceaf88 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: fy4_private_868 = PHI <fy4_private_202(9)>
+nbody.c:37:9: note: 	stmt 0 fy4_private_868 = PHI <fy4_private_202(9)>
+nbody.c:37:9: note: 	stmt 1 fz4_private_866 = PHI <fz4_private_204(9)>
+nbody.c:37:9: note: 	children 0x3ceb008
+nbody.c:37:9: note: node 0x3ceb008 (max_nunits=2, refcnt=2) vector(2) float
+nbody.c:37:9: note: op template: fy4_private_202 = fy4_private_27 + _201;
+nbody.c:37:9: note: 	stmt 0 fy4_private_202 = fy4_private_27 + _201;
+nbody.c:37:9: note: 	stmt 1 fz4_private_204 = fz4_private_29 + _203;
+nbody.c:37:9: note: 	children 0x3ceb088 0x3ceb188
+nbody.c:37:9: note: node 0x3ceb088 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: fy4_private_27 = PHI <0.0(8), fy4_private_202(13)>
+nbody.c:37:9: note: 	stmt 0 fy4_private_27 = PHI <0.0(8), fy4_private_202(13)>
+nbody.c:37:9: note: 	stmt 1 fz4_private_29 = PHI <0.0(8), fz4_private_204(13)>
+nbody.c:37:9: note: 	children 0x3ceb108 0x3ceb008
+nbody.c:37:9: note: node (constant) 0x3ceb108 (max_nunits=1, refcnt=1) vector(2) float
+nbody.c:37:9: note: 	{ 0.0, 0.0 }
+nbody.c:37:9: note: node 0x3ceb188 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: _201 = dy4_185 * d_3_over_2_4_198;
+nbody.c:37:9: note: 	stmt 0 _201 = dy4_185 * d_3_over_2_4_198;
+nbody.c:37:9: note: 	stmt 1 _203 = dz4_188 * d_3_over_2_4_198;
+nbody.c:37:9: note: 	children 0x3ceb388 0x3ceb308
+nbody.c:37:9: note: node (external) 0x3ceb388 (max_nunits=1, refcnt=1) const vector(2) float
+nbody.c:37:9: note: 	{ dy4_185, dz4_188 }
+nbody.c:37:9: note: node (external) 0x3ceb308 (max_nunits=1, refcnt=1) const vector(2) float
+nbody.c:37:9: note: 	{ d_3_over_2_4_198, d_3_over_2_4_198 }
+nbody.c:37:9: note: node (constant) 0x3ceb408 (max_nunits=1, refcnt=1) vector(2) float
+nbody.c:37:9: note: 	{ 0.0, 0.0 }
+nbody.c:37:9: note: node 0x3ceb488 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: _269 = fy3_private_22 + _268;
+nbody.c:37:9: note: 	stmt 0 _269 = fy3_private_22 + _268;
+nbody.c:37:9: note: 	stmt 1 _265 = fz3_private_24 + _264;
+nbody.c:37:9: note: 	children 0x3ceb508 0x3cebb08
+nbody.c:37:9: note: node 0x3ceb508 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: fy3_private_22 = PHI <0.0(2), fy3_private_871(10), 0.0(7)>
+nbody.c:37:9: note: 	stmt 0 fy3_private_22 = PHI <0.0(2), fy3_private_871(10), 0.0(7)>
+nbody.c:37:9: note: 	stmt 1 fz3_private_24 = PHI <0.0(2), fz3_private_870(10), 0.0(7)>
+nbody.c:37:9: note: 	children 0x3ceb588 0x3ceb608 0x3ceba88
+nbody.c:37:9: note: node (constant) 0x3ceb588 (max_nunits=1, refcnt=1) vector(2) float
+nbody.c:37:9: note: 	{ 0.0, 0.0 }
+nbody.c:37:9: note: node 0x3ceb608 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: fy3_private_871 = PHI <fy3_private_175(9)>
+nbody.c:37:9: note: 	stmt 0 fy3_private_871 = PHI <fy3_private_175(9)>
+nbody.c:37:9: note: 	stmt 1 fz3_private_870 = PHI <fz3_private_177(9)>
+nbody.c:37:9: note: 	children 0x3ceb688
+nbody.c:37:9: note: node 0x3ceb688 (max_nunits=2, refcnt=2) vector(2) float
+nbody.c:37:9: note: op template: fy3_private_175 = fy3_private_21 + _174;
+nbody.c:37:9: note: 	stmt 0 fy3_private_175 = fy3_private_21 + _174;
+nbody.c:37:9: note: 	stmt 1 fz3_private_177 = fz3_private_23 + _176;
+nbody.c:37:9: note: 	children 0x3ceb708 0x3ceb808
+nbody.c:37:9: note: node 0x3ceb708 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: fy3_private_21 = PHI <0.0(8), fy3_private_175(13)>
+nbody.c:37:9: note: 	stmt 0 fy3_private_21 = PHI <0.0(8), fy3_private_175(13)>
+nbody.c:37:9: note: 	stmt 1 fz3_private_23 = PHI <0.0(8), fz3_private_177(13)>
+nbody.c:37:9: note: 	children 0x3ceb788 0x3ceb688
+nbody.c:37:9: note: node (constant) 0x3ceb788 (max_nunits=1, refcnt=1) vector(2) float
+nbody.c:37:9: note: 	{ 0.0, 0.0 }
+nbody.c:37:9: note: node 0x3ceb808 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: _174 = dy3_158 * d_3_over_2_3_171;
+nbody.c:37:9: note: 	stmt 0 _174 = dy3_158 * d_3_over_2_3_171;
+nbody.c:37:9: note: 	stmt 1 _176 = dz3_161 * d_3_over_2_3_171;
+nbody.c:37:9: note: 	children 0x3ceba08 0x3ceb988
+nbody.c:37:9: note: node (external) 0x3ceba08 (max_nunits=1, refcnt=1) const vector(2) float
+nbody.c:37:9: note: 	{ dy3_158, dz3_161 }
+nbody.c:37:9: note: node (external) 0x3ceb988 (max_nunits=1, refcnt=1) const vector(2) float
+nbody.c:37:9: note: 	{ d_3_over_2_3_171, d_3_over_2_3_171 }
+nbody.c:37:9: note: node (constant) 0x3ceba88 (max_nunits=1, refcnt=1) vector(2) float
+nbody.c:37:9: note: 	{ 0.0, 0.0 }
+nbody.c:37:9: note: node 0x3cebb08 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: _268 = fy2_private_16 + _267;
+nbody.c:37:9: note: 	stmt 0 _268 = fy2_private_16 + _267;
+nbody.c:37:9: note: 	stmt 1 _264 = fz2_private_18 + _263;
+nbody.c:37:9: note: 	children 0x3cebb88 0x3cec188
+nbody.c:37:9: note: node 0x3cebb88 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: fy2_private_16 = PHI <0.0(2), fy2_private_4(10), 0.0(7)>
+nbody.c:37:9: note: 	stmt 0 fy2_private_16 = PHI <0.0(2), fy2_private_4(10), 0.0(7)>
+nbody.c:37:9: note: 	stmt 1 fz2_private_18 = PHI <0.0(2), fz2_private_2(10), 0.0(7)>
+nbody.c:37:9: note: 	children 0x3cebc08 0x3cebc88 0x3cec108
+nbody.c:37:9: note: node (constant) 0x3cebc08 (max_nunits=1, refcnt=1) vector(2) float
+nbody.c:37:9: note: 	{ 0.0, 0.0 }
+nbody.c:37:9: note: node 0x3cebc88 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: fy2_private_4 = PHI <fy2_private_148(9)>
+nbody.c:37:9: note: 	stmt 0 fy2_private_4 = PHI <fy2_private_148(9)>
+nbody.c:37:9: note: 	stmt 1 fz2_private_2 = PHI <fz2_private_150(9)>
+nbody.c:37:9: note: 	children 0x3cebd08
+nbody.c:37:9: note: node 0x3cebd08 (max_nunits=2, refcnt=2) vector(2) float
+nbody.c:37:9: note: op template: fy2_private_148 = fy2_private_15 + _147;
+nbody.c:37:9: note: 	stmt 0 fy2_private_148 = fy2_private_15 + _147;
+nbody.c:37:9: note: 	stmt 1 fz2_private_150 = fz2_private_17 + _149;
+nbody.c:37:9: note: 	children 0x3cebd88 0x3cebe88
+nbody.c:37:9: note: node 0x3cebd88 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: fy2_private_15 = PHI <0.0(8), fy2_private_148(13)>
+nbody.c:37:9: note: 	stmt 0 fy2_private_15 = PHI <0.0(8), fy2_private_148(13)>
+nbody.c:37:9: note: 	stmt 1 fz2_private_17 = PHI <0.0(8), fz2_private_150(13)>
+nbody.c:37:9: note: 	children 0x3cebe08 0x3cebd08
+nbody.c:37:9: note: node (constant) 0x3cebe08 (max_nunits=1, refcnt=1) vector(2) float
+nbody.c:37:9: note: 	{ 0.0, 0.0 }
+nbody.c:37:9: note: node 0x3cebe88 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: _147 = dy2_131 * d_3_over_2_2_144;
+nbody.c:37:9: note: 	stmt 0 _147 = dy2_131 * d_3_over_2_2_144;
+nbody.c:37:9: note: 	stmt 1 _149 = dz2_134 * d_3_over_2_2_144;
+nbody.c:37:9: note: 	children 0x3cec088 0x3cec008
+nbody.c:37:9: note: node (external) 0x3cec088 (max_nunits=1, refcnt=1) const vector(2) float
+nbody.c:37:9: note: 	{ dy2_131, dz2_134 }
+nbody.c:37:9: note: node (external) 0x3cec008 (max_nunits=1, refcnt=1) const vector(2) float
+nbody.c:37:9: note: 	{ d_3_over_2_2_144, d_3_over_2_2_144 }
+nbody.c:37:9: note: node (constant) 0x3cec108 (max_nunits=1, refcnt=1) vector(2) float
+nbody.c:37:9: note: 	{ 0.0, 0.0 }
+nbody.c:37:9: note: node 0x3cec188 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: _267 = _252 + prephitmp_884;
+nbody.c:37:9: note: 	stmt 0 _267 = _252 + prephitmp_884;
+nbody.c:37:9: note: 	stmt 1 _263 = _260 + prephitmp_886;
+nbody.c:37:9: note: 	children 0x3cec208 0x3cec288
+nbody.c:37:9: note: node 0x3cec208 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: _252 = *.omp_data_i_43(D).fy;
+nbody.c:37:9: note: 	stmt 0 _252 = *.omp_data_i_43(D).fy;
+nbody.c:37:9: note: 	stmt 1 _260 = *.omp_data_i_43(D).fz;
+nbody.c:37:9: note: node 0x3cec288 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: prephitmp_884 = PHI <0.0(2), _883(10), 0.0(7)>
+nbody.c:37:9: note: 	stmt 0 prephitmp_884 = PHI <0.0(2), _883(10), 0.0(7)>
+nbody.c:37:9: note: 	stmt 1 prephitmp_886 = PHI <0.0(2), _885(10), 0.0(7)>
+nbody.c:37:9: note: 	children 0x3cec308 0x3cec388 0x3cecd08
+nbody.c:37:9: note: node (constant) 0x3cec308 (max_nunits=1, refcnt=1) vector(2) float
+nbody.c:37:9: note: 	{ 0.0, 0.0 }
+nbody.c:37:9: note: node 0x3cec388 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: _883 = fy0_private_20 + fy1_private_10;
+nbody.c:37:9: note: 	stmt 0 _883 = fy0_private_20 + fy1_private_10;
+nbody.c:37:9: note: 	stmt 1 _885 = fz0_private_14 + fz1_private_8;
+nbody.c:37:9: note: 	children 0x3cec408 0x3cec888
+nbody.c:37:9: note: node 0x3cec408 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: fy0_private_20 = PHI <fy0_private_94(9)>
+nbody.c:37:9: note: 	stmt 0 fy0_private_20 = PHI <fy0_private_94(9)>
+nbody.c:37:9: note: 	stmt 1 fz0_private_14 = PHI <fz0_private_96(9)>
+nbody.c:37:9: note: 	children 0x3cec488
+nbody.c:37:9: note: node 0x3cec488 (max_nunits=2, refcnt=2) vector(2) float
+nbody.c:37:9: note: op template: fy0_private_94 = fy0_private_3 + _93;
+nbody.c:37:9: note: 	stmt 0 fy0_private_94 = fy0_private_3 + _93;
+nbody.c:37:9: note: 	stmt 1 fz0_private_96 = fz0_private_5 + _95;
+nbody.c:37:9: note: 	children 0x3cec508 0x3cec608
+nbody.c:37:9: note: node 0x3cec508 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: fy0_private_3 = PHI <0.0(8), fy0_private_94(13)>
+nbody.c:37:9: note: 	stmt 0 fy0_private_3 = PHI <0.0(8), fy0_private_94(13)>
+nbody.c:37:9: note: 	stmt 1 fz0_private_5 = PHI <0.0(8), fz0_private_96(13)>
+nbody.c:37:9: note: 	children 0x3cec588 0x3cec488
+nbody.c:37:9: note: node (constant) 0x3cec588 (max_nunits=1, refcnt=1) vector(2) float
+nbody.c:37:9: note: 	{ 0.0, 0.0 }
+nbody.c:37:9: note: node 0x3cec608 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: _93 = dy0_74 * d_3_over_2_0_90;
+nbody.c:37:9: note: 	stmt 0 _93 = dy0_74 * d_3_over_2_0_90;
+nbody.c:37:9: note: 	stmt 1 _95 = dz0_80 * d_3_over_2_0_90;
+nbody.c:37:9: note: 	children 0x3cec808 0x3cec788
+nbody.c:37:9: note: node (external) 0x3cec808 (max_nunits=1, refcnt=1) const vector(2) float
+nbody.c:37:9: note: 	{ dy0_74, dz0_80 }
+nbody.c:37:9: note: node (external) 0x3cec788 (max_nunits=1, refcnt=1) const vector(2) float
+nbody.c:37:9: note: 	{ d_3_over_2_0_90, d_3_over_2_0_90 }
+nbody.c:37:9: note: node 0x3cec888 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: fy1_private_10 = PHI <fy1_private_121(9)>
+nbody.c:37:9: note: 	stmt 0 fy1_private_10 = PHI <fy1_private_121(9)>
+nbody.c:37:9: note: 	stmt 1 fz1_private_8 = PHI <fz1_private_123(9)>
+nbody.c:37:9: note: 	children 0x3cec908
+nbody.c:37:9: note: node 0x3cec908 (max_nunits=2, refcnt=2) vector(2) float
+nbody.c:37:9: note: op template: fy1_private_121 = fy1_private_9 + _120;
+nbody.c:37:9: note: 	stmt 0 fy1_private_121 = fy1_private_9 + _120;
+nbody.c:37:9: note: 	stmt 1 fz1_private_123 = fz1_private_11 + _122;
+nbody.c:37:9: note: 	children 0x3cec988 0x3ceca88
+nbody.c:37:9: note: node 0x3cec988 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: fy1_private_9 = PHI <0.0(8), fy1_private_121(13)>
+nbody.c:37:9: note: 	stmt 0 fy1_private_9 = PHI <0.0(8), fy1_private_121(13)>
+nbody.c:37:9: note: 	stmt 1 fz1_private_11 = PHI <0.0(8), fz1_private_123(13)>
+nbody.c:37:9: note: 	children 0x3ceca08 0x3cec908
+nbody.c:37:9: note: node (constant) 0x3ceca08 (max_nunits=1, refcnt=1) vector(2) float
+nbody.c:37:9: note: 	{ 0.0, 0.0 }
+nbody.c:37:9: note: node 0x3ceca88 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: _120 = dy1_104 * d_3_over_2_1_117;
+nbody.c:37:9: note: 	stmt 0 _120 = dy1_104 * d_3_over_2_1_117;
+nbody.c:37:9: note: 	stmt 1 _122 = dz1_107 * d_3_over_2_1_117;
+nbody.c:37:9: note: 	children 0x3cecc88 0x3cecc08
+nbody.c:37:9: note: node (external) 0x3cecc88 (max_nunits=1, refcnt=1) const vector(2) float
+nbody.c:37:9: note: 	{ dy1_104, dz1_107 }
+nbody.c:37:9: note: node (external) 0x3cecc08 (max_nunits=1, refcnt=1) const vector(2) float
+nbody.c:37:9: note: 	{ d_3_over_2_1_117, d_3_over_2_1_117 }
+nbody.c:37:9: note: node (constant) 0x3cecd08 (max_nunits=1, refcnt=1) vector(2) float
+nbody.c:37:9: note: 	{ 0.0, 0.0 }
+nbody.c:37:9: note: ------>vectorizing SLP node starting from: _228 = dy5_212 * d_3_over_2_5_225;
+nbody.c:37:9: note: transform binary/unary operation.
+nbody.c:37:9: note: add new stmt: vect__228.18_861 = _863 * _862;
+nbody.c:37:9: note: ------>vectorizing SLP node starting from: fy5_private_33 = PHI <0.0(8), fy5_private_229(13)>
+nbody.c:37:9: note: ------>vectorizing SLP node starting from: fy5_private_229 = fy5_private_33 + _228;
+nbody.c:37:9: note: vect_is_simple_use: operand fy5_private_33 = PHI <0.0(8), fy5_private_229(13)>, type of def: internal
+nbody.c:37:9: note: vect_is_simple_use: operand dy5_212 * d_3_over_2_5_225, type of def: internal
+nbody.c:37:9: note: transform binary/unary operation.
+nbody.c:37:9: note: add new stmt: vect_fy5_private_229.20_859 = vect_fy5_private_33.19_860 + vect__228.18_861;
+nbody.c:37:9: note: ------>vectorizing SLP node starting from: fy5_private_865 = PHI <fy5_private_229(9)>
+nbody.c:37:9: note: ------>vectorizing SLP node starting from: fy5_private_34 = PHI <0.0(2), fy5_private_865(10), 0.0(7)>
+nbody.c:37:9: note: ------>vectorizing SLP node starting from: _201 = dy4_185 * d_3_over_2_4_198;
+nbody.c:37:9: note: transform binary/unary operation.
+nbody.c:37:9: note: add new stmt: vect__201.23_854 = _856 * _855;
+nbody.c:37:9: note: ------>vectorizing SLP node starting from: fy4_private_27 = PHI <0.0(8), fy4_private_202(13)>
+nbody.c:37:9: note: ------>vectorizing SLP node starting from: fy4_private_202 = fy4_private_27 + _201;
+nbody.c:37:9: note: vect_is_simple_use: operand fy4_private_27 = PHI <0.0(8), fy4_private_202(13)>, type of def: internal
+nbody.c:37:9: note: vect_is_simple_use: operand dy4_185 * d_3_over_2_4_198, type of def: internal
+nbody.c:37:9: note: transform binary/unary operation.
+nbody.c:37:9: note: add new stmt: vect_fy4_private_202.25_852 = vect_fy4_private_27.24_853 + vect__201.23_854;
+nbody.c:37:9: note: ------>vectorizing SLP node starting from: fy4_private_868 = PHI <fy4_private_202(9)>
+nbody.c:37:9: note: ------>vectorizing SLP node starting from: fy4_private_28 = PHI <0.0(2), fy4_private_868(10), 0.0(7)>
+nbody.c:37:9: note: ------>vectorizing SLP node starting from: _174 = dy3_158 * d_3_over_2_3_171;
+nbody.c:37:9: note: transform binary/unary operation.
+nbody.c:37:9: note: add new stmt: vect__174.28_847 = _849 * _848;
+nbody.c:37:9: note: ------>vectorizing SLP node starting from: fy3_private_21 = PHI <0.0(8), fy3_private_175(13)>
+nbody.c:37:9: note: ------>vectorizing SLP node starting from: fy3_private_175 = fy3_private_21 + _174;
+nbody.c:37:9: note: vect_is_simple_use: operand fy3_private_21 = PHI <0.0(8), fy3_private_175(13)>, type of def: internal
+nbody.c:37:9: note: vect_is_simple_use: operand dy3_158 * d_3_over_2_3_171, type of def: internal
+nbody.c:37:9: note: transform binary/unary operation.
+nbody.c:37:9: note: add new stmt: vect_fy3_private_175.30_845 = vect_fy3_private_21.29_846 + vect__174.28_847;
+nbody.c:37:9: note: ------>vectorizing SLP node starting from: fy3_private_871 = PHI <fy3_private_175(9)>
+nbody.c:37:9: note: ------>vectorizing SLP node starting from: fy3_private_22 = PHI <0.0(2), fy3_private_871(10), 0.0(7)>
+nbody.c:37:9: note: ------>vectorizing SLP node starting from: _147 = dy2_131 * d_3_over_2_2_144;
+nbody.c:37:9: note: transform binary/unary operation.
+nbody.c:37:9: note: add new stmt: vect__147.33_840 = _842 * _841;
+nbody.c:37:9: note: ------>vectorizing SLP node starting from: fy2_private_15 = PHI <0.0(8), fy2_private_148(13)>
+nbody.c:37:9: note: ------>vectorizing SLP node starting from: fy2_private_148 = fy2_private_15 + _147;
+nbody.c:37:9: note: vect_is_simple_use: operand fy2_private_15 = PHI <0.0(8), fy2_private_148(13)>, type of def: internal
+nbody.c:37:9: note: vect_is_simple_use: operand dy2_131 * d_3_over_2_2_144, type of def: internal
+nbody.c:37:9: note: transform binary/unary operation.
+nbody.c:37:9: note: add new stmt: vect_fy2_private_148.35_838 = vect_fy2_private_15.34_839 + vect__147.33_840;
+nbody.c:37:9: note: ------>vectorizing SLP node starting from: fy2_private_4 = PHI <fy2_private_148(9)>
+nbody.c:37:9: note: ------>vectorizing SLP node starting from: fy2_private_16 = PHI <0.0(2), fy2_private_4(10), 0.0(7)>
+nbody.c:37:9: note: ------>vectorizing SLP node starting from: _252 = *.omp_data_i_43(D).fy;
+nbody.c:37:9: note: transform load. ncopies = 1
+nbody.c:37:9: note: create vector_type-pointer variable to type: vector(2) float  vectorizing a pointer ref: *.omp_data_i_43(D).fy
+nbody.c:37:9: note: created vectp.39_835
+nbody.c:37:9: note: add new stmt: vect__252.40_834 = MEM <vector(2) float> [(float *)vectp.39_835];
+nbody.c:37:9: note: ------>vectorizing SLP node starting from: _93 = dy0_74 * d_3_over_2_0_90;
+nbody.c:37:9: note: transform binary/unary operation.
+nbody.c:37:9: note: add new stmt: vect__93.41_831 = _833 * _832;
+nbody.c:37:9: note: ------>vectorizing SLP node starting from: fy0_private_3 = PHI <0.0(8), fy0_private_94(13)>
+nbody.c:37:9: note: ------>vectorizing SLP node starting from: fy0_private_94 = fy0_private_3 + _93;
+nbody.c:37:9: note: vect_is_simple_use: operand fy0_private_3 = PHI <0.0(8), fy0_private_94(13)>, type of def: internal
+nbody.c:37:9: note: vect_is_simple_use: operand dy0_74 * d_3_over_2_0_90, type of def: internal
+nbody.c:37:9: note: transform binary/unary operation.
+nbody.c:37:9: note: add new stmt: vect_fy0_private_94.43_829 = vect_fy0_private_3.42_830 + vect__93.41_831;
+nbody.c:37:9: note: ------>vectorizing SLP node starting from: fy0_private_20 = PHI <fy0_private_94(9)>
+nbody.c:37:9: note: ------>vectorizing SLP node starting from: _120 = dy1_104 * d_3_over_2_1_117;
+nbody.c:37:9: note: transform binary/unary operation.
+nbody.c:37:9: note: add new stmt: vect__120.45_825 = _827 * _826;
+nbody.c:37:9: note: ------>vectorizing SLP node starting from: fy1_private_9 = PHI <0.0(8), fy1_private_121(13)>
+nbody.c:37:9: note: ------>vectorizing SLP node starting from: fy1_private_121 = fy1_private_9 + _120;
+nbody.c:37:9: note: vect_is_simple_use: operand fy1_private_9 = PHI <0.0(8), fy1_private_121(13)>, type of def: internal
+nbody.c:37:9: note: vect_is_simple_use: operand dy1_104 * d_3_over_2_1_117, type of def: internal
+nbody.c:37:9: note: transform binary/unary operation.
+nbody.c:37:9: note: add new stmt: vect_fy1_private_121.47_823 = vect_fy1_private_9.46_824 + vect__120.45_825;
+nbody.c:37:9: note: ------>vectorizing SLP node starting from: fy1_private_10 = PHI <fy1_private_121(9)>
+nbody.c:37:9: note: ------>vectorizing SLP node starting from: _883 = fy0_private_20 + fy1_private_10;
+nbody.c:37:9: note: vect_is_simple_use: operand fy0_private_20 = PHI <fy0_private_94(9)>, type of def: internal
+nbody.c:37:9: note: vect_is_simple_use: operand fy1_private_10 = PHI <fy1_private_121(9)>, type of def: internal
+nbody.c:37:9: note: transform binary/unary operation.
+nbody.c:37:9: note: add new stmt: vect__883.49_821 = vect_fy0_private_20.44_828 + vect_fy1_private_10.48_822;
+nbody.c:37:9: note: ------>vectorizing SLP node starting from: prephitmp_884 = PHI <0.0(2), _883(10), 0.0(7)>
+nbody.c:37:9: note: ------>vectorizing SLP node starting from: _267 = _252 + prephitmp_884;
+nbody.c:37:9: note: vect_is_simple_use: operand *.omp_data_i_43(D).fy, type of def: internal
+nbody.c:37:9: note: vect_is_simple_use: operand prephitmp_884 = PHI <0.0(2), _883(10), 0.0(7)>, type of def: internal
+nbody.c:37:9: note: transform binary/unary operation.
+nbody.c:37:9: note: add new stmt: vect__267.51_819 = vect__252.40_834 + vect_prephitmp_884.50_820;
+nbody.c:37:9: note: ------>vectorizing SLP node starting from: _268 = fy2_private_16 + _267;
+nbody.c:37:9: note: vect_is_simple_use: operand fy2_private_16 = PHI <0.0(2), fy2_private_4(10), 0.0(7)>, type of def: internal
+nbody.c:37:9: note: vect_is_simple_use: operand _252 + prephitmp_884, type of def: internal
+nbody.c:37:9: note: transform binary/unary operation.
+nbody.c:37:9: note: add new stmt: vect__268.52_818 = vect_fy2_private_16.37_836 + vect__267.51_819;
+nbody.c:37:9: note: ------>vectorizing SLP node starting from: _269 = fy3_private_22 + _268;
+nbody.c:37:9: note: vect_is_simple_use: operand fy3_private_22 = PHI <0.0(2), fy3_private_871(10), 0.0(7)>, type of def: internal
+nbody.c:37:9: note: vect_is_simple_use: operand fy2_private_16 + _267, type of def: internal
+nbody.c:37:9: note: transform binary/unary operation.
+nbody.c:37:9: note: add new stmt: vect__269.53_817 = vect_fy3_private_22.32_843 + vect__268.52_818;
+nbody.c:37:9: note: ------>vectorizing SLP node starting from: _270 = fy4_private_28 + _269;
+nbody.c:37:9: note: vect_is_simple_use: operand fy4_private_28 = PHI <0.0(2), fy4_private_868(10), 0.0(7)>, type of def: internal
+nbody.c:37:9: note: vect_is_simple_use: operand fy3_private_22 + _268, type of def: internal
+nbody.c:37:9: note: transform binary/unary operation.
+nbody.c:37:9: note: add new stmt: vect__270.54_816 = vect_fy4_private_28.27_850 + vect__269.53_817;
+nbody.c:37:9: note: ------>vectorizing SLP node starting from: _253 = fy5_private_34 + _270;
+nbody.c:37:9: note: vect_is_simple_use: operand fy5_private_34 = PHI <0.0(2), fy5_private_865(10), 0.0(7)>, type of def: internal
+nbody.c:37:9: note: vect_is_simple_use: operand fy4_private_28 + _269, type of def: internal
+nbody.c:37:9: note: transform binary/unary operation.
+nbody.c:37:9: note: add new stmt: vect__253.55_815 = vect_fy5_private_34.22_857 + vect__270.54_816;
+nbody.c:37:9: note: ------>vectorizing SLP node starting from: *.omp_data_i_43(D).fy = _253;
+nbody.c:37:9: note: vect_is_simple_use: operand fy5_private_34 + _270, type of def: internal
+nbody.c:37:9: note: vect_is_simple_use: operand fz5_private_36 + _266, type of def: internal
+nbody.c:37:9: note: transform store. ncopies = 1
+nbody.c:37:9: note: create vector_type-pointer variable to type: vector(2) float  vectorizing a pointer ref: *.omp_data_i_43(D).fy
+nbody.c:37:9: note: created vectp.57_814
+nbody.c:37:9: note: add new stmt: MEM <vector(2) float> [(float *)vectp.57_814] = vect__253.55_815;
+nbody.c:37:9: note: vectorizing stmts using SLP.
+nbody.c:37:9: optimized: basic block part vectorized using 32 byte vectors
+nbody.c:37:9: note: ***** The result for vector mode V32QI would be the same
+nbody.c:37:9: missed: missed loop optimization: niters analysis ends up with assumptions.
+BB 4 is always executed in loop 1
+BB 9 is always executed in loop 2
+loop 1's coldest_outermost_loop is 1, hotter_than_inner_loop is NULL
+loop 2's coldest_outermost_loop is 2, hotter_than_inner_loop is NULL
+nbody.c:106:16: note: considering unrolling loop 1 at BB 7
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+nbody.c:100:25: note: considering unrolling loop 2 at BB 12
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+BB 3 is always executed in loop 1
+loop 1's coldest_outermost_loop is 1, hotter_than_inner_loop is NULL
+nbody.c:17:23: missed: statement clobbers memory: _1 = rand ();
+nbody.c:16:23: missed: couldn't vectorize loop
+nbody.c:16:23: missed: not vectorized: control flow in loop.
+nbody.c:15:6: note: vectorized 0 loops in function.
+nbody.c:17:23: missed: statement clobbers memory: _1 = rand ();
+nbody.c:17:23: missed: statement clobbers memory: _1 = rand ();
+nbody.c:18:23: missed: statement clobbers memory: _2 = rand ();
+nbody.c:21:33: missed: statement clobbers memory: _3 = rand ();
+nbody.c:22:26: missed: statement clobbers memory: _10 = rand ();
+nbody.c:23:33: missed: statement clobbers memory: _15 = rand ();
+nbody.c:25:27: missed: statement clobbers memory: _21 = rand ();
+nbody.c:26:34: missed: statement clobbers memory: _26 = rand ();
+nbody.c:27:27: missed: statement clobbers memory: _32 = rand ();
+nbody.c:29:1: note: ***** Analysis failed with vector mode V4DI
+nbody.c:29:1: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+BB 4 is always executed in loop 1
+loop 1's coldest_outermost_loop is 1, hotter_than_inner_loop is NULL
+nbody.c:16:23: note: considering unrolling loop 1 at BB 3
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+BB 4 is always executed in loop 2
+BB 3 is always executed in loop 1
+loop 2's coldest_outermost_loop is 2, hotter_than_inner_loop is NULL
+loop 1's coldest_outermost_loop is 1, hotter_than_inner_loop is NULL
+consider run-time aliasing test between *_23 and *_20
+consider run-time aliasing test between *_31 and *_28
+consider run-time aliasing test between *_39 and *_36
+nbody.c:31:6: missed: statement clobbers memory: __builtin_GOMP_parallel (move_particles_optimized._omp_fn.0, &.omp_data_o.4, 0, 4);
+nbody.c:117:23: missed: couldn't vectorize loop
+nbody.c:118:15: missed: not vectorized: no vectype for stmt: _21 = *_20;
+ scalar_type: f32
+nbody.c:34:23: missed: couldn't vectorize loop
+nbody.c:31:6: missed: statement clobbers memory: __builtin_GOMP_parallel (move_particles_optimized._omp_fn.0, &.omp_data_o.4, 0, 4);
+nbody.c:31:6: note: vectorized 0 loops in function.
+nbody.c:31:6: missed: statement clobbers memory: __builtin_GOMP_parallel (move_particles_optimized._omp_fn.0, &.omp_data_o.4, 0, 4);
+nbody.c:31:6: missed: statement clobbers memory: __builtin_GOMP_parallel (move_particles_optimized._omp_fn.0, &.omp_data_o.4, 0, 4);
+nbody.c:37:9: note: ***** Analysis succeeded with vector mode V8SF
+nbody.c:37:9: note: SLPing BB part
+nbody.c:37:9: note: Costing subgraph: 
+nbody.c:37:9: note: node 0x3cea688 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: .omp_data_o.4.fy = 0.0;
+nbody.c:37:9: note: 	stmt 0 .omp_data_o.4.fy = 0.0;
+nbody.c:37:9: note: 	stmt 1 .omp_data_o.4.fz = 0.0;
+nbody.c:37:9: note: 	children 0x3cea708
+nbody.c:37:9: note: node (constant) 0x3cea708 (max_nunits=1, refcnt=1) vector(2) float
+nbody.c:37:9: note: 	{ 0.0, 0.0 }
+nbody.c:37:9: note: Cost model analysis: 
+nbody.c:37:9: note: Cost model analysis for part in loop 1:
+  Vector cost: 24
+  Scalar cost: 24
+nbody.c:37:9: note: Costing subgraph: 
+nbody.c:37:9: note: node 0x3cea788 (max_nunits=2, refcnt=1) vector(2) long long unsigned int
+nbody.c:37:9: note: op template: .omp_data_o.4.n = n_48(D);
+nbody.c:37:9: note: 	stmt 0 .omp_data_o.4.n = n_48(D);
+nbody.c:37:9: note: 	stmt 1 .omp_data_o.4.i = i_75;
+nbody.c:37:9: note: 	children 0x3cea808
+nbody.c:37:9: note: node (external) 0x3cea808 (max_nunits=1, refcnt=1) vector(2) long long unsigned int
+nbody.c:37:9: note: 	{ n_48(D), i_75 }
+nbody.c:37:9: note: Cost model analysis: 
+nbody.c:37:9: note: Cost model analysis for part in loop 1:
+  Vector cost: 20
+  Scalar cost: 24
+nbody.c:37:9: note: Basic block will be vectorized using SLP
+nbody.c:37:9: note: Vectorizing SLP tree:
+nbody.c:37:9: note: node 0x3cea688 (max_nunits=2, refcnt=1) vector(2) float
+nbody.c:37:9: note: op template: .omp_data_o.4.fy = 0.0;
+nbody.c:37:9: note: 	stmt 0 .omp_data_o.4.fy = 0.0;
+nbody.c:37:9: note: 	stmt 1 .omp_data_o.4.fz = 0.0;
+nbody.c:37:9: note: 	children 0x3cea708
+nbody.c:37:9: note: node (constant) 0x3cea708 (max_nunits=1, refcnt=1) vector(2) float
+nbody.c:37:9: note: 	{ 0.0, 0.0 }
+nbody.c:37:9: note: ------>vectorizing SLP node starting from: .omp_data_o.4.fy = 0.0;
+nbody.c:37:9: note: vect_is_simple_use: operand 0.0, type of def: constant
+nbody.c:37:9: note: transform store. ncopies = 1
+nbody.c:37:9: note: create vector_type-pointer variable to type: vector(2) float  vectorizing a pointer ref: .omp_data_o.4.fy
+nbody.c:37:9: note: created &.omp_data_o.4.fy
+nbody.c:37:9: note: add new stmt: MEM <vector(2) float> [(float *)&.omp_data_o.4 + 32B] = { 0.0, 0.0 };
+nbody.c:37:9: note: vectorizing stmts using SLP.
+nbody.c:37:9: optimized: basic block part vectorized using 32 byte vectors
+nbody.c:37:9: note: Vectorizing SLP tree:
+nbody.c:37:9: note: node 0x3cea788 (max_nunits=2, refcnt=1) vector(2) long long unsigned int
+nbody.c:37:9: note: op template: .omp_data_o.4.n = n_48(D);
+nbody.c:37:9: note: 	stmt 0 .omp_data_o.4.n = n_48(D);
+nbody.c:37:9: note: 	stmt 1 .omp_data_o.4.i = i_75;
+nbody.c:37:9: note: 	children 0x3cea808
+nbody.c:37:9: note: node (external) 0x3cea808 (max_nunits=1, refcnt=1) vector(2) long long unsigned int
+nbody.c:37:9: note: 	{ n_48(D), i_75 }
+nbody.c:37:9: note: ------>vectorizing SLP node starting from: .omp_data_o.4.n = n_48(D);
+nbody.c:37:9: note: vect_is_simple_use: operand i_75 = PHI <i_70(9), 0(7)>, type of def: internal
+nbody.c:37:9: note: transform store. ncopies = 1
+nbody.c:37:9: note: create vector_type-pointer variable to type: vector(2) long long unsigned int  vectorizing a pointer ref: .omp_data_o.4.n
+nbody.c:37:9: note: created &.omp_data_o.4.n
+nbody.c:37:9: note: add new stmt: MEM <vector(2) long long unsigned int> [(long long unsigned int *)&.omp_data_o.4 + 8B] = _46;
+nbody.c:37:9: note: vectorizing stmts using SLP.
+nbody.c:37:9: optimized: basic block part vectorized using 32 byte vectors
+nbody.c:37:9: note: ***** The result for vector mode V32QI would be the same
+BB 5 is always executed in loop 2
+BB 3 is always executed in loop 1
+loop 2's coldest_outermost_loop is 2, hotter_than_inner_loop is NULL
+loop 1's coldest_outermost_loop is 1, hotter_than_inner_loop is NULL
+nbody.c:117:23: note: considering unrolling loop 2 at BB 6
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+nbody.c:34:23: note: considering unrolling loop 1 at BB 4
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
+BB 5 is always executed in loop 1
+loop 1's coldest_outermost_loop is 1, hotter_than_inner_loop is NULL
+nbody.c:147:27: missed: statement clobbers memory: start_90 = omp_get_wtime ();
+nbody.c:146:23: missed: couldn't vectorize loop
+nbody.c:146:23: missed: not vectorized: control flow in loop.
+nbody.c:124:5: note: vectorized 0 loops in function.
+nbody.c:147:27: missed: statement clobbers memory: start_90 = omp_get_wtime ();
+/usr/include/stdlib.h:495:10: missed: statement clobbers memory: _101 = strtoll (_1, 0B, 10);
+nbody.c:131:30: missed: statement clobbers memory: p_59 = aligned_alloc (32, 48);
+nbody.c:132:14: missed: statement clobbers memory: _3 = aligned_alloc (32, _2);
+nbody.c:133:14: missed: statement clobbers memory: _5 = aligned_alloc (32, _2);
+nbody.c:134:14: missed: statement clobbers memory: _7 = aligned_alloc (32, _2);
+nbody.c:135:15: missed: statement clobbers memory: _8 = aligned_alloc (32, _2);
+nbody.c:136:15: missed: statement clobbers memory: _9 = aligned_alloc (32, _2);
+nbody.c:137:15: missed: statement clobbers memory: _10 = aligned_alloc (32, _2);
+nbody.c:139:5: missed: statement clobbers memory: init (p_59, iftmp.7_51);
+nbody.c:142:5: missed: statement clobbers memory: printf ("\n\x1b[1mTotal memory size:\x1b[0m %llu B, %llu KiB, %llu MiB\n\n", s_73, _12, _11);
+nbody.c:143:5: missed: statement clobbers memory: printf ("\x1b[1m%5s %10s %10s %8s\x1b[0m\n", "Step", "Time, s", "Interact/s", "GFLOP/s");
+nbody.c:144:5: missed: statement clobbers memory: fflush (stdout.8_13);
+nbody.c:147:27: missed: statement clobbers memory: start_90 = omp_get_wtime ();
+nbody.c:148:9: missed: statement clobbers memory: move_particles_optimized (p_59, 9.99999977648258209228515625e-3, iftmp.7_51);
+nbody.c:149:25: missed: statement clobbers memory: end_93 = omp_get_wtime ();
+nbody.c:159:9: missed: statement clobbers memory: printf ("%5llu %10.3e %10.3e %8.1f %s\n", i_110, _32, _35, _33, iftmp.9_52);
+nbody.c:161:9: missed: statement clobbers memory: fflush (stdout.10_36);
+nbody.c:167:5: missed: statement clobbers memory: __builtin_puts (&"-----------------------------------------------------"[0]);
+nbody.c:168:5: missed: statement clobbers memory: printf ("\x1b[1m%s %4s \x1b[42m%10.1lf +- %.1lf GFLOP/s\x1b[0m\n", "Average performance:", "", rate_77, drate_78);
+nbody.c:169:5: missed: statement clobbers memory: __builtin_puts (&"-----------------------------------------------------"[0]);
+nbody.c:171:5: missed: statement clobbers memory: free (_40);
+nbody.c:172:5: missed: statement clobbers memory: free (_41);
+nbody.c:173:5: missed: statement clobbers memory: free (_42);
+nbody.c:174:5: missed: statement clobbers memory: free (_43);
+nbody.c:175:5: missed: statement clobbers memory: free (_44);
+nbody.c:176:5: missed: statement clobbers memory: free (_45);
+nbody.c:177:5: missed: statement clobbers memory: free (p_59);
+nbody.c:152:50: note: ***** Analysis succeeded with vector mode V4DI
+nbody.c:152:50: note: SLPing BB part
+nbody.c:152:50: note: Costing subgraph: 
+nbody.c:152:50: note: node 0x3c3b668 (max_nunits=2, refcnt=1) vector(2) double
+nbody.c:152:50: note: op template: _16 = _15 * 1.9e+1;
+nbody.c:152:50: note: 	stmt 0 _16 = _15 * 1.9e+1;
+nbody.c:152:50: note: 	stmt 1 _112 = _18 * 2.0e+0;
+nbody.c:152:50: note: 	children 0x3c3b768 0x3c3b7e8
+nbody.c:152:50: note: node (external) 0x3c3b768 (max_nunits=1, refcnt=1) vector(2) double
+nbody.c:152:50: note: 	{ _15, _18 }
+nbody.c:152:50: note: node (constant) 0x3c3b7e8 (max_nunits=1, refcnt=1) vector(2) double
+nbody.c:152:50: note: 	{ 1.9e+1, 2.0e+0 }
+nbody.c:152:50: note: Cost model analysis: 
+nbody.c:152:50: note: Cost model analysis for part in loop 0:
+  Vector cost: 56
+  Scalar cost: 44
+nbody.c:152:50: missed: not vectorized: vectorization is not profitable.
+nbody.c:152:50: note: ***** The result for vector mode V32QI would be the same
+nbody.c:152:50: note: ***** Re-trying analysis with vector mode V16QI
+nbody.c:152:50: note: ***** Analysis succeeded with vector mode V16QI
+nbody.c:152:50: note: SLPing BB part
+nbody.c:152:50: note: Costing subgraph: 
+nbody.c:152:50: note: node 0x3c3b668 (max_nunits=2, refcnt=1) vector(2) double
+nbody.c:152:50: note: op template: _16 = _15 * 1.9e+1;
+nbody.c:152:50: note: 	stmt 0 _16 = _15 * 1.9e+1;
+nbody.c:152:50: note: 	stmt 1 _112 = _18 * 2.0e+0;
+nbody.c:152:50: note: 	children 0x3c3b768 0x3c3b868
+nbody.c:152:50: note: node (external) 0x3c3b768 (max_nunits=1, refcnt=1) vector(2) double
+nbody.c:152:50: note: 	{ _15, _18 }
+nbody.c:152:50: note: node (constant) 0x3c3b868 (max_nunits=1, refcnt=1) vector(2) double
+nbody.c:152:50: note: 	{ 1.9e+1, 2.0e+0 }
+nbody.c:152:50: note: Cost model analysis: 
+nbody.c:152:50: note: Cost model analysis for part in loop 0:
+  Vector cost: 56
+  Scalar cost: 44
+nbody.c:152:50: missed: not vectorized: vectorization is not profitable.
+nbody.c:152:50: note: ***** Re-trying analysis with vector mode V8QI
+nbody.c:156:19: note: ***** Analysis failed with vector mode V8QI
+nbody.c:156:19: note: ***** Re-trying analysis with vector mode V4QI
+nbody.c:156:19: note: ***** Analysis failed with vector mode V4QI
+BB 5 is always executed in loop 1
+loop 1's coldest_outermost_loop is 1, hotter_than_inner_loop is NULL
+nbody.c:146:23: note: considering unrolling loop 1 at BB 8
+considering unrolling loop with constant number of iterations
+considering unrolling loop with runtime-computable number of iterations
