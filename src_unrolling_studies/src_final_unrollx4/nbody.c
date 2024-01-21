@@ -59,39 +59,40 @@ void move_particles(particle_t *restrict p, const f32 dt, u64 n)
             
             for (u64 j = 0; j < n; j+=4)
             {
-                const f32 d1 = 1/(( (p->x[j] - p->x[i])* (p->x[j] - p->x[i])) + ((p->y[j] - p->y[i]) * (p->y[j] - p->y[i])) + (( p->z[j] - p->z[i]) * ( p->z[j] - p->z[i])) + softening * sqrtf(( (p->x[j] - p->x[i])* (p->x[j] - p->x[i])) + ((p->y[j] - p->y[i]) * (p->y[j] - p->y[i])) + (( p->z[j] - p->z[i]) * ( p->z[j] - p->z[i])) + softening)); //12
+                //Newton's law: 36 FLOPs (Floating-Point Operations)
+                const f32 d1 = 1/(( (p->x[j] - p->x[i])* (p->x[j] - p->x[i])) + ((p->y[j] - p->y[i]) * (p->y[j] - p->y[i])) + (( p->z[j] - p->z[i]) * ( p->z[j] - p->z[i])) + softening * sqrtf(( (p->x[j] - p->x[i])* (p->x[j] - p->x[i])) + ((p->y[j] - p->y[i]) * (p->y[j] - p->y[i])) + (( p->z[j] - p->z[i]) * ( p->z[j] - p->z[i])) + softening));
                 
                 //Calculate net force: 6 FLOPs
-                fx += (p->x[j] - p->x[i]) * d1; //14 (add, mul)
-                fy += (p->y[j] - p->y[i]) * d1; //16 (add, mul)
-                fz += (p->z[j] - p->z[i]) * d1; //18 (add, mul)
+                fx += (p->x[j] - p->x[i]) * d1;
+                fy += (p->y[j] - p->y[i]) * d1;
+                fz += (p->z[j] - p->z[i]) * d1;
                 
-                const f32 d2 = 1/(( (p->x[j+1] - p->x[i])* (p->x[j+1] - p->x[i])) + ((p->y[j+1] - p->y[i]) * (p->y[j+1] - p->y[i])) + (( p->z[j+1] - p->z[i]) * ( p->z[j+1] - p->z[i])) + softening * sqrtf(( (p->x[j+1] - p->x[i])* (p->x[j+1] - p->x[i])) + ((p->y[j+1] - p->y[i]) * (p->y[j+1] - p->y[i])) + (( p->z[j+1] - p->z[i]) * ( p->z[j+1] - p->z[i])) + softening)); //12
+                const f32 d2 = 1/(( (p->x[j+1] - p->x[i])* (p->x[j+1] - p->x[i])) + ((p->y[j+1] - p->y[i]) * (p->y[j+1] - p->y[i])) + (( p->z[j+1] - p->z[i]) * ( p->z[j+1] - p->z[i])) + softening * sqrtf(( (p->x[j+1] - p->x[i])* (p->x[j+1] - p->x[i])) + ((p->y[j+1] - p->y[i]) * (p->y[j+1] - p->y[i])) + (( p->z[j+1] - p->z[i]) * ( p->z[j+1] - p->z[i])) + softening));
                 
-                fx += (p->x[j+1] - p->x[i]) * d2; //14 (add, mul)
-                fy += (p->y[j+1] - p->y[i]) * d2; //16 (add, mul)
-                fz += (p->z[j+1] - p->z[i]) * d2; //18 (add, mul)
+                fx += (p->x[j+1] - p->x[i]) * d2;
+                fy += (p->y[j+1] - p->y[i]) * d2;
+                fz += (p->z[j+1] - p->z[i]) * d2;
                 
-                const f32 d3 = 1/(( (p->x[j+2] - p->x[i])* (p->x[j+2] - p->x[i])) + ((p->y[j+2] - p->y[i]) * (p->y[j+2] - p->y[i])) + (( p->z[j+2] - p->z[i]) * ( p->z[j+2] - p->z[i])) + softening * sqrtf(( (p->x[j+2] - p->x[i])* (p->x[j+2] - p->x[i])) + ((p->y[j+2] - p->y[i]) * (p->y[j+2] - p->y[i])) + (( p->z[j+2] - p->z[i]) * ( p->z[j+2] - p->z[i])) + softening)); //12
+                const f32 d3 = 1/(( (p->x[j+2] - p->x[i])* (p->x[j+2] - p->x[i])) + ((p->y[j+2] - p->y[i]) * (p->y[j+2] - p->y[i])) + (( p->z[j+2] - p->z[i]) * ( p->z[j+2] - p->z[i])) + softening * sqrtf(( (p->x[j+2] - p->x[i])* (p->x[j+2] - p->x[i])) + ((p->y[j+2] - p->y[i]) * (p->y[j+2] - p->y[i])) + (( p->z[j+2] - p->z[i]) * ( p->z[j+2] - p->z[i])) + softening));
                 
-                fx += (p->x[j+2] - p->x[i]) * d3; //14 (add, mul)
-                fy += (p->y[j+2] - p->y[i]) * d3; //16 (add, mul)
-                fz += (p->z[j+2] - p->z[i]) * d3; //18 (add, mul)
+                fx += (p->x[j+2] - p->x[i]) * d3;
+                fy += (p->y[j+2] - p->y[i]) * d3;
+                fz += (p->z[j+2] - p->z[i]) * d3;
                 
-                const f32 d4 = 1/(( (p->x[j+3] - p->x[i])* (p->x[j+3] - p->x[i])) + ((p->y[j+3] - p->y[i]) * (p->y[j+3] - p->y[i])) + (( p->z[j+3] - p->z[i]) * ( p->z[j+3] - p->z[i])) + softening * sqrtf(( (p->x[j+3] - p->x[i])* (p->x[j+3] - p->x[i])) + ((p->y[j+3] - p->y[i]) * (p->y[j+3] - p->y[i])) + (( p->z[j+3] - p->z[i]) * ( p->z[j+3] - p->z[i])) + softening)); //12
+                const f32 d4 = 1/(( (p->x[j+3] - p->x[i])* (p->x[j+3] - p->x[i])) + ((p->y[j+3] - p->y[i]) * (p->y[j+3] - p->y[i])) + (( p->z[j+3] - p->z[i]) * ( p->z[j+3] - p->z[i])) + softening * sqrtf(( (p->x[j+3] - p->x[i])* (p->x[j+3] - p->x[i])) + ((p->y[j+3] - p->y[i]) * (p->y[j+3] - p->y[i])) + (( p->z[j+3] - p->z[i]) * ( p->z[j+3] - p->z[i])) + softening));
                 
-                fx += (p->x[j+3] - p->x[i]) * d4; //14 (add, mul)
-                fy += (p->y[j+3] - p->y[i]) * d4; //16 (add, mul)
-                fz += (p->z[j+3] - p->z[i]) * d4; //18 (add, mul)
+                fx += (p->x[j+3] - p->x[i]) * d4;
+                fy += (p->y[j+3] - p->y[i]) * d4;
+                fz += (p->z[j+3] - p->z[i]) * d4;
                 
                 
             }
             
-            //Newton's law: 36 FLOPs (Floating-Point Operations) per iteration
+            
             //Update particle velocities using the previously computed net force: 6 FLOPs
-            p->vx[i] += dt * fx; //20 (mul, add)
-            p->vy[i] += dt * fy; //22 (mul, add)
-            p->vz[i] += dt * fz; //24 (mul, add)
+            p->vx[i] += dt * fx;
+            p->vy[i] += dt * fy;
+            p->vz[i] += dt * fz;
         }
     }
     //Update positions: 6 FLOPs

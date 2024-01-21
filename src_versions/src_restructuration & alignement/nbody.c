@@ -53,7 +53,7 @@ void move_particles(particle_t *restrict p, const f32 dt, u64 n)
       f32 fy = 0.0;
       f32 fz = 0.0;
 
-      //Newton's law: 17 FLOPs (Floating-Point Operations) per iteration
+      //Newton's law: 18 FLOPs (Floating-Point Operations) per iteration
       for (u64 j = 0; j < n; j++)
     {
       //3 FLOPs (Floating-Point Operations)
